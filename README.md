@@ -25,7 +25,7 @@ https://www.adidas.com.ar/ <br>
 
 Listado del grupo con una breve descripción de cada uno:<br>
 
-<B>Abeldaño Matias</B>: Empleado en el área de la seguridad informática, amante de la tecnología, y fanático de Star Wars.
+<B>Abeldaño Matias</B>: Empleado en el área de la seguridad informática, amante de la tecnología y fanático de Star Wars.
 
 <B>Alfonso Hernán</B>: Estudiante de Programación. Amante del jazz y la pintura. Fana de River y de los gatos. Trabajo en el sector financiero. Conocimientos de Marketing.
 
