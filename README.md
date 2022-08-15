@@ -31,7 +31,7 @@ Listado del grupo con una breve descripción de cada uno:<br>
 
 <B>Agüero Facundo</B>: Estudiante de Programación Web Full Stack. Me gusta ver documentales de 2WW y series de Narcos. Crossfit, hincha del Rey de Copas.
 
-<B>Blasi Emiliano</B>:
+<B>Blasi Emiliano</B>: Futuro desarrollador Full Stack. Me dedico a la Ingenieria Civil. En mis tiempos libres salgo a correr y/o entrenar. Amo viajar y conocer nuevas culturas.
 
 <B>Bostal Luciano</B>: Empleado en el Sector Financiero. Emprendedor. Futuro programador y analista bursátil. Amante del fútbol, las pizzas y la tecnología.
 
