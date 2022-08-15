@@ -27,15 +27,15 @@ Listado del grupo con una breve descripción de cada uno:<br>
 
 <B>Abeldaño Matias</B>:
 
-<B>Alfonso Hernán</B>:
+<B>Alfonso Hernán</B>: Estudiante de Programación. Amante del jazz y la pintura. Fana de River y de los gatos. Trabajo en el sector financiero. Conocimientos de Marketing.
 
-<B>Agüero Facundo</B>: Estudiante de Programación Web Full Stack.  Me gusta ver documentales de 2WW y series de Narcos. Crossfit, hincha del Rey de Copas.
+<B>Agüero Facundo</B>: Estudiante de Programación Web Full Stack. Me gusta ver documentales de 2WW y series de Narcos. Crossfit, hincha del Rey de Copas.
 
 <B>Blasi Emiliano</B>:
 
-<B>Bostal Luciano</B>: Empleado en el Sector Financiero. Emprendedor. Futuro programador y analista bursátil. Amante del futbol, las pizzas y la tecnología.
+<B>Bostal Luciano</B>: Empleado en el Sector Financiero. Emprendedor. Futuro programador y analista bursátil. Amante del fútbol, las pizzas y la tecnología.
 
-<B>Miño Nahuel</B>:
+<B>Miño Nahuel</B>: Estudiante de Programación Web Full Stack, juego al fútbol, soy de River y me gusta ver series y películas.
 
 
 Link del tablero de trabajo en donde se encuentran trabajando:<br>
