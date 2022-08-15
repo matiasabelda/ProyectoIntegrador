@@ -33,7 +33,7 @@ Listado del grupo con una breve descripción de cada uno:<br>
 
 <B>Blasi Emiliano</B>:
 
-<B>Bostal Luciano</B>:
+<B>Bostal Luciano</B>: Empleado en el Sector Financiero. Emprendedor. Futuro programador y analista bursátil. Amante del futbol, las pizzas y la tecnología.
 
 <B>Miño Nahuel</B>:
 
