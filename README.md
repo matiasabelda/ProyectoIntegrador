@@ -27,7 +27,7 @@ Listado del grupo con una breve descripción de cada uno:<br>
 
 <B>Abeldaño Matias</B>: Empleado en el área de la seguridad informática, amante de la tecnología y fanático de Star Wars.
 
-<B>Alfonso Hernán</B>: Amante del jazz y la pintura. Fana de River y de los gatos. Trabajo en el sector financiero. Conocimientos de Marketing.Futuro desarrollador frontend.
+<B>Alfonso Hernán</B>: Amante del jazz y la pintura. Fana de River y de los gatos. Trabajo en el sector financiero. Conocimientos de Marketing. Futuro Desarrollador Frontend.
 
 <B>Agüero Facundo</B>: Estudiante de Programación Web Full Stack. Me gusta ver documentales de 2WW y series de Narcos. Crossfit, hincha del Rey de Copas.
 
