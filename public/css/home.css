@@ -1,0 +1,112 @@
+.titulo {
+    font-weight: bold;
+    font-size: 25px;
+    margin: 30px;
+    margin-left: 30px;
+    display: block;
+    text-align: center;
+}
+.container-producto {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.card-producto-hidden {
+    width: 200px;
+    height: 320px;
+    margin: 20px 10px 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+}
+.card-producto {
+    width: 194px;
+    height: auto;
+    justify-content: flex-start;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    padding: 10px;
+    cursor: default;
+    transition: all 400ms ease;
+}
+.card-producto img {
+    width: 194px;
+    height: auto;
+}
+.card-producto:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.card-producto:hover .detalle-producto i {
+    transform: rotate(-90deg);
+}
+.card-producto:hover .nombre-producto{
+    display: block;
+}
+.detalle-producto {
+    border-top: #ebebeb solid 1px;
+    width: 100%;
+    position: relative;
+}
+
+.precio-producto {
+    text-align: left;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(12, 11, 11);
+    margin-top: 10px;
+}
+
+.descuento-producto {
+    text-align: center;
+    color: #39b54a;
+    font-size: 14px;
+    position: absolute;
+    top: 14px;
+    left: 100px;
+}
+
+.detalle-producto i {
+    color: green;
+    font-size: 18px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: green solid 1px;
+    position: absolute;
+    padding: 6px;
+    right: 5px;
+    top: -18px;
+    transition: 500ms;
+}
+
+.nombre-producto {
+    display: none;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: 2000ms;
+}
+
+/* ------------------- Inicio Medias Queries --------------------- */
+
+@media (min-width: 768px) {
+
+    .titulo {
+        text-align: left;
+        margin-left: 50px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .titulo {
+        margin-left: 100px;
+    }
+}
