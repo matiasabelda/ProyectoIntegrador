@@ -1,11 +1,21 @@
+/*
 .titulo {
     font-weight: bold;
     font-size: 25px;
-    margin: 30px;
-    margin-left: 30px;
-    display: block;
-    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    max-width: 800px;
+    border: #39b54a solid 1px;
 }
+*/
+.titulo {
+    text-align: left;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-left: 8vh;
+}
+
 .container-producto {
     width: 100%;
     height: auto;
@@ -96,17 +106,17 @@
 
 /* ------------------- Inicio Medias Queries --------------------- */
 
-@media (min-width: 768px) {
-
+@media (max-width: 661px) {
     .titulo {
-        text-align: left;
-        margin-left: 50px;
+        text-align: center;
+        font-size: 20px;
+        margin-right: 8vw;
     }
 }
 
 @media (min-width: 1200px) {
 
     .titulo {
-        margin-left: 100px;
+        margin-left: 20vw;
     }
 }
