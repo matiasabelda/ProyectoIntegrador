@@ -12,6 +12,15 @@ app.get('/', (req, res) => {
 app.get('/producto', (req, res) => {
     res.sendFile(path.resolve(__dirname,'./views/producto.html'))
 });
+app.get('/carrito', (req,res) => {
+    res.sendFile(path.resolve(__dirname,'./views/carrito.html'))
+})
+app.get('/registro', (req,res) => {
+    res.sendFile(path.resolve(__dirname,'./views/indexFormulario.html'))
+})
+app.get('/login', (req,res) => {
+    res.sendFile(path.resolve(__dirname,'./views/login.html'))
+})
 
 app.listen(3002, () => {
     console.log('Servidor corriendo en el puerto 3002')

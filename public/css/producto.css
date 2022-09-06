@@ -1,0 +1,892 @@
+*{
+    box-sizing: border-box;
+}
+
+#producto-entero{
+    display: flex;
+    flex-direction: row;
+}
+#producto-entero{
+    width: 90vw;
+    height: 99vh;
+    border: 2px solid rgba( 0, 0, 0, 0.3);
+    margin: 19px auto 0;
+    padding: 0;
+}
+
+
+.fotos-producto{
+    display: flex;
+    flex-direction: column;
+
+}
+.fotos-producto{
+    margin-left: 70px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+
+}
+.fotos-producto .fotos-izq{
+    width: 162px;
+    height: 130px;
+    border: 2px solid black;
+    margin: 4px 0 0 0;
+}
+.fotos-producto-grande{
+    margin-top: 74px;
+    margin-left: 5px;
+}
+.fotos-derecha{
+    width: 563px;
+    height: 532px;
+    border: 2px solid black;
+}
+.nombre-producto{
+ 
+    width: 635px ;
+    height: 50px;
+    margin-left: 120px;
+    margin-top: 74px;
+}
+.nombre-productos{
+    margin:auto 0 auto 10px;
+    text-decoration:underline
+}
+
+#div-boton-x-producto{
+   text-align: right;
+   margin-left: 126px;
+   
+}
+
+
+.div-boton-comprar{
+    margin-top: 8px;
+}
+#boton-comprar{
+    width: 635px ;
+    border-radius: 7px;
+
+}
+.div-boton-carrito{
+    margin-top: 7px;
+
+  
+}
+#boton-carrito{
+    width: 635px ;
+    border-radius: 7px;
+
+    
+}
+#cantidad-productos{
+    margin-bottom: 8px;
+    width: 205px;
+}
+#icono-compartir{
+    margin-top: 10px;
+    font-size: 2em;
+}
+.compartir-cuotas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.calcular-cuotas{
+    margin-top: 15px;
+}
+.precio-producto{
+    margin-top: 283px;
+    margin-bottom: 48px;
+}
+
+.retiro-envio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.retiro-envio{
+    margin-top: 49px;
+}
+#boton-envio-retiro{
+    width: 300px;
+    text-align: left;
+    border: 2px solid black;
+    border-radius: 7px;
+}
+#boton-medios-pago{
+    width: 635px ;
+    text-align: left;
+    border: 2px solid black;
+    border-radius: 7px;
+}
+.div-flecha-boton{
+    text-align: right;
+    margin-top: -24px;
+}
+.bn35 {
+    text-decoration: underline;
+    font-size: small;
+    margin-top: 12px;
+    margin-left: 1px;
+  }
+
+
+  @media only screen and (max-width: 480px) and (min-width: 370px){
+    header{
+        background-color: black;
+    }
+    .barra-busqueda{
+        display: block;
+        font-size: 120vw;
+        margin: 0 auto 10px;
+      }
+      .primer-texto p{
+        font-size: x-small;
+    
+      }
+      .primer-texto{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        margin-left: 56px;
+        margin-right: -19px;
+       
+    }
+    
+    .primer-texto p{
+        font-family:Arial, Helvetica, sans-serif;
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-top: -11px;
+        color: white;
+        font-size: 11px;
+    }
+      .logo-completo{
+        text-align: center;
+        width: 86px;
+        margin: 29px auto 18px;
+       
+    }
+      .main-listas {
+        display: none;
+      }
+      #producto-entero{
+      
+        width: 99vw;
+        height: 99vh;
+      
+        margin: 19px 0 0 2px  ;
+        padding: 0;
+    }
+      .fotos-producto{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 7px;
+        margin-bottom: 70px;
+      }
+      .fotos-producto .fotos-izq{
+        width: 13vw;
+        height: 8vh
+
+    }
+      .fotos-derecha{
+          width: 49vw;
+          height:33.6vh;
+         
+          
+      }
+      .fotos-producto-grande{
+        margin-top: 11px;
+        margin-left: 4px;
+    }
+    .nombre-producto{
+        margin-left: 20px;
+        margin-top: 74px;
+    }
+    .nombre-productos{
+        margin:-61px 0 auto -2px;
+        text-decoration:underline;
+        font-size: small;
+    }
+    .precio-producto{
+        margin-top: 103px;
+        margin-bottom: 31px;
+        margin-left: -17px;
+    }
+    #cantidad-productos{
+        margin-bottom: 8px;
+        width: 25px;
+    }
+    .div-boton-comprar{
+        margin-top: 42px;
+        margin-left: -250px;
+    }
+    #boton-comprar{
+        width: 80vw ;
+        border-radius: 7px;
+    
+    }
+    .div-boton-carrito{
+        margin-top: 7px;
+        margin-left: -250px;
+    
+      
+    }
+    #boton-carrito{
+        width: 80vw ;
+        border-radius: 7px;
+    
+        
+    }
+    .compartir-cuotas{
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    #box-footer{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+       
+     }
+    #box-footer{
+        margin-right: 12px;
+        margin-top: 12px;
+       
+     }
+    #box-footer .footer1{
+        margin: auto 20px;
+        justify-content: center;
+      
+
+     }
+     
+    #footer-derecho{
+        display: none;
+     }
+    .fin-footer{
+        font-size: X-small;
+     }
+     .titu{
+        font-size: small;
+      
+     }
+     
+     .titu .texto{
+        font-size: x-small; 
+     }
+     .footer-icon{
+        margin-bottom: -8px;
+     }
+     .retiro-envio{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+
+    }
+    .retiro-envio{
+        margin-top: 49px;
+       margin-left: 2px;
+       margin-bottom: -26px;
+
+    }
+    .boton-envio{
+        margin-left:11px;
+    }
+    .boton-retiro{
+        margin-left: -67vw;
+    }
+    #boton-envio-retiro{
+        width: 45vw;
+        text-align: left;
+        border: 2px solid black;
+        border-radius: 7px;
+    }
+    .div-boton-comprar{
+        margin-left: -67vw;;
+    }
+    .div-boton-carrito{
+        margin-left: -67vw;;
+    }
+    #boton-medios-pago{
+        width: 96vw ;
+        text-align: left;
+        border: 2px solid black;
+        border-radius: 7px;
+       
+    }
+    .div-flecha-boton{
+        text-align: right;
+        margin-top: -24px;
+    }
+    .bn35 {
+        text-decoration: underline;
+        font-size: small;
+        margin-top: 12px;
+        margin-left: 1px;
+      }
+    #div-boton-x-producto{
+        display: none;
+    }
+    
+}
+@media only screen and (max-width: 780px) and (min-width: 480px){
+    header{
+        background-color: black;
+    }
+    .barra-busqueda{
+        display: block;
+        font-size: 120vw;
+        margin: 0 auto 10px;
+      }
+      .primer-texto p{
+        font-size: x-small;
+    
+      }
+      .primer-texto{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        margin-left: 56px;
+        margin-right: -19px;
+       
+    }
+    
+    .primer-texto p{
+        font-family:Arial, Helvetica, sans-serif;
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-top: -11px;
+        color: white;
+        font-size: 11px;
+    }
+      .logo-completo{
+        text-align: center;
+        width: 86px;
+        margin: 29px auto 18px;
+       
+    }
+      .main-listas {
+        display: none;
+      }
+      #producto-entero{
+      
+        width: 99vw;
+        height: 99vh;
+      
+        margin: 19px 0 0 2px  ;
+        padding: 0;
+    }
+      .fotos-producto{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 7px;
+        margin-bottom: 70px;
+      }
+      .fotos-producto .fotos-izq{
+        width: 13vw;
+        height: 8vh
+
+    }
+      .fotos-derecha{
+          width: 49vw;
+          height:33.6vh;
+         
+          
+      }
+      .fotos-producto-grande{
+        margin-top: 11px;
+        margin-left: 4px;
+    }
+    .nombre-producto{
+        margin-left: 20px;
+        margin-top: 74px;
+    }
+    .nombre-productos{
+        margin:-61px 0 auto -2px;
+        text-decoration:underline;
+        font-size: small;
+    }
+    .precio-producto{
+        margin-top: 103px;
+        margin-bottom: 31px;
+        margin-left: -17px;
+    }
+    #cantidad-productos{
+        margin-bottom: 8px;
+        width: 25px;
+    }
+    .div-boton-comprar{
+        margin-top: 42px;
+        margin-left: -250px;
+    }
+    #boton-comprar{
+        width: 80vw ;
+        border-radius: 7px;
+    
+    }
+    .div-boton-carrito{
+        margin-top: 7px;
+        margin-left: -250px;
+    
+      
+    }
+    #boton-carrito{
+        width: 80vw ;
+        border-radius: 7px;
+    
+        
+    }
+    .compartir-cuotas{
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    #box-footer{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+       
+     }
+    #box-footer{
+        margin-right: 12px;
+        margin-top: 12px;
+       
+     }
+    #box-footer .footer1{
+        margin: auto 20px;
+        justify-content: center;
+      
+
+     }
+     
+    #footer-derecho{
+        display: none;
+     }
+    .fin-footer{
+        font-size: X-small;
+     }
+     .titu{
+        font-size: small;
+      
+     }
+     
+     .titu .texto{
+        font-size: x-small; 
+     }
+     .footer-icon{
+        margin-bottom: -8px;
+     }
+     .retiro-envio{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+
+    }
+    .retiro-envio{
+        margin-top: 49px;
+       margin-left: 2px;
+       margin-bottom: -26px;
+
+    }
+    .boton-envio{
+        margin-left:11px;
+    }
+    .boton-retiro{
+        margin-left: -64vw;
+    }
+    #boton-envio-retiro{
+        width: 44vw;
+        text-align: left;
+        border: 2px solid black;
+        border-radius: 7px;
+    }
+    .div-boton-comprar{
+        margin-left: -64vw;
+    }
+    .div-boton-carrito{
+        margin-left: -64vw;
+    }
+    #boton-medios-pago{
+        width: 87vw ;
+        text-align: left;
+        border: 2px solid black;
+        border-radius: 7px;
+       
+    }
+    .div-flecha-boton{
+        text-align: right;
+        margin-top: -24px;
+    }
+    .bn35 {
+        text-decoration: underline;
+        font-size: small;
+        margin-top: 12px;
+        margin-left: 1px;
+      }
+    #div-boton-x-producto{
+        display: none;
+    }
+    
+}
+@media only screen and (max-width: 1280px) and (min-width: 781px){
+    header{
+        background-color: black;
+    }
+    .barra-busqueda{
+        display: block;
+        font-size: 120vw;
+        margin: 0 auto 10px;
+      }
+      .primer-texto p{
+        font-size: x-small;
+    
+      }
+      .primer-texto{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        margin-left: 56px;
+        margin-right: -19px;
+       
+    }
+    
+    .primer-texto p{
+        font-family:Arial, Helvetica, sans-serif;
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-top: -11px;
+        color: white;
+        font-size: 11px;
+    }
+      .logo-completo{
+        text-align: center;
+        width: 86px;
+        margin: 29px auto 18px;
+       
+    }
+      .main-listas {
+        display: none;
+      }
+      #producto-entero{
+      
+        width: 99vw;
+        height: 99vh;
+      
+        margin: 19px 0 0 2px  ;
+        padding: 0;
+    }
+      .fotos-producto{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 7px;
+        margin-bottom: 70px;
+      }
+      .fotos-producto .fotos-izq{
+        width: 13vw;
+        height: 8vh
+
+    }
+      .fotos-derecha{
+          width: 47vw;
+          height:48vh;
+         
+          
+      }
+      .fotos-producto-grande{
+        margin-top: 11px;
+        margin-left: 4px;
+    }
+    .nombre-producto{
+        margin-left: 20px;
+        margin-top: 74px;
+    }
+    .nombre-productos{
+        margin:-61px 0 auto -2px;
+        text-decoration:underline;
+        font-size: x-large;
+    }
+    .precio-producto{
+        margin-top: 103px;
+        margin-bottom: 31px;
+        margin-left: -17px;
+    }
+    #cantidad-productos{
+        margin-bottom: 8px;
+        width: 25px;
+    }
+    .div-boton-comprar{
+        margin-top: 20vh;
+        margin-left: -62vw;
+    }
+    #boton-comprar{
+        width: 80vw ;
+        border-radius: 7px;
+    
+    }
+    .div-boton-carrito{
+        margin-top: 7px;
+        margin-left: -62vw;
+    
+      
+    }
+    #boton-carrito{
+        width: 80vw ;
+        border-radius: 7px;
+    
+        
+    }
+    .compartir-cuotas{
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    #box-footer{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+       
+     }
+    #box-footer{
+        margin-right: 12px;
+        margin-top: 12px;
+       
+     }
+    #box-footer .footer1{
+        margin: auto 20px;
+        justify-content: center;
+      
+
+     }
+     
+    #footer-derecho{
+        display: none;
+     }
+    .fin-footer{
+        font-size: X-small;
+     }
+     .titu{
+        font-size: small;
+      
+     }
+     
+     .titu .texto{
+        font-size: small; 
+     }
+     .footer-icon{
+        margin-bottom: -8px;
+     }
+     .retiro-envio{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+
+    }
+    .retiro-envio{
+        margin-top: 49px;
+       margin-left: 2vw;
+       margin-bottom: -18vh;
+
+    }
+    .boton-envio{
+        margin-left:11px;
+    }
+    .boton-retiro{
+        margin-left: -64vw;
+    }
+    #boton-envio-retiro{
+        width: 44vw;
+        text-align: left;
+        border: 2px solid black;
+        border-radius: 7px;
+    }
+  
+    
+    
+    #boton-medios-pago{
+        width: 89vw ;
+        text-align: left;
+        border: 2px solid black;
+        border-radius: 7px;
+       
+    }
+    .div-flecha-boton{
+        text-align: right;
+        margin-top: -24px;
+    }
+    .bn35 {
+        text-decoration: underline;
+        font-size: small;
+        margin-top: 12px;
+        margin-left: 1px;
+      }
+    #div-boton-x-producto{
+        display: none;
+    }
+    
+}
+@media only screen and (max-width: 1700px) and (min-width: 1281px){
+    #producto-entero{
+        display: flex;
+        flex-direction: row;
+    }
+    #producto-entero{
+        width: 100vw;
+        height: 100vh;
+        border: 2px solid rgba( 0, 0, 0, 0.3);
+        margin: 19px auto 0;
+        padding: 0;
+    }
+    
+    
+    .fotos-producto{
+        display: flex;
+        flex-direction: column;
+    
+    }
+    .fotos-producto{
+        margin-left: 1vw;
+        margin-top: 70px;
+        margin-bottom: 70px;
+    
+    }
+    .fotos-producto .fotos-izq{
+        width: 162px;
+        height: 130px;
+        border: 2px solid black;
+        margin: 4px 0 0 0;
+    }
+    .fotos-producto-grande{
+        margin-top: 74px;
+        margin-left: 5px;
+    }
+    .fotos-derecha{
+        width: 563px;
+        height: 532px;
+        border: 2px solid black;
+    }
+    .nombre-producto{
+     
+        width: 635px ;
+        height: 50px;
+        margin-left: 120px;
+        margin-top: 74px;
+    }
+    .nombre-productos{
+        margin:auto 0 auto -8vw;
+        text-decoration:underline
+    }
+    
+    #div-boton-x-producto{
+       text-align: right;
+       margin-left: 126px;
+       
+    }
+    
+    
+    .div-boton-comprar{
+        margin-top: 1vh;
+        margin-left: -7vw;
+    }
+    #boton-comprar{
+        width: 35vw ;
+        border-radius: 7px;
+    
+    }
+    .div-boton-carrito{
+        margin-top: 2px;
+        margin-left: -7vw;
+    
+      
+    }
+    #boton-carrito{
+        width: 35vw ;
+        border-radius: 7px;
+    
+        
+    }
+    #cantidad-productos{
+        margin-bottom: 8px;
+        width: 205px;
+        margin-left: -7vw;
+    }
+    #icono-compartir{
+        margin-top: 10px;
+        font-size: 2em;
+        margin-left: -7vw;
+       
+    }
+    .compartir-cuotas{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+    
+    .calcular-cuotas{
+        margin-top: 15px;
+        display: none;
+    }
+    .precio-producto{
+        margin-top: 283px;
+        margin-bottom: 48px;
+        margin-left: -7vw;
+   
+
+    }
+    
+    .retiro-envio{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+    }
+    .retiro-envio{
+        margin-top: 9px;
+       margin-left: -7vw;
+       margin-bottom: -18vh;
+    }
+    .boton-envio{
+        margin-left: 3px;
+    }
+    #boton-envio-retiro{
+        width: 17vw;
+        text-align: left;
+        border: 2px solid black;
+        border-radius: 7px;
+    }
+    #boton-medios-pago{
+        width: 34.3vw ;
+        text-align: left;
+        border: 2px solid black;
+        border-radius: 7px;
+        margin-top: 18vh;
+        
+    }
+    .div-flecha-boton{
+        text-align: right;
+        margin-top: -24px;
+    }
+    .bn35 {
+        text-decoration: underline;
+        font-size: small;
+        margin-top: 12px;
+        margin-left: 7vw;
+      }
+    #boton-x-producto{
+        display: none;
+    }
+    .div-boton-carrito #boton-medios-pago{
+        display: none;
+    }
+    
+
+
+
+
+
+
+}
