@@ -150,6 +150,6 @@ body{
 @media (min-width: 1200px) {
 
     .lista-izq{
-        margin-right:15vw;
+        margin-right:-1vw;
     }
 }
