@@ -19,7 +19,7 @@ body{
 }
 
 .primer-texto p {
-    font-size: 16px;
+    font-size: 14px;
     margin-right: 12px;
 }
 .venta-empresas {
@@ -49,9 +49,9 @@ body{
 .main-listas{
     color: white;
     margin: -24px auto -23px;
+    margin-left: 17vw;
     display: flex;
     justify-content: space-between;
-    justify-content: right;
     opacity: 0.8;
 }
 
@@ -73,7 +73,6 @@ body{
 
 .lista-izq{
     font-size: 15px;
-    margin-right:5vw;
 }
 
 .lista-derc{
@@ -95,14 +94,14 @@ body{
 
 /* ------------------- Inicio Medias Queries --------------------- */
 
-@media (max-width: 768px) {
+@media (max-width: 770px) {
 
     .primer-texto {
         display: none;
     }
 
     .logo-completo {
-        justify-self: center;
+        /*justify-self: center;*/
         width: 80px;
     }
     
@@ -114,42 +113,88 @@ body{
     .main-listas {
         display: none;
     }
+
+    .hamburguer-button {
+        display: block;
+    }
+
+    .navbar-hidden {
+        display: none;
+    }
     
 }
 
-@media (min-width: 769px) {
+@media (min-width: 771px) {
     
+    
+    .main-header-top-bar{
+        justify-content: space-between;
+    }
+
+    .favoritos {
+        display: none;
+    }
+
+    .carrito {
+        display: none;
+    }
+
     .hamburguer-button {
         display: none;
     }
-    
-    .favoritos {
+
+    .navbar-hidden {
         display: none;
     }
 
-    .carrito {
+    .inicia-sesion {
+        font-size: 14px;
+    }
+
+    .mi-cuenta {
+        font-size: 14px;
+    }
+    .primer-texto {
+        justify-self: flex-end;
+    }
+
+    .promociones {
         display: none;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1000px) {
 
     .favoritos {
         display: inline-block;
+        font-size: 14px;
     }
 
     .carrito {
         display: inline-block;
+        font-size: 14px;
     }
 
-    .venta-empresas {
-        display: inline;
+   
+
+    .mi-cuenta {
+        font-size: 15px;
+    }
+
+    .inicia-sesion {
+        font-size: 15px;
     }
 }
+
+
 
 @media (min-width: 1200px) {
 
-    .lista-izq{
-        margin-right:-1vw;
+    .main-listas {
+        margin-left: 19vw;
+    }
+
+    .promociones {
+        display: inline;
     }
 }
