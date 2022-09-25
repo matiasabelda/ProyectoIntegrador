@@ -10,7 +10,7 @@
     <link href='https://fonts.googleapis.com/css2?family=Roboto&display=swap' rel="stylesheet">
     <link href="/css/normalize.css" rel="stylesheet">
     <link href="/css/estilos.css" rel="stylesheet">
-    <link href="/css/home.css" rel="stylesheet">
+    <link href="/css/perfil.css" rel="stylesheet">
     <link href="/css/footer.css" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css%22%3E>
     <link href="https://fonts.googleapis.com/css2?family=Amiko&display=swap" rel="stylesheet">
@@ -55,7 +55,7 @@
           
           
            <ul class="lista-derc" >
-            <li class="mi-cuenta"><a href="/perfil"><i class="fa-solid fa-circle-user"></i> Mi cuenta </a> </li>
+            <li class="mi-cuenta"><a href="a"><i class="fa-solid fa-circle-user"></i> Mi cuenta </a> </li>
             <li class="inicia-sesion"><a href="/login"><i class="fa-solid fa-right-to-bracket"></i> Inicia Sesión </a> </li>
             <li class="favoritos"><a href="a"><i class="fa-solid fa-heart"></i> Favoritos </a> </li>
             <li class="carrito"><a href="/carrito"><i class="fa-solid fa-cart-shopping"></i> Carrito </a> </li>
@@ -76,159 +76,67 @@
                 <li><a href="#">Mis compras <i class="fa-solid fa-basket-shopping"></i></a></li>
             </ul>
         </nav>
-        </header>
+    </header>
     <main>
-    <!-- Contenido del Slide con Bootstrap -->
-      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/img/slider-dicons2.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="/img/slider-dicons5.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="/img/slider-dicons4.jpg" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+        <br>
+        <div id="box-lista-de-opciones-datos">
+           
+            <div id="primera-lista">
+   <!--usuario nuevo -->           
+             <div class="nombre-foto-1" >
+                <a href="/"><i id="usuario-icono"class="fa-regular fa-circle-user"></i></a>
+                <h3> Usuario Nuevo</h3>
+             </div>
+            </div>
+         
+            <div id="segunda-lista">
+    
+    <!--Mis datos --> 
 
-      <!-- Contenido de Basado en tu última visita -->
-      <div class="container-main">
-        <p class="titulo">Basados en tu última visita</p>
-        <div class="container-producto">
-            <div class="card-producto-hidden">
-                <section class="card-producto">
-                    <figure>
-                        <img src="/img/img-tv-samsung-smart.jpg"></img>
-                    </figure>
-                    
-                    <div class="detalle-producto">
-                        <i class="fa-sharp fa-solid fa-truck"></i>
-                        <h3 class="precio-producto">$ 93.000</h3>
-                        <p class="descuento-producto">25% Off</p>
-                        <p class="nombre-producto">TV Samsung Smart 47´</p>
-                    </div>
-                </section>
-            </div>
-            <div class="card-producto-hidden">
-                <section class="card-producto">
-                    <figure>
-                        <img src="/img/img-cafetera-moulinex.jpg"></img>
-                    </figure>
-                    
-                    <div class="detalle-producto">
-                        <i class="fa-sharp fa-solid fa-truck"></i>
-                        <h3 class="precio-producto">$ 25.000</h3>
-                        <p class="descuento-producto">30% Off</p>
-                        <p class="nombre-producto">Cafetera Moulinex 2L M2808</p>
-                    </div>
-                </section>
-            </div>
-            <div class="card-producto-hidden">
-                <section class="card-producto">
-                    <figure>
-                        <img src="/img/img-samsung-galaxy-s10.jpg"></img>
-                    </figure>
-                    
-                    <div class="detalle-producto">
-                        <i class="fa-sharp fa-solid fa-truck"></i>
-                        <h3 class="precio-producto">$ 49.500</h3>
-                        <p class="descuento-producto">15% Off</p>
-                        <p class="nombre-producto">Smartphone Samsung S10</p>
-                    </div>
-                </section>
-            </div>
-            <div class="card-producto-hidden">
-                <section class="card-producto">
-                    <figure>
-                        <img src="/img/img-macbook-pro-2019.jpg"></img>
-                    </figure>
-                    
-                    <div class="detalle-producto">
-                        <i class="fa-sharp fa-solid fa-truck"></i>
-                        <h3 class="precio-producto">$ 98.000</h3>
-                        <p class="descuento-producto">30% Off</p>
-                        <p class="nombre-producto">Macbook Pro I9-64GB RAM</p>
-                    </div>
-                </section>
-            </div>
-        </div>
-        </div>
+             <div class="nombre-foto">
+               <a href="a"><i id="usuario-icono-2" class="fa-regular fa-circle-user"></i></a>
+               <h3>Mis datos</h3>
+             </div>
+         
+    <!--Seguridad--> 
+          
+             <div class="nombre-foto">
+                <a href="a"><i id="icono-datos" class="fa-solid fa-lock"></i></a>
+                <h3>Seguridad</h3>
+             </div>
 
-        <!-- Contenido de Ofertas del día -->
-      <div class="container-main">
-        <p class="titulo">Ofertas del día</p>
-        <div class="container-producto">
-            <div class="card-producto-hidden">
-                <section class="card-producto">
-                    <figure>
-                        <img src="/img/pendrive.webp"></img>
-                    </figure>
-                    
-                    <div class="detalle-producto">
-                        <i class="fa-sharp fa-solid fa-truck"></i>
-                        <h3 class="precio-producto">$ 18.000</h3>
-                        <p class="descuento-producto">21% Off</p>
-                        <p class="nombre-producto">Pendrive 128GB EV3020</p>
-                    </div>
-                </section>
-            </div>
-            <div class="card-producto-hidden">
-                <section class="card-producto">
-                    <figure>
-                        <img src="/img/taladro-inalambrico.jpg"></img>
-                    </figure>
-                    
-                    <div class="detalle-producto">
-                        <i class="fa-sharp fa-solid fa-truck"></i>
-                        <h3 class="precio-producto">$ 47.500</h3>
-                        <p class="descuento-producto">30% Off</p>
-                        <p class="nombre-producto">Taladro Inalámbrico TF5600</p>
-                    </div>
-                </section>
-            </div>
-            <div class="card-producto-hidden">
-                <section class="card-producto">
-                    <figure>
-                        <img src="/img/webcam-360.webp"></img>
-                    </figure>
-                    
-                    <div class="detalle-producto">
-                        <i class="fa-sharp fa-solid fa-truck"></i>
-                        <h3 class="precio-producto">$ 27.599</h3>
-                        <p class="descuento-producto">15% Off</p>
-                        <p class="nombre-producto">WebCam 360 Mod8001</p>
-                    </div>
-                </section>
-            </div>
-            <div class="card-producto-hidden">
-                <section class="card-producto">
-                    <figure>
-                        <img src="/img/HP-Envy-I7.webp"></img>
-                    </figure>
-                    
-                    <div class="detalle-producto">
-                        <i class="fa-sharp fa-solid fa-truck"></i>
-                        <h3 class="precio-producto">$ 96.000</h3>
-                        <p class="descuento-producto">30% Off</p>
-                        <p class="nombre-producto">HP Envy 15-j1001-I9</p>
-                    </div>
-                </section>
+    <!--Mis tarjetas --> 
+
+             <div class="nombre-foto">
+                <a href="a"><i id="icono-datos-tarjeta"class="fa-regular fa-credit-card"></i></a>
+                <h3>Mis tarjetas</h3>
+             </div>
+
+    <!--Direcciones --> 
+
+             <div class="nombre-foto">
+                <a href="a"><i id="icono-datos-direcciones" class="fa-solid fa-location-dot"></i></a>
+                <h3>Direcciones</h3>
+             </div>
+
+    <!--Privacidad --> 
+
+             <div class="nombre-foto">
+                <a href="a"><i id="icono-datos-privacidad" class="fa-solid fa-user-shield"></i></a>
+                <h3>Privacidad</h3>
+             </div>
+
+    <!--Comunicaciones --> 
+
+             <div class="nombre-foto">
+                <a href="a"><i id="icono-datos-comunicaciones" class="fa-regular fa-message"></i></a>
+                <h3>Comunicaciones</h3>
+             </div>
+
             </div>
         </div>
-        </div>
+        <br>
     </main>
-      
-    <!-- Contenido del Footer -->
     <footer>
         <div id="footer">
             <div id="box-footer">
@@ -307,7 +215,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 
     
-       </body>
 
-
-</html>
+</body>
+</html>    
