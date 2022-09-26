@@ -1,0 +1,74 @@
+[
+    {
+     "id": 1,
+     "name": "TV Samsung Smart 47´",
+     "price": 93000,
+     "discount": 50,
+     "category": "visited",
+     "description": "TV Samsung 1080HD UltraHigh Definition 4K",
+     "image": "img-tv-samsung-smart.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Cafetera Moulinex 2L M2808",
+        "price": 25000,
+        "discount": 30,
+        "category": "visited",
+        "description": "Cafetera Dolce Gusto Lumio. La cafetera Dolce Gusto Lumio es de variedad automática que ha llegado con un diseño radical al que nos tenía acostumbrados Dolce Gusto.En este post te contamos todo lo que necesitas saber sobre ella",
+        "image": "img-cafetera-moulinex.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Smartphone Samsung S10",
+        "price": 49500,
+        "discount": 15,
+        "category": "visited",
+        "description": "El mejor celular de las últimas 2 décadas",
+        "image": "img-samsung-galaxy-s10.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Macbook Pro I9-64GB RAM",
+        "price": 98000,
+        "discount": 25,
+        "category": "visited",
+        "description": "Última Mac Ultra Delgada y Ultra Liviana",
+        "image": "img-macbook-pro-2019.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Pendrive 128GB EV3020",
+        "price": 18000,
+        "discount": 21,
+        "category": "visited",
+        "description": "El Pendrive más ligero del mercado",
+        "image": "pendrive.webp"
+    },
+    {
+        "id": 6,
+        "name": "Taladro Inalámbrico TF5600",
+        "price": 47500,
+        "discount": 43,
+        "category": "visited",
+        "description": "Última Mac Ultra Delgada y Ultra Liviana",
+        "image": "taladro-inalambrico.jpg"
+    },
+    {
+        "id": 7,
+        "name": "WebCam 360 Mod8001",
+        "price": 27599,
+        "discount": 15,
+        "category": "visited",
+        "description": "Webcam para la seguridad de tu casa gira 360 grados",
+        "image": "webcam-360.webp"
+    },
+    {
+        "id": 8,
+        "name": "HP Envy 15-j1001-I9",
+        "price": 96000,
+        "discount": 30,
+        "category": "visited",
+        "description": "Hp Last Generation - Nvidia Force 15kl600 - Beats Audio",
+        "image": "HP-Envy-I7.webp"
+    }
+]
