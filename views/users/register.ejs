@@ -76,110 +76,109 @@
 <!-- aca inicia el formulario -->
     
 <main>
-  <div ><h4> Registro  de Usuarios</h4> </div>     
+  <br>
+  <div ><h3> Registro  de Usuarios</h3> </div>     
+  <hr>
   <main>
    
-      <div class="container"  >
+<div class="container"  >
           
-      <form class="row " id="FormDicons" method="post" action=""   >
+      <form class="row mt-3 " id="FormDicons" method="post" action=" "   >
 
-          <div class="col-6">
+        <div class="col-6">
               <label for="emailInput" class="form-label">E-mail</label>
               <input type="email" name="E-mail" class="form-control"  id="emailInput" placeholder ="Ingresa tu @ mail" required>
-          </div>
-          <div class="col-6">
+        </div>
+
+        <div class="col-6">
               <label for="coemailInput" class="form-label">Confirma  E-mail</label>
               <input type="email" name="CE-mail" class="form-control"  id="coemailInput" placeholder ="Confirma tu @ mail" required>
-          </div>
+        </div>
           <br>
           <br>
           <br>
-          <div class="col-12">
+        <div class="col-12">
               <div class="form-check">
-              <label for="checknotif" class="form-checkterm-label">Quiero recibir novedades y notificaciones en mi E-mail </label>
               <input type="checkbox"  name="Checknotif" id="checknotif" class="form-checkterm-input" >
-          </div>
-          </div>
+              <label for="checknotif" class="form-checkterm-label">Quiero recibir novedades y notificaciones en mi E-mail </label>
+              </div>
+        </div>
 
-          <div class="col-6">
+        <div class="col-6">
               <label for="passwordinput" class="form-label">Contraseña</label>
               <input type="password" name="pass" class="form-control"  id="passwordinput" placeholder ="Ingresa tu contraseña" required >
-          </div>
-          <div class="col-6">
+        </div>
+
+        <div class="col-6">
               <label for="copasswordinput" class="form-label">Confirma Contraseña</label>
               <input type="password" name="cpass"  class="form-control"  id="copasswordinput" placeholder ="Confirma tu contraseña" required>
-          </div>
+        </div>
 
-          <div class="col-6">
+        <div class="col-6">
             <label for="Documento" class="form-label">Numero de Documento</label>
             <input type="number"  name="ndoc"  class="form-control"  id="Documento" placeholder ="Ingresa tu numero documento" >
         </div>
-          <div class="col-6">
+
+        <div class="col-6">
               <label for="Telefono" class="form-label">Telefono</label>
-              <input type="number" name="tele"  class="form-control"  id="Telefono" placeholder ="Ingresa tu numero de telefono sin codigo de area" required>
-          </div>
+              <input type="number" name="tele"  class="form-control"  id="Telefono" placeholder ="Ingresa tu numero de telefono " required>
+        </div>
           
-          <div class="col-6">
+        <div class="col-6">
               <label for="Name" class="form-label">Nombre </label>
               <input type="text"  name="nombre"  class="form-control"  id="Name" placeholder ="Ingresa tu nombre completo" required>
-          </div>
-          <div class="col-6">
+        </div>
+
+        <div class="col-6">
               <label for="Apellido" class="form-label">Apellido </label>
               <input type="text"  name="Apell" class="form-control"  id="Apellido" placeholder ="Ingresa tu Apellido " required>
-          </div>
-          <div class="col-6">
+        </div>
+
+        <div class="col-6">
               <label for="Nacimiento" class="form-label">Fecha de Nacimiento</label>
               <input type="date" name="naci" min =1900-01-01 max = 2022-01-01 class="form-control"  id="Nacimiento" placeholder ="Fecha de Nacimiento"  required>
-          </div>
-          <div class="col-6">
+        </div>
+
+        <div class="col-6">
               <label for="Country" class="form-label">Pais de residencia</label>
               <input type="tex"  name="count" class="form-control"  id="Country" placeholder ="Ingresa pais de residencia" required>
-          </div>
-          <br>
-          <br>
-          
-          <div>
-              <label> <h5>Genero</h5></label>
-             
-              <div class="col-4">
-              <div class="form-radio">
-              <label for="Masculino" class="form-genero-label">Masc</label>
-              <input type="radio" name="genero"  value="Masculino" id="Masculino" class="form-genero-input" checked>
-          </div>
-          </div>
-          <div class="col-4">
-              <div class="form-radio">
-              <label for="Femenino" class="form-genero-label">Fem</label>
-              <input type="radio" name="genero"   value="Femenino"  id="Femenino" class="form-genero-input" >
-          </div>
-          </div>
-          <div class="col-4">
-              <div class="form-radio">
-              <label for="Otro" class="form-genero-label">Otro</label>
-              <input type="radio" name="genero"  value="Otro" id="Otro" class="form-genero-input" >
-          </div>
-          </div>
-          
         </div>
-               
-         <div class="col-12">
+          <br>
+          <br>
+          <br>
+          <br>
+        <div class="col-12">
+              <div class="form-radio">
+              <label for="genero" class="form-genero-label">Genero</label><br>
+              <input type="radio" name="genero"  value="Masculino" id="Masculino"  checked> Masculino
+              <input type="radio" name="genero"  value="Femenino"  id="Femenino"> Femenino
+              <input type="radio" name="genero"  value="Otro" id="Otro"> Otro
+              </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col-12">
           <div class="form-check">
-          <input type="checkbox" id="checkterms" class="form-check-input" required>
-          <label for="checkterms" class="form-check-label">Acepto terminos y condiciones </label>
+          <input type="checkbox"  name="terms" id="terms" class="form-checkterm-input" >
+          <label for="terms" class="form-checkterm-label">Acepto terminos y condiciones </label>
+          </div>
           
-      </div>
-      </div>
-      <div class="col-6">
+        <div class="col-6"><br>
           <button type="button reset" class="btn btn-dark">Reiniciar</button>
-         </div>
-         <div class="col-6">
+        </div>
+      
+         <div class="col-6"><br>
           <button type="button submit" class="btn btn-dark"> Enviarlo </button>
          </div>
+        <br>
+        <br>       
       </form>
-      </div>
+</div>
       <br>
             
-           <!--final div class container fila 23-->
+           <!--final div class container ->
 
     </main>
     <footer>
