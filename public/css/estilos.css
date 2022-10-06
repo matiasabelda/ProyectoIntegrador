@@ -8,111 +8,19 @@ body{
  
 }
 
-.main-header {
-    background-color:black;
-    padding: 20px;
-    border-bottom: 2px solid rgba( 0, 0, 0, 0.5) ;
-}
-.primer-texto {
-    display: flex;
-    flex-direction: row;
-}
 
-.primer-texto p {
-    font-size: 14px;
-    margin-right: 12px;
-}
+
 .venta-empresas {
     display: none;
 }
 
-.primer-texto p a {
-    text-decoration: none;
-    color: white;
-}
 
-.main-header-top-bar{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.barra-busqueda{
-  margin-top: 12px;
-  width: 50%;
-  margin: auto 20px;
-}
-
-.logo-completo{
-    text-align: left;
-    width: 120px;
-}
-.main-listas{
-    color: white;
-    margin: -24px auto -23px;
-    margin-left: 17vw;
-    display: flex;
-    justify-content: space-between;
-    opacity: 0.8;
-}
-
-.main-listas ul {
-   list-style: none;
-    padding: 0;
-    display: flex;
-}
-.main-listas a {
-    text-decoration: none;
-    color: white;
-    display: block;
-
-}
- 
-.main-listas li{
-    margin:0 14px ;
-}
-
-.lista-izq{
-    font-size: 15px;
-}
-
-.lista-derc{
-    font-size: 17px;
-}
-
-.hamburguer-button {
-    background-color: black;
-    border: #6c757d solid 1px;
-    color: #6c757d;
-    text-align: center;
-    display: block;
-    max-width: 50px;
-    padding: 10px 0px;
-    border-radius: 8px;
-    font-size: 15px;
-    margin: auto;
-}
 
 /* ------------------- Inicio Medias Queries --------------------- */
 
 @media (max-width: 770px) {
 
-    .primer-texto {
-        display: none;
-    }
-
-    .logo-completo {
-        /*justify-self: center;*/
-        width: 80px;
-    }
     
-    .barra-busqueda {
-        width: 80%;
-        max-width: 400px;
-        text-align: center;
-    }
-    .main-listas {
-        display: none;
-    }
 
     .hamburguer-button {
         display: block;
@@ -127,9 +35,7 @@ body{
 @media (min-width: 771px) {
     
     
-    .main-header-top-bar{
-        justify-content: space-between;
-    }
+   
 
     .favoritos {
         display: none;

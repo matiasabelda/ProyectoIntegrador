@@ -7,90 +7,7 @@ body{
  
 }
 
-.main-header {
-    background-color:black;
-    padding: 20px;
-    border-bottom: 2px solid rgba( 0, 0, 0, 0.5) ;
-}
-.primer-texto{
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    margin-left: 56px;
-    margin-right: -19px;
-   
-}
 
-.primer-texto p{
-    font-family:Arial, Helvetica, sans-serif;
-    margin-left: 19px;
-    margin-right: 19px;
-    margin-top: -11px;
-    color: white;
-    font-size: 17px;
-}
-.main-header-top-bar{
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    margin-top: -42px;
-    margin-left: -12px;
-}
-.barra-busqueda{
-  margin-top: 12px;
-  width: 50%;
-  text-align: center;
-  margin: auto 20px;
-}
-
-.logo-completo{
-    text-align: left;
-    width: 120px;
-}
-
-
-
-.main-listas{
-   
-    color: white;
-    margin: -24px auto -23px;
-    display: flex;
-    justify-content: space-between;
-    opacity: 0.8;
-    
-}
-
-.main-listas ul {
-   list-style: none;
-    padding: 0;
-    display: flex;
-}
-.main-listas a {
-    text-decoration: none;
-    color: white;
-    display: inline-block;
-   
-}
- 
-.main-listas li{
-    margin:0 14px ;
-   
-    font-family:Arial, Helvetica, sans-serif;
-  
-}
-
-.main-listas .lista-izq{
-    margin-left: -490px;
-    font-size: 15px
-}
-.main-listas .categorias{
-    margin-left: 106px;
-    font-size: 15px
-}
-.main-listas .lista-derc{
-   margin-right: -3px;
-   font-size: 19px
-}
 
 
 
@@ -266,9 +183,7 @@ body{
     margin-bottom: 1px;
     margin-top: -13px;
 }
-footer{
-    background-color: black;
-}
+
 .tarjetas{
     margin: 0 38px;
     width: 405px;
@@ -376,209 +291,14 @@ footer{
    
 }
 
-footer{
-    background-color: black;
-}
 
-#footer{
-    display: flex;
-    flex-direction: row;
-    justify-content:space-around;
-}
-.redes-sociales{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-#footer-derecho{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-#footer-derecho{
-    margin-top: 22px;
-    padding-left: 23px;
-    border-left: 2px solid rgba(255,255,255,0.7);
-}
-
-.seguinos-texto{
-    margin-left: 34px;
-    margin-bottom: -17px;
-    color: white;
-    margin-top: 9px;
-    opacity: 0.7;
-
-}
-
-.redes-sociales{
-    margin-left:  1px ;
-    padding-top: 6px;
-    padding-bottom: 2px;
-    margin-bottom: 9px;
-}
-.redes-div{
-    margin: 0 7px;
-}
-.ig{
-    margin-top: 2px;
-    margin-left: auto;
-    margin-right: 3px;
-    color: white;
-}
-.insta{
-    font-size: 30px;
-}
-.facebook{
-    font-size: 32px;
-    color: white;
-}
-.fb{
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: 3px;
-   
-}
-.twitter{
-    font-size: 32px;
-}
-.tw{
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: 3px; 
-    color: white;
-}
-.youtube{
-    font-size: 32px;
-}
-.yt{
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: 3px; 
-    color: white;
-}
-.barra-correo{
-    width: 600px;
-    margin-left:23px ;
-    margin-bottom: 9px;
-    
-}
-.texto-suscribirte{
-    color: white;
-    margin-left: 34px;
-    margin-top: 5px;
-    margin-bottom: 17px;
-    opacity: 0.7;
-}
-.atencion-texto{
-    margin-left: 34px;
-    color: white;
-    opacity: 0.7;
-    margin-top: 9px;
-    font-size: small;
-}
-.numero-atencion{
-    margin-left: 34px;
-    margin-bottom: -17px;
-    color: white;
-    margin-top: -3px;
-    opacity: 0.7;
-
-}
-.titu{
-    text-align: center;
-    color: white;
-}
-
-.fin-footer{
-    text-align: center;
-    color: white;
-    opacity: 0.7;
-    
-   
-}
-
-
- .footer-icon{
-    text-align: center;
-    font-size: x-large;
- }
- .footer-icon:hover {
-    color: white;
-
- }
-
- 
- #box-footer{
-    display: flex;
-    flex-direction:row;
-    justify-content: center;
-   
- }
- #box-footer{
-    margin-right: 12px;
- }
- #box-footer .footer1{
-    margin: auto 20px;
-    justify-content: center;
- }
-
- .texto{
-    color:white;
-    font-size: 13px;
-    text-align: center;
-    opacity: 0.69;
-    font-family: 'Roboto', sans-serif;
-}
 
 @media only screen and (max-width: 480px) and (min-width: 370px){
-    header{
-        background-color: black;
-    }
-    .barra-busqueda{
-        display: block;
-        font-size: 120vw;
-        margin: 0 auto 10px;
-      }
-      .primer-texto p{
-        font-size: x-small;
-    
-      }
-      .primer-texto{
-        display: flex;
-        flex-direction: row;
-        justify-content: right;
-        margin-left: 56px;
-        margin-right: -19px;
-       
-    }
-    
-    .primer-texto p{
-        font-family:Arial, Helvetica, sans-serif;
-        margin-left: 4px;
-        margin-right: 4px;
-        margin-top: -11px;
-        color: white;
-        font-size: 11px;
-    }
-      .logo-completo{
-        text-align: center;
-        width: 86px;
-        margin: 29px auto 18px;
-       
-    }
-      .main-listas {
-        display: none;
-      }
+   
     .hola{
         display: none;
     }
-    .main-header-top-bar{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-       
-    }
+    
    
     .carrito {
         font-size: 30px;
@@ -684,93 +404,15 @@ footer{
         width: 300px;
         height: 44px;
     }
-    #box-footer{
-        display: flex;
-        flex-direction:column;
-        justify-content: center;
-       
-     }
-    #box-footer{
-        margin-right: 12px;
-        margin-top: 12px;
-       
-     }
-    #box-footer .footer1{
-        margin: auto 20px;
-        justify-content: center;
-      
-
-     }
-     
-    #footer-derecho{
-        display: none;
-     }
-    .fin-footer{
-        font-size: X-small;
-     }
-     .titu{
-        font-size: small;
-      
-     }
-     
-     .titu .texto{
-        font-size: x-small; 
-     }
-     .footer-icon{
-        margin-bottom: -8px;
-     }
     
     
 }
 @media only screen and (max-width: 780px) and (min-width: 480px){
-    header{
-        background-color: black;
-    }
-    .barra-busqueda{
-        display: block;
-        font-size: 120vw;
-        margin: 0 auto 10px;
-      }
-      .primer-texto p{
-        font-size: x-small;
-    
-      }
-      .primer-texto{
-        display: flex;
-        flex-direction: row;
-        justify-content: right;
-        margin-left: 56px;
-        margin-right: -19px;
-       
-    }
-    
-    .primer-texto p{
-        font-family:Arial, Helvetica, sans-serif;
-        margin-left: 4px;
-        margin-right: 4px;
-        margin-top: -11px;
-        color: white;
-        font-size: 11px;
-    }
-      .logo-completo{
-        text-align: center;
-        width: 86px;
-        margin: 29px auto 18px;
-       
-    }
-    .main-listas {
-        display: none;
-      }
+  
     .hola{
         display: none;
     }
-    .main-header-top-bar{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-       
-    }
+    
    
     .carrito {
         font-size: 30px;
@@ -876,93 +518,15 @@ footer{
         width: 300px;
         height: 44px;
     }
-    #box-footer{
-        display: flex;
-        flex-direction:column;
-        justify-content: center;
-       
-     }
-    #box-footer{
-       
-        margin-top: 12px;
-       
-     }
-    #box-footer .footer1{
-        margin: auto 20px;
-        justify-content: center;
-      
-
-     }
-     
-    #footer-derecho{
-        display: none;
-     }
-    .fin-footer{
-        font-size: X-small;
-     }
-     .titu{
-        font-size: small;
-      
-     }
-     
-     .titu .texto{
-        font-size: x-small; 
-     }
-     .footer-icon{
-        margin-bottom: -8px;
-     }
     
 }
 @media only screen and (max-width: 1280px) and (min-width: 781px){
-    header{
-        background-color: black;
-    }
-    .barra-busqueda{
-        display: block;
-        font-size: 120vw;
-        margin: 0 auto 10px;
-      }
-      .primer-texto p{
-        font-size: x-small;
-    
-      }
-      .primer-texto{
-        display: flex;
-        flex-direction: row;
-        justify-content: right;
-        margin-left: 56px;
-        margin-right: -19px;
-       
-    }
-    
-    .primer-texto p{
-        font-family:Arial, Helvetica, sans-serif;
-        margin-left: 4px;
-        margin-right: 4px;
-        margin-top: -11px;
-        color: white;
-        font-size: 11px;
-    }
-      .logo-completo{
-        text-align: center;
-        width: 86px;
-        margin: 29px auto 18px;
-       
-    }
-    .main-listas {
-        display: none;
-      }
+   
     
     .hola{
         display: none;
     }
-    .main-header-top-bar{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-       
-    }
+    
    
     .carrito {
         font-size: 30px;
@@ -1070,9 +634,7 @@ footer{
 
 
 
-    #footer-derecho{
-        display: none;
-     }
+    
 
 }
 @media only screen and (min-width: 1280px) and (max-width: 1500px){
@@ -1080,92 +642,6 @@ footer{
         font-family:Arial, Helvetica, sans-serif;
      
     }
-    
-    .main-header {
-        background-color:black;
-        padding: 20px;
-        border-bottom: 2px solid rgba( 0, 0, 0, 0.5) ;
-    }
-    .primer-texto{
-        display: flex;
-        flex-direction: row;
-        justify-content: right;
-        margin-left: 56px;
-        margin-right: -19px;
-       
-    }
-    
-    .primer-texto p{
-        font-family:Arial, Helvetica, sans-serif;
-        margin-left: 19px;
-        margin-right: 19px;
-        margin-top: -11px;
-        color: white;
-        font-size: 17px;
-    }
-    .main-header-top-bar{
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-        margin-top: -42px;
-        margin-left: -12px;
-    }
-    .barra-busqueda{
-      margin-top: 12px;
-      width: 50%;
-      text-align: center;
-      margin: auto 20px;
-    }
-    
-    .logo-completo{
-        text-align: left;
-        width: 120px;
-    }
-    
-    
-    
-    .main-listas{
-       
-        color: white;
-        margin: -24px auto -23px;
-        display: flex;
-        justify-content: space-between;
-        opacity: 0.8;
-        
-    }
-    
-    .main-listas ul {
-       list-style: none;
-        padding: 0;
-        display: flex;
-    }
-    .main-listas a {
-        text-decoration: none;
-        color: white;
-        display: inline-block;
-       
-    }
-     
-    .main-listas li{
-        margin:0 14px ;
-       
-        font-family:Arial, Helvetica, sans-serif;
-      
-    }
-    
-    .main-listas .lista-izq{
-        margin-left: -220px;
-        font-size: 15px
-    }
-    .main-listas .categorias{
-        margin-left: 106px;
-        font-size: 15px
-    }
-    .main-listas .lista-derc{
-       margin-right: -3px;
-       font-size: 19px
-    }
-    
     
     
     .caja-boton{
@@ -1448,158 +924,7 @@ footer{
        
     }
     
-    footer{
-        background-color: black;
-    }
-    
-    #footer{
-        display: flex;
-        flex-direction: row;
-        justify-content:space-around;
-    }
-    .redes-sociales{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-    #footer-derecho{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    #footer-derecho{
-        margin-top: 22px;
-        padding-left: 23px;
-        border-left: 2px solid rgba(255,255,255,0.7);
-    }
-    
-    .seguinos-texto{
-        margin-left: 34px;
-        margin-bottom: -17px;
-        color: white;
-        margin-top: 9px;
-        opacity: 0.7;
-    
-    }
-    
-    .redes-sociales{
-        margin-left:  1px ;
-        padding-top: 6px;
-        padding-bottom: 2px;
-        margin-bottom: 9px;
-    }
-    .redes-div{
-        margin: 0 7px;
-    }
-    .ig{
-        margin-top: 2px;
-        margin-left: auto;
-        margin-right: 3px;
-        color: white;
-    }
-    .insta{
-        font-size: 30px;
-    }
-    .facebook{
-        font-size: 32px;
-        color: white;
-    }
-    .fb{
-        margin-top: 0;
-        margin-left: auto;
-        margin-right: 3px;
-       
-    }
-    .twitter{
-        font-size: 32px;
-    }
-    .tw{
-        margin-top: 0;
-        margin-left: auto;
-        margin-right: 3px; 
-        color: white;
-    }
-    .youtube{
-        font-size: 32px;
-    }
-    .yt{
-        margin-top: 0;
-        margin-left: auto;
-        margin-right: 3px; 
-        color: white;
-    }
-    .barra-correo{
-        width: 600px;
-        margin-left:23px ;
-        margin-bottom: 9px;
-        
-    }
-    .texto-suscribirte{
-        color: white;
-        margin-left: 34px;
-        margin-top: 5px;
-        margin-bottom: 17px;
-        opacity: 0.7;
-    }
-    .atencion-texto{
-        margin-left: 34px;
-        color: white;
-        opacity: 0.7;
-        margin-top: 9px;
-        font-size: small;
-    }
-    .numero-atencion{
-        margin-left: 34px;
-        margin-bottom: -17px;
-        color: white;
-        margin-top: -3px;
-        opacity: 0.7;
-    
-    }
-    .titu{
-        text-align: center;
-        color: white;
-    }
-    
-    .fin-footer{
-        text-align: center;
-        color: white;
-        opacity: 0.7;
-        
-       
-    }
-    
-    
-     .footer-icon{
-        text-align: center;
-        font-size: x-large;
-     }
-     .footer-icon:hover {
-        color: white;
-    
-     }
-    
-     
-     #box-footer{
-        display: flex;
-        flex-direction:row;
-        justify-content: center;
-       
-     }
-     
-     #box-footer .footer1{
-        margin: auto 20px;
-        justify-content: center;
-     }
-    
-     .texto{
-        color:white;
-        font-size: 13px;
-        text-align: center;
-        opacity: 0.69;
-        font-family: 'Roboto', sans-serif;
-    }
-
+   
 
 
 

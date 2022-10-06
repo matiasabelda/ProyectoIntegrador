@@ -1,0 +1,319 @@
+.main-header {
+    background-color:black;
+    padding: 20px;
+    border-bottom: 2px solid rgba( 0, 0, 0, 0.5) ;
+}
+.primer-texto{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-left: 56px;
+    margin-right: -19px;
+   
+}
+
+.primer-texto p{
+    font-family:Arial, Helvetica, sans-serif;
+    margin-left: 19px;
+    margin-right: 19px;
+    margin-top: -11px;
+    color: white;
+    font-size: 17px;
+    opacity: 0.4;
+}
+.main-header-top-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-top: -42px;
+    margin-left: -12px;
+}
+.barra-busqueda{
+  margin-top: 12px;
+  width: 50%;
+  text-align: center;
+  margin: auto 20px;
+}
+
+.logo-completo{
+    text-align: left;
+    width: 120px;
+}
+
+
+
+.main-listas{
+   
+    color: white;
+    margin: -24px auto -23px;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.8;
+    
+}
+
+.main-listas ul {
+   list-style: none;
+    padding: 0;
+    display: flex;
+}
+.main-listas a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+   
+}
+ 
+.main-listas li{
+    margin:0 14px ;
+   
+    font-family:Arial, Helvetica, sans-serif;
+  
+}
+
+.main-listas .lista-izq{
+    margin-left: -490px;
+    font-size: 15px
+}
+.main-listas .categorias{
+    margin-left: 106px;
+    font-size: 15px
+}
+.main-listas .lista-derc{
+   margin-right: -3px;
+   font-size: 15px
+}
+
+@media only screen and (max-width: 480px) and (min-width: 370px){
+header{
+    background-color: black;
+}
+.barra-busqueda{
+    display: block;
+    font-size: 120vw;
+    margin: 0 auto 10px;
+  }
+  .primer-texto p{
+    font-size: x-small;
+
+  }
+  .primer-texto{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-left: 56px;
+    margin-right: -19px;
+   
+}
+
+.primer-texto p{
+    font-family:Arial, Helvetica, sans-serif;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: -11px;
+    color: white;
+    font-size: 11px;
+}
+  .logo-completo{
+    text-align: center;
+    width: 86px;
+    margin: 29px auto 18px;
+   
+}
+  .main-listas {
+    display: none;
+  }
+
+.main-header-top-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+}
+
+@media only screen and (max-width: 780px) and (min-width: 480px){
+    header{
+        background-color: black;
+    }
+    .barra-busqueda{
+        display: block;
+        font-size: 120vw;
+        margin: 0 auto 10px;
+      }
+      .primer-texto p{
+        font-size: x-small;
+    
+      }
+      .primer-texto{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        margin-left: 56px;
+        margin-right: -19px;
+       
+    }
+    
+    .primer-texto p{
+        font-family:Arial, Helvetica, sans-serif;
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-top: -11px;
+        color: white;
+        font-size: 11px;
+    }
+      .logo-completo{
+        text-align: center;
+        width: 86px;
+        margin: 29px auto 18px;
+       
+    }
+    .main-listas {
+        display: none;
+      }
+   
+    .main-header-top-bar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+}
+@media only screen and (max-width: 1280px) and (min-width: 781px){
+    header{
+        background-color: black;
+    }
+    .barra-busqueda{
+        display: block;
+        font-size: 120vw;
+        margin: 0 auto 10px;
+      }
+      .primer-texto p{
+        font-size: x-small;
+    
+      }
+      .primer-texto{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        margin-left: 56px;
+        margin-right: -19px;
+       
+    }
+    
+    .primer-texto p{
+        font-family:Arial, Helvetica, sans-serif;
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-top: -11px;
+        color: white;
+        font-size: 11px;
+    }
+      .logo-completo{
+        text-align: center;
+        width: 86px;
+        margin: 29px auto 18px;
+       
+    }
+    .main-listas {
+        display: none;
+      }
+    
+
+    .main-header-top-bar{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1500px){
+    .main-header {
+        background-color:black;
+        padding: 20px;
+        border-bottom: 2px solid rgba( 0, 0, 0, 0.5) ;
+    }
+    .primer-texto{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        margin-left: 56px;
+        margin-right: -19px;
+       
+    }
+    
+    .primer-texto p{
+        font-family:Arial, Helvetica, sans-serif;
+        margin-left: 19px;
+        margin-right: 19px;
+        margin-top: -11px;
+        color: white;
+        font-size: 17px;
+    }
+    .main-header-top-bar{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        margin-top: -42px;
+        margin-left: -12px;
+    }
+    .barra-busqueda{
+      margin-top: 12px;
+      width: 50%;
+      text-align: center;
+      margin: auto 20px;
+    }
+    
+    .logo-completo{
+        text-align: left;
+        width: 120px;
+    }
+    
+    
+    
+    .main-listas{
+       
+        color: white;
+        margin: -24px auto -23px;
+        display: flex;
+        justify-content: space-between;
+        opacity: 0.8;
+        
+    }
+    
+    .main-listas ul {
+       list-style: none;
+        padding: 0;
+        display: flex;
+    }
+    .main-listas a {
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+       
+    }
+     
+    .main-listas li{
+        margin:0 14px ;
+       
+        font-family:Arial, Helvetica, sans-serif;
+      
+    }
+    
+    .main-listas .lista-izq{
+        margin-left: -220px;
+        font-size: 15px
+    }
+    .main-listas .categorias{
+        margin-left: 106px;
+        font-size: 15px
+    }
+    .main-listas .lista-derc{
+       margin-right: -3px;
+       font-size: 19px
+    }
+}
