@@ -19,6 +19,7 @@
     margin-top: -11px;
     color: white;
     font-size: 17px;
+    opacity: 0.4;
 }
 .main-header-top-bar{
     display: flex;
@@ -80,7 +81,7 @@
 }
 .main-listas .lista-derc{
    margin-right: -3px;
-   font-size: 19px
+   font-size: 15px
 }
 
 @media only screen and (max-width: 480px) and (min-width: 370px){
