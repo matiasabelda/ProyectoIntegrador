@@ -254,3 +254,7 @@
     resize: vertical;
     padding: 15px;
   }
+
+  #title-description {
+    margin-top: 15px;
+  }

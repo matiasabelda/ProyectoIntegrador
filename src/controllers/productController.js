@@ -9,6 +9,7 @@ let controladorProducts = {
     index: (req, res) => {
         res.render('products', {productos: products}); // En la vista producto.ejs mostramos toda la lista de productos del JSON
     },
+
     // Detail - Detail from one product
 	detail: (req, res) => {
 
@@ -78,6 +79,7 @@ let controladorProducts = {
 
 		res.send("Producto no encontrado");
 	},
+
 	// Update - Method to update
 	update: (req, res) => {
 
@@ -99,7 +101,6 @@ let controladorProducts = {
 		fs.writeFileSync(productsFilePath,JSON.stringify(products, null, " "),'utf-8');
 
 		res.redirect('/');
-		
 	},
 
 	// Delete - Delete one product from DB
@@ -115,7 +116,11 @@ let controladorProducts = {
 
 		res.redirect('/');
 
-	}
+	},
+	
+	carrito: (req, res) => {
+        res.render('carrito');
+    }
 };
 
 module.exports = controladorProducts;

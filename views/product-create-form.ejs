@@ -56,10 +56,10 @@
           
           
            <ul class="lista-derc" >
-            <li class="mi-cuenta"><a href="/registro"><i class="fa-solid fa-circle-user"></i> Mi cuenta </a> </li>
-            <li class="inicia-sesion"><a href="/login"><i class="fa-solid fa-right-to-bracket"></i> Inicia Sesión </a> </li>
+            <li class="mi-cuenta"><a href="/users/registro"><i class="fa-solid fa-circle-user"></i> Mi cuenta </a> </li>
+            <li class="inicia-sesion"><a href="/users/login"><i class="fa-solid fa-right-to-bracket"></i> Inicia Sesión </a> </li>
             <li class="favoritos"><a href="a"><i class="fa-solid fa-heart"></i> Favoritos </a> </li>
-            <li class="carrito"><a href="/carrito"><i class="fa-solid fa-cart-shopping"></i> Carrito </a> </li>
+            <li class="carrito"><a href="/users/carrito"><i class="fa-solid fa-cart-shopping"></i> Carrito </a> </li>
            </ul>
           
          </nav>
@@ -108,7 +108,11 @@
                                 <option value="visited">Últimos agregados</option>
                             </select>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 col-md-6">
+                            <label for="product-img" class="form-label">Cargue una imagen:</label><br>
+                            <input type="file" id="product-img" name="product-img">
+                        </div>
+                        <div class="col-12" id="title-description">
                             <label for="description" class="form-label">Descripción:</label>
                             <textarea name="description" id="description" class="form-input"></textarea>
                         </div>

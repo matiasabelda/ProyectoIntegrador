@@ -18,65 +18,12 @@
 </head>
 
 <body>
-    <!-- Contenido del Header -->
-    <header class="main-header">
 
-        <div class="main-header-top-bar">
-            
-            <a href="/"><img class="logo-completo" src="/img/products/logo_dicons.jpg"></img></a>
+    <!-- header -->
+	<%- include ('./partials/header') %>
+	<!-- /header -->
 
-            <nav class="barra-busqueda">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar " aria-label="Search">
-                    <button type="button" class="btn btn-outline-secondary"><span class="material-icons">
-                      <i class="fa-solid fa-magnifying-glass"></i>
-                         </span></button>
-                  </form>
-            </nav>
-
-            
-
-            <div class="primer-texto">
-                <p><a href="x">Locales</a></p>
-                <p class="empresas"><a href="x">Empresas</a></p>
-                <p><a href="x">Contactanos</a></p>
-            </div>
-        </div>
-    
-        <nav class="main-listas">
-       
-          <ul class="lista-izq">
-            <li class="categorias"><a href="a">Categorias <i class="fa-solid fa-angle-down"></i></a></li>
-            <li class="vender"><a href="/products/create"> Vender  </a></li>
-            <li class="historial"><a href="a"> Historial </a></li>
-            <li class="promociones"><a href="a"> Promociones </a></li>
-            <li class="ayuda"><a href="a"> Ayuda   </a></li>
-           </ul>
-          
-          
-           <ul class="lista-derc" >
-            <li class="mi-cuenta"><a href="/registro"><i class="fa-solid fa-circle-user"></i> Mi cuenta </a> </li>
-            <li class="inicia-sesion"><a href="/login"><i class="fa-solid fa-right-to-bracket"></i> Inicia Sesión </a> </li>
-            <li class="favoritos"><a href="a"><i class="fa-solid fa-heart"></i> Favoritos </a> </li>
-            <li class="carrito"><a href="/carrito"><i class="fa-solid fa-cart-shopping"></i> Carrito </a> </li>
-           </ul>
-          
-         </nav>
-
-         <!-- Barra de Navegacion escondida para pantallas menores a 768px-->      
-         <a href="#" class="hamburguer-button"><i class="fa-solid fa-bars"></i></a>  
-         <nav class="navbar-hidden">
-            <ul type="none" class="navbar-list">
-                <li><a href="#">Ofertas</a><i class="bi-alarm"></i></li>
-                <li><a href="#">Tiendas Oficiales</a></li>
-                <li><a href="/products/create">Vender</a></li>
-                <li><a href="#">Ayuda</a></li>
-                <li><a href="/registro">Creá tu cuenta <i class="fa-solid fa-id-card"></i></a></li>
-                <li><a href="/login">Ingresá <i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
-                <li><a href="#">Mis compras <i class="fa-solid fa-basket-shopping"></i></a></li>
-            </ul>
-        </nav>
-        </header>
+   
     <main>
     <!-- Contenido del Slide con Bootstrap -->
     
