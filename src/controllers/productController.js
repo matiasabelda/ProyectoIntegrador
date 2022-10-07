@@ -41,7 +41,7 @@ let controladorProducts = {
 	store: (req, res) => {
 		let datos = req.body;
 		let idNuevoProducto = (products[products.length-1].id)+1;
-		let imagenNuevoProducto = 'qqqqq.jpg';
+		
 
 		let nuevoProducto ={
 			"id": idNuevoProducto,
@@ -50,7 +50,7 @@ let controladorProducts = {
 			"discount": parseInt(datos.discount),
 			"category": datos.category,
 			"description": datos.description,
-			"image": imagenNuevoProducto
+			"image": req.file.filename
 		};
 
 		products.push(nuevoProducto);
@@ -87,32 +87,52 @@ let controladorProducts = {
 
 		let datosProducto = req.body;
 
+		let nombreImagenAntigua="";
+
 		for (let o of products){
 			if (o.id==idProducto){
+
+				nombreImagenAntigua = o.image;
+
 				o.name = datosProducto.name;
 				o.price = parseInt(datosProducto.price);
 				o.discount = parseInt(datosProducto.discount);
 				o.category = datosProducto.category;
 				o.description = datosProducto.description;
+				o.image = req.file.filename;
 				break;
 			}
 		}
 
 		fs.writeFileSync(productsFilePath,JSON.stringify(products, null, " "),'utf-8');
 
+		// Borra la imagen anterior guardada fisicamente de el producto que estamos editando
+		fs.unlinkSync(__dirname+'/../../public/img/products/'+nombreImagenAntigua);
+
 		res.redirect('/');
+		
 	},
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 
 		let idProductoX = req.params.id;
+
+		let nombreImagenAntigua="";
+
+		for (let o of products){
+			if (o.id==idProductoX){
+				nombreImagenAntigua = o.image;
+			}
+		}
 		
 		let NuevaListaProductos = products.filter(function(e){
 			return e.id!=idProductoX;
 		});
 
 		fs.writeFileSync(productsFilePath,JSON.stringify(NuevaListaProductos, null, " "),'utf-8');
+
+		fs.unlinkSync(__dirname+'/../../public/img/products/'+nombreImagenAntigua);
 
 		res.redirect('/');
 

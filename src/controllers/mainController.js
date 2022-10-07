@@ -14,7 +14,10 @@ let controladorMain = {
         res.render('home', {productos: products});
     },
 	search: (req, res) => {
-		res.send('Proximamente...')
+		res.send('Proximamente...');
+	},
+    error404: (req, res) => {
+		res.render('error-404');
 	}
 };
 
