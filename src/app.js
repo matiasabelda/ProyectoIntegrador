@@ -15,9 +15,8 @@ app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la 
 
 app.use('/', routes);
 
-
 app.use('*', function(req, res) {
-    res.send("Error de acceso, esta ruta no existe en el sitio")
+    res.render('error-404');
 });
 
 app.listen(process.env.PORT || 3002, function() {

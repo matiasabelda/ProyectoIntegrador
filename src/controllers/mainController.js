@@ -15,9 +15,6 @@ let controladorMain = {
     },
 	search: (req, res) => {
 		res.send('Proximamente...');
-	},
-    error404: (req, res) => {
-		res.render('error-404');
 	}
 };
 
