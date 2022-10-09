@@ -41,20 +41,25 @@ let controladorProducts = {
 	store: (req, res) => {
 		let datos = req.body;
 		let idNuevoProducto = (products[products.length-1].id)+1;
+		let imagenProducto = '';
 		
-
-		let nuevoProducto ={
-			"id": idNuevoProducto,
-			"name": datos.name,
-			"price": parseInt(datos.price),
-			"discount": parseInt(datos.discount),
-			"category": datos.category,
-			"description": datos.description,
-			"image": req.file.filename
-		};
-
-		products.push(nuevoProducto);
-		fs.writeFileSync(productsFilePath,JSON.stringify(products, null, " "),'utf-8');
+		if(req.file) {
+			imagenProducto = req.file.filename;
+		} else {
+			imagenProducto = 'noImage.jpg';
+		}
+			let nuevoProducto ={
+				"id": idNuevoProducto,
+				"name": datos.name,
+				"price": parseInt(datos.price),
+				"discount": parseInt(datos.discount),
+				"category": datos.category,
+				"description": datos.description,
+				"image": imagenProducto
+			};
+	
+			products.push(nuevoProducto);
+			fs.writeFileSync(productsFilePath,JSON.stringify(products, null, " "),'utf-8');
 
 		res.redirect('/');
 	},
@@ -106,8 +111,11 @@ let controladorProducts = {
 
 		fs.writeFileSync(productsFilePath,JSON.stringify(products, null, " "),'utf-8');
 
-		// Borra la imagen anterior guardada fisicamente de el producto que estamos editando
-		fs.unlinkSync(__dirname+'/../../public/img/products/'+nombreImagenAntigua);
+		// Borra la imagen anterior guardada fisicamente del producto que estamos editando
+		if(nombreImagenAntigua != 'noImage.jpg') {
+			fs.unlinkSync(__dirname+'/../../public/img/products/'+nombreImagenAntigua);
+		}
+		
 
 		res.redirect('/');
 		
@@ -132,8 +140,10 @@ let controladorProducts = {
 
 		fs.writeFileSync(productsFilePath,JSON.stringify(NuevaListaProductos, null, " "),'utf-8');
 
-		fs.unlinkSync(__dirname+'/../../public/img/products/'+nombreImagenAntigua);
-
+		if(nombreImagenAntigua != 'noImage.jpg') {
+			fs.unlinkSync(__dirname+'/../../public/img/products/'+nombreImagenAntigua);
+		}
+		
 		res.redirect('/');
 
 	},
