@@ -1,0 +1,14 @@
+[
+ {
+  "id": 1,
+  "name": "Luciano",
+  "apell": "Bostal",
+  "nac": "2000-08-28",
+  "count": "Argentina",
+  "email": "luciano.bostal@gmail.com",
+  "pass": "$2a$10$rLr0JBPEAp31gvNXM8TxSuXZMcKvls.8yiVLIpisGvcweI71TLjLa",
+  "genero": "Masculino",
+  "terms": "on",
+  "avatar": "1668020943059.jpg"
+ }
+]

@@ -2,8 +2,22 @@ const express = require('express');
 const path = require('path');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 const routes = require('./routes/index.routes');
+const session = require ('express-session');
+const cookies = require('cookie-parser');
 
 const app = express();
+
+const userloggedMiddleware = require ('./middlewares/userLoggedMiddleware');
+
+app.use(session({
+	secret: "Es secreto",
+	resave: false,
+	saveUninitialized: false,
+}));
+
+app.use(cookies());
+
+app.use(userloggedMiddleware);
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: false }));

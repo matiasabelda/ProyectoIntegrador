@@ -67,18 +67,25 @@
                 <h2 class="fw-bold text-center py-5">Bienvenido</h2>
                 
                 <!--Login-->
-                <form action="#">
+                <form action="login" method="POST" class="needs-validation" novalidate>
                     <div class="mb-4">
                         <label for="email" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" name="email">
+                        <input type="email" class="form-control" name="email" required>
+                        <div class="valid-feedback">¡Ok, válido!</div>
+                        <div class="invalid-feedback">Completá tu email</div>
+                        <% if(locals.errors && errors.email) { %>
+                        <div class="text-danger"><% errors.email.msg %></div>
+                        <% } %>
                     </div>
                     <div class="mb-4">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" name="password">
+                        <input type="password" class="form-control" name="password" required>
+                        <div class="valid-feedback">¡Ok, válido!</div>
+                        <div class="invalid-feedback">Completá tu contraseña</div>
                         <span><a href="#">Recuperar Contraseña</a></span>
                     </div>
                     <div class="mb-4 form-check">
-                        <input type="checkbox" name="connected" class="form-check-input">
+                        <input type="checkbox" name="connected" id="connected" class="form-check-input">
                         <label for="connected" class="form-check-label">Mantenerme conectado</label>
                     </div>
 
@@ -97,7 +104,26 @@
             </div>
         </div>
     </div>
+    <script>
+        (function () {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+    </script>
 </body>
 </html>
-
-
