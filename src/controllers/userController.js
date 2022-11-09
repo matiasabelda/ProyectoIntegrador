@@ -61,6 +61,46 @@ const userController = {
 
     login: (req, res) => {
         res.render('./users/login');
+    },
+
+    //agregue ha -----------------------------------------------------------------------------
+    processLogin: function (req, res){
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()) {
+            let usersJSON = fs.readFileSync('users.json',{encoding : 'utf-8'});
+            let users;
+            if (usersJSON == ""){
+                users = [];
+            } else {
+                users = JSON.parse(usersJSON);
+            }
+            let usuarioALoguearse
+
+            for (let i = 0; i < users.length; i++) {
+                if(users[i].email == req.body.email){
+                    if (bcrypt.compareSync(req.body.password, users[i].password)){
+                        usuarioALoguearse = users [i];
+                        break;
+                    }
+                }
+            }
+            if (usuarioALoguearse == undefined) {
+                return res.render (('login'), {errors: [
+                    {msg: 'Credenciales inválidas'}
+                ]});
+            } 
+
+            req.session.usuarioLogueado = usuarioALoguearse;
+            if (req.body.connected != undefined){
+                res.cookie('connected',
+                usuarioALoguearse.email, { maxAge: 60000})
+            }
+
+            res.render ('Fue un exito');
+          } else {
+            return res.render(('./users/login'),{errors: errors.errors});
+          }
     }
 }
 

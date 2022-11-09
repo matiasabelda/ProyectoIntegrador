@@ -10,6 +10,7 @@ const userController = require('../controllers/userController');
 const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const multer = require('multer');
+const { check, validationResult, body } = require('express-validator'); //Agregue validationresult y body ha---------------------------
 
 const multerDiskStorage = multer.diskStorage({
     destination: function(req, file, cb) {       // request, archivo y callback que almacena archivo en destino
@@ -44,6 +45,22 @@ router.get('/register', guestMiddleware, userController.registro);
 router.post('/register', uploadFile.single('avatar'), userController.processRegister);
 
 router.get('/login', userController.login);
+
+//agregue ha-----------------------------------------------------------
+router.post('/login', [
+    check('email').isEmail().withMessage('Email invalido'),
+    check('password').isLength({min: 08}).withMessage('La contraseña debe tener al menos 8 caracteres')
+] ,userController.processLogin);
+
+router.get('/check', function (req, res){
+    if(req.session.usuarioLogueado == undefined) {
+        res.send('No estas Logueado');
+    } else {
+        res.send("El usuario Logueado es " + req.session.usuarioLogueado.email);
+    }
+})
+
+//hasta aca ha------------------------------------------------------------
 
 router.get('/perfil', userController.perfil);
 
