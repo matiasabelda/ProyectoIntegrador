@@ -55,54 +55,55 @@ const userController = {
         return res.redirect('login');
     },
 
-    perfil: (req, res) => {
-        res.render('./users/perfil');
-    },
-
     login: (req, res) => {
-        res.render('./users/login');
+        return res.render('./users/login');
     },
 
-    //agregue ha -----------------------------------------------------------------------------
-    processLogin: function (req, res){
-        let errors = validationResult(req);
+    loginProcess: (req, res) => {
+        let userToLogin = User.findByField('email', req.body.email);
+        
+        if(userToLogin) {
+			let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.pass);
+			if (isOkThePassword) {
+				delete userToLogin.pass; // Borro la contraseña de sesión por seguridad
+				req.session.userLogged = userToLogin;
 
-        if (errors.isEmpty()) {
-            let usersJSON = fs.readFileSync('users.json',{encoding : 'utf-8'});
-            let users;
-            if (usersJSON == ""){
-                users = [];
-            } else {
-                users = JSON.parse(usersJSON);
-            }
-            let usuarioALoguearse
+				if(req.body.remember_user) {
+					res.cookie('email', req.body.email, { maxAge: (1000 * 60) * 60 })
+				}
 
-            for (let i = 0; i < users.length; i++) {
-                if(users[i].email == req.body.email){
-                    if (bcrypt.compareSync(req.body.password, users[i].password)){
-                        usuarioALoguearse = users [i];
-                        break;
-                    }
-                }
-            }
-            if (usuarioALoguearse == undefined) {
-                return res.render (('login'), {errors: [
-                    {msg: 'Credenciales inválidas'}
-                ]});
-            } 
+				return res.redirect('profile');
+			} 
+			return res.render('login', {
+				errors: {
+					email: {
+						msg: 'Las credenciales son inválidas'
+					}
+				}
+			});
+		}
 
-            req.session.usuarioLogueado = usuarioALoguearse;
-            if (req.body.connected != undefined){
-                res.cookie('connected',
-                usuarioALoguearse.email, { maxAge: 60000})
-            }
+		return res.render('login', {
+			errors: {
+				email: {
+					msg: 'No se encuentra este email en nuestra base de datos'
+				}
+			}
+		});
+	}, 
 
-            res.render ('Fue un exito');
-          } else {
-            return res.render(('./users/login'),{errors: errors.errors});
-          }
-    }
+    profile: (req, res) => {
+		return res.render('./users/profile', {
+			user: req.session.userLogged
+		});
+	},
+
+	logout: (req, res) => {
+		res.clearCookie('userEmail');
+		req.session.destroy();
+		return res.redirect('/');
+	}
+
 }
-
 
 module.exports = userController;

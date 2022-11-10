@@ -10,5 +10,17 @@
   "genero": "Masculino",
   "terms": "on",
   "avatar": "1668020943059.jpg"
+ },
+ {
+  "id": 2,
+  "name": "Lio",
+  "apell": "Messi",
+  "nac": "2000-02-02",
+  "count": "Argentina",
+  "email": "lucho@dh.com",
+  "pass": "$2a$10$o5Lft1QickXD21Erl.RoSOKWd91f71cqQ01YvVJsf85h8OyYtXNlW",
+  "genero": "Masculino",
+  "terms": "on",
+  "avatar": "1668038559019.jpeg"
  }
 ]

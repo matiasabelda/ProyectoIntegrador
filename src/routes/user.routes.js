@@ -10,7 +10,6 @@ const userController = require('../controllers/userController');
 const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const multer = require('multer');
-const { check, validationResult, body } = require('express-validator'); //Agregue validationresult y body ha---------------------------
 
 const multerDiskStorage = multer.diskStorage({
     destination: function(req, file, cb) {       // request, archivo y callback que almacena archivo en destino
@@ -42,15 +41,19 @@ const uploadFile = multer({ storage: multerDiskStorage, fileFilter: fileFilter, 
 router.get('/register', guestMiddleware, userController.registro); 
 
 // Procesamiento de Registro de Nuevos Usuarios
-router.post('/register', uploadFile.single('avatar'), userController.processRegister);
+router.post('/register', uploadFile.single('avatar'), userController.processRegister); 
 
-router.get('/login', userController.login);
+// Vista de login de Usuarios
+router.get('/login', guestMiddleware, userController.login);
 
-//agregue ha-----------------------------------------------------------
-router.post('/login', [
-    check('email').isEmail().withMessage('Email invalido'),
-    check('password').isLength({min: 08}).withMessage('La contraseña debe tener al menos 8 caracteres')
-] ,userController.processLogin);
+// Procesamiento de login de Usuarios
+router.post('/login', userController.loginProcess); 
+
+// Perfil de Usuario
+router.get('/profile', authMiddleware, userController.profile);
+
+// Logout
+router.get('/logout', userController.logout);
 
 router.get('/check', function (req, res){
     if(req.session.usuarioLogueado == undefined) {
@@ -58,11 +61,9 @@ router.get('/check', function (req, res){
     } else {
         res.send("El usuario Logueado es " + req.session.usuarioLogueado.email);
     }
-})
+});
 
-//hasta aca ha------------------------------------------------------------
-
-router.get('/perfil', userController.perfil);
 
 
 module.exports = router;
+
