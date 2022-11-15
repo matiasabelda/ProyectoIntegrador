@@ -4,10 +4,14 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const db = require('../database/models')
+
 let controladorProducts = {
     // Muestra todos los productos
     index: (req, res) => {
-        res.render('products', {productos: products}); // En la vista producto.ejs mostramos toda la lista de productos del JSON
+        
+		db.dicons.findAll()
+		// res.render('products', {productos: products}); // En la vista producto.ejs mostramos toda la lista de productos del JSON
     },
 
     // Detail - Detail from one product
