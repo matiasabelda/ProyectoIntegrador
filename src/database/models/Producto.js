@@ -10,7 +10,7 @@ function productsData(sequelize, Datatypes) {
         discount: { type: Datatypes.INTEGER},
         category: { type: Datatypes.STRING},
         description: {type: Datatypes.STRING(1500)},
-        image: {type: Datatypes.image}, // product-Img asi se llama en el formulario
+        image: {type: Datatypes.STRING}, // product-Img asi se llama en el formulario
     };
 
     config = {camelCase: false, timestamps: false}; 
@@ -34,7 +34,7 @@ function productsData(sequelize, Datatypes) {
           foreignKey: "Producto_id"
         });
 
-        usuarios.hasMany(modelos.sales, {   
+        productos.hasMany(modelos.sales, {   
             as: "ventas",
             foreignKey: "Producto_id",
           });

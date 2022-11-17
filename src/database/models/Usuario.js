@@ -13,7 +13,7 @@ function usersData(sequelize, Datatypes) {
         email: { type: Datatypes.STRING},
         pass: {type: Datatypes.STRING(1500)},
         terms: {type: Datatypes.STRING},
-        avatar: {type: Datatypes.image},
+        avatar: {type: Datatypes.STRING},
         admin: {type: Datatypes.BOOLEAN} //preguntar que Datatypes es, si admin, bit o string o a que se refiere el admin
     };
 

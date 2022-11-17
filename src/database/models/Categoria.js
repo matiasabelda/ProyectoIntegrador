@@ -1,8 +1,3 @@
-import { DataTypes } from '@sequelize/core';
-
-const DataTypes = require('sequelize.Datatypes')
-
-
 function diconsData(sequelize, Datatypes) {
 
     alias = 'category';
