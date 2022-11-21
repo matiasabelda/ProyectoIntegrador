@@ -1,6 +1,5 @@
 module.exports = {
-  
-  "development": {
+    "development": {
     "username": "root",
     "password": "",
     "database": "dicons_db",

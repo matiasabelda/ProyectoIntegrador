@@ -15,6 +15,61 @@ let controladorProducts = {
 		db.dicons.findAll()
     },
 
+//ha agrego crear producto------------------------------------
+store : (req,res) => {
+	db.products.create({
+		create_at: req.body.create_at,
+        update_at: req.body.update_at ,
+        name: req.body.name,
+        price: req.body.price ,
+        discount: req.body.discount,
+        category: req.body.category,
+        description: req.body.description ,
+        image: req.body.image
+	});
+	res.redirect("/products");
+},
+
+
+//ha agrego editar producto------------------------------------
+
+edit: (req, res) => {
+	db.products.findByPK(req.params.id)
+	.then(function(Products){
+		res.render('product-edit-form', {productos: products});
+	})
+},
+
+update : (req,res) => {
+	db.products.update({
+		create_at: req.body.create_at,
+        update_at: req.body.update_at ,
+        name: req.body.name,
+        price: req.body.price ,
+        discount: req.body.discount,
+        category: req.body.category,
+        description: req.body.description ,
+        image: req.body.image
+	},
+		{
+			where:{
+			id: req.params.id
+		}
+	})
+	res.redirect("/products/edit/" + req.params.id)
+},
+
+//ha agrego delete producto------------------------------------
+
+delete : (req, res) => {
+	db.products.destroy({
+		where:{
+			id: req.params.id
+		}
+	})
+	res.redirect("/products");
+},
+
     // Detail - Detail from one product
 	detail: (req, res) => {
 

@@ -7,12 +7,31 @@ const User = require('../models/User');
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 //const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
+const db = require('../database/models'); // agrego ha Importo toda la carpeta models incluyendo Sequelize con sus metodos
 
 const userController = {
 
     registro: (req, res) => {
         return res.render('./users/register');
     },
+
+    //ha agrego crear usuario------------------------------------
+   processRegister: (req,res) => {
+	db.users.create({
+		create_at: req.body.create_at,
+        update_at: req.body.update_at,
+        delete_at: req.body.delete_at,
+        name: req.body.name,
+        apell: req.body.apell,
+        nac: req.body.nac,
+        count: req.body.count,
+        email: req.body.email,
+        pass: req.body.pass,
+        terms: req.body.terms,
+        avatar: req.body.avatar,
+        admin: req.body.admin
+	});
+	res.redirect("/users")},
 
     processRegister: (req, res) => {
         const resultValidation = validationResult(req);
