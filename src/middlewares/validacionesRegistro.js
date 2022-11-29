@@ -24,6 +24,26 @@ Window.addEventListener("load", function(){
             errores.push("El campo de fecha tiene que estar completo");
         }
 
+        let campoPais = document.querySelector("#Country")
+
+        if (campoPais.value == ""){
+            errores.push("El campo pais tiene que estar completo");
+        }
+
+        let campoEmail = document.querySelector("#emailInput")
+
+        if (campoEmail .value == ""){
+            errores.push("El campo email tiene que estar completo")
+        } else if (campoEmail.value.length < 2){
+            errores.push ("El campo de email debe tener al menos 2 caracteres");
+        }
+
+        let campoContraseña = document.querySelector("#passwordinput")
+
+        if (campoContraseña.value < 5){
+            errores.push ("El campo de contraseña debe tener al menos 5 caracteres");
+        }
+
         if (errores.length > 0){
             e.preventDefault();
 

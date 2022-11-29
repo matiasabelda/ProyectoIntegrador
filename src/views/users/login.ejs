@@ -65,12 +65,14 @@
                     <a href="/"> <i class="fa-solid fa-arrow-left icon-black d-xl-none d-lg-none"></i></a>
                   </span>
                 <h2 class="fw-bold text-center py-5">Bienvenido</h2>
-                
+                <div class="errores">
+                    <ul></ul>
+                </div>
                 <!--Login-->
-                <form action="login" method="POST" class="needs-validation" novalidate>
+                <form action="login" method="POST" class="needs-validation" id ="FormLogin"novalidate>
                     <div class="mb-4">
                         <label for="email" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" name="email" required>
+                        <input type="email" class="form-control" name="email" id ="email-login"required>
                         <div class="valid-feedback">¡Ok, válido!</div>
                         <div class="invalid-feedback">Completá tu email</div>
                         <% if(locals.errors && errors.email) { %>
@@ -79,7 +81,7 @@
                     </div>
                     <div class="mb-4">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" name="password" required>
+                        <input type="password" class="form-control" name="password" id="contraseña-login"required>
                         <div class="valid-feedback">¡Ok, válido!</div>
                         <div class="invalid-feedback">Completá tu contraseña</div>
                         <span><a href="#">Recuperar Contraseña</a></span>
@@ -125,5 +127,6 @@
       })
   })()
     </script>
+    <script src="/src/middlewares/validacionesLogin.js"></script>
 </body>
 </html>
