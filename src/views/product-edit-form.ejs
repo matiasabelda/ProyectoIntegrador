@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="col-12">
-                <form action="/products/edit/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+                <form action="/products/edit/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="needs-validation" id="FormEdit"novalidate>
                     <div class="row product-detail">
                         <div class="col-12 col-md-6">
                             <label for="name" class="form-label">Nombre del producto:</label>
@@ -115,7 +115,7 @@
       })
   })()
     </script>  
-    
+    <script src="/src/middlewares/validacionesEditForm.js"></script>
     </body>
 
 
