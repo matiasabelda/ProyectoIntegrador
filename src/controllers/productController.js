@@ -1,211 +1,109 @@
-const fs = require('fs');
-const path = require('path');
-
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
 const db = require('../database/models'); // Importo toda la carpeta models incluyendo Sequelize con sus metodos
 
 let controladorProducts = {
-    // Muestra todos los productos
+
+    // Show all products
     index: (req, res) => {
-        
-		
-		//res.render('products', {productos: products}); // En la vista producto.ejs mostramos toda la lista de productos del JSON
-		db.dicons.findAll()
-    },
-
-//ha agrego crear producto------------------------------------
-store : (req,res) => {
-	db.products.create({
-		create_at: req.body.create_at,
-        update_at: req.body.update_at ,
-        name: req.body.name,
-        price: req.body.price ,
-        discount: req.body.discount,
-        category: req.body.category,
-        description: req.body.description ,
-        image: req.body.image
-	});
-	res.redirect("/products");
-},
-
-
-//ha agrego editar producto------------------------------------
-
-edit: (req, res) => {
-	db.products.findByPK(req.params.id)
-	.then(function(Products){
-		res.render('product-edit-form', {productos: products});
-	})
-},
-
-update : (req,res) => {
-	db.products.update({
-		create_at: req.body.create_at,
-        update_at: req.body.update_at ,
-        name: req.body.name,
-        price: req.body.price ,
-        discount: req.body.discount,
-        category: req.body.category,
-        description: req.body.description ,
-        image: req.body.image
-	},
-		{
-			where:{
-			id: req.params.id
-		}
-	})
-	res.redirect("/products/edit/" + req.params.id)
-},
-
-//ha agrego delete producto------------------------------------
-
-delete : (req, res) => {
-	db.products.destroy({
-		where:{
-			id: req.params.id
-		}
-	})
-	res.redirect("/products");
-},
-
-    // Detail - Detail from one product
-	detail: (req, res) => {
-
-		let idProducto = req.params.id;
-
-		let productoBuscado=null;
-
-		for (let o of products){
-			if (o.id==idProducto){
-				productoBuscado=o;
-				break;
-			}
-		}
-
-		if (productoBuscado!=null){
-			res.render('detail',{producto: productoBuscado});
-		}
-
-		res.send("Producto no encontrado");
-	
+		res.redirect('/'); // Si el usuario va al entry point "/products" lo redirige al home donde se muestran todos los productos
 	},
 
 	// Create - Form to create
 	create: (req, res) => {
-		res.render('product-create-form');
+		db.category.findAll()
+			.then(function(categorias) {
+				console.log(categorias)
+				return res.render('product-create-form', {categorias: categorias});
+			}
+		);
 	},
-	
-	// Create -  Method to store
-	store: (req, res) => {
-		let datos = req.body;
-		let idNuevoProducto = (products[products.length-1].id)+1;
-		let imagenProducto = '';
-		
+
+	store : (req,res) => {
+
+		// Si el usuario no sube ninguna foto que se cargue una foto por default
+		let imgProduct = '';
+
 		if(req.file) {
-			imagenProducto = req.file.filename;
+
+			imgProduct = req.file.filename;
+
 		} else {
-			imagenProducto = 'noImage.jpg';
-		}
-			let nuevoProducto ={
-				"id": idNuevoProducto,
-				"name": datos.name,
-				"price": parseInt(datos.price),
-				"discount": parseInt(datos.discount),
-				"category": datos.category,
-				"description": datos.description,
-				"image": imagenProducto
-			};
-	
-			products.push(nuevoProducto);
-			fs.writeFileSync(productsFilePath,JSON.stringify(products, null, " "),'utf-8');
-
-		res.redirect('/');
-	},
-
-	// Update - Form to edit
-	edit: (req, res) => {
-
-		let idProducto = req.params.id;
-
-		let productoBuscado=null;
-
-		for (let o of products){
-			if (o.id==idProducto){
-				productoBuscado=o;
-				break;
-			}
+			
+			imgProduct = 'noImage.jpg';
 		}
 
-		if (productoBuscado!=null){
-			res.render('product-edit-form',{producto: productoBuscado});
-		}
-
-		res.send("Producto no encontrado");
-	},
-
-	// Update - Method to update
-	update: (req, res) => {
-
-		let idProducto = req.params.id;
-
-		let datosProducto = req.body;
-
-		let nombreImagenAntigua="";
-
-		for (let o of products){
-			if (o.id==idProducto){
-
-				nombreImagenAntigua = o.image;
-
-				o.name = datosProducto.name;
-				o.price = parseInt(datosProducto.price);
-				o.discount = parseInt(datosProducto.discount);
-				o.category = datosProducto.category;
-				o.description = datosProducto.description;
-				o.image = req.file.filename;
-				break;
-			}
-		}
-
-		fs.writeFileSync(productsFilePath,JSON.stringify(products, null, " "),'utf-8');
-
-		// Borra la imagen anterior guardada fisicamente del producto que estamos editando
-		if(nombreImagenAntigua != 'noImage.jpg') {
-			fs.unlinkSync(__dirname+'/../../public/img/products/'+nombreImagenAntigua);
-		}
-		
-
-		res.redirect('/');
-		
-	},
-
-	// Delete - Delete one product from DB
-	destroy : (req, res) => {
-
-		let idProductoX = req.params.id;
-
-		let nombreImagenAntigua="";
-
-		for (let o of products){
-			if (o.id==idProductoX){
-				nombreImagenAntigua = o.image;
-			}
-		}
-		
-		let NuevaListaProductos = products.filter(function(e){
-			return e.id!=idProductoX;
+		db.products.create({
+			create_at: req.body.create_at,
+			update_at: req.body.update_at,
+			name: req.body.name,
+			price: req.body.price,
+			discount: req.body.discount,
+			Categoria_id: req.body.category,
+			description: req.body.description,
+			image: imgProduct
+		})
+		// Faltaria crear un alert que diga "producto creado correctamente" y luego redirigimos la vista al home
+		.then(function() {
+			res.redirect("/");
 		});
-
-		fs.writeFileSync(productsFilePath,JSON.stringify(NuevaListaProductos, null, " "),'utf-8');
-
-		if(nombreImagenAntigua != 'noImage.jpg') {
-			fs.unlinkSync(__dirname+'/../../public/img/products/'+nombreImagenAntigua);
-		}
 		
-		res.redirect('/');
+	},
 
+	// Detail - Detail Form of each product
+	detail: (req, res) => {
+		db.products.findOne({where: {id: req.params.id}})
+			.then(function(productoBuscado) {
+				res.render('detail', {productoBuscado: productoBuscado})
+			})
+	},
+
+	// Edit - Edit Form of each product
+	edit: (req, res) => {
+		
+		let productToEdit = db.products.findByPk(req.params.id);
+		let allCategories = db.category.findAll();
+
+		Promise.all([productToEdit, allCategories])
+			.then(([productoAEditar, categorias]) => {
+				res.render('product-edit-form', {
+					productoAEditar: productoAEditar, categorias: categorias
+					});
+			});
+	},
+
+	// Update - Update products atributes
+	update: (req,res) => {
+		db.products.update({
+			
+			// create_at: req.body.create_at,
+			update_at: req.body.update_at ,
+			name: req.body.name,
+			price: req.body.price ,
+			discount: req.body.discount,
+			Categoria_id: req.body.category,
+			description: req.body.description,
+			image: req.body.image //image: req.file ? req.file.filename : "logo-PF-tipografico.png",
+		},
+		{
+			where:{
+				id: req.params.id
+			}
+		}).then(() => {
+			res.redirect("/products/detail/" + req.params.id)
+		});
+		
+	},
+
+	//ha agrego delete producto------------------------------------
+	// Delete - Delete specific product by id
+	delete : (req, res) => {
+		db.products.destroy({
+			where:{
+				id: req.params.id
+			}
+		}).then(() => {
+			res.redirect("/products");
+		});
+		
 	},
 	
 	carrito: (req, res) => {

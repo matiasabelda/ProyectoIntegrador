@@ -53,7 +53,7 @@
             <div class="container-producto">
                 <p class="titulo">Basados en tu última visita</p>
                 <!-- Show the "visited" products -->
-                <% for(let p of productos) { %> 
+                <% for(let p of Allproductos) { %> 
                     <div class="card-producto-hidden">
                         <section class="card-producto">
                             <a href="/products/detail/<%= p.id %>">
@@ -78,7 +78,7 @@
             <div class="container-producto">
                 <p class="titulo">Ofertas del Día</p>
                 <!-- Show the "Offerts" products -->
-                <% for(let p of productos) { %> 
+                <% for(let p of Allproductos) { %> 
                     <div class="card-producto-hidden">
                         <section class="card-producto">
                             <a href="/products/detail/<%= p.id %>">

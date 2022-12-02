@@ -75,8 +75,8 @@
                         <input type="email" class="form-control" name="email" id ="email-login"required>
                         <div class="valid-feedback">¡Ok, válido!</div>
                         <div class="invalid-feedback">Completá tu email</div>
-                        <% if(locals.errors && errors.email) { %>
-                        <div class="text-danger"><% errors.email.msg %></div>
+                        <% if(locals.msg) { %>
+                            <div class="text-danger"><%= locals.msg %></div>
                         <% } %>
                     </div>
                     <div class="mb-4">

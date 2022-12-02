@@ -6,23 +6,23 @@ function diconsData(sequelize, Datatypes){
       id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
       created_at: {type: Datatypes.DATE},
       updated_at: {type: Datatypes.DATE},
-      monto_unit: {type: Datatypes.STRING(500)},
-      cantidad: {type: Datatypes.INTEGER},
+      unit_amount: {type: Datatypes.FLOAT(10)},
+      cantidad_producto: {type: Datatypes.INTEGER},
       Usuario_id: {type: Datatypes.INTEGER},
       Detalle_Venta_id: {type: Datatypes.INTEGER},
       Producto_id: {type: Datatypes.INTEGER}
     };
     
-    config = {camelCase: false, timestamps: false}; 
+    config = {tableName: 'Venta', camelCase: false, timestamps: false}; 
     
     const ventas = sequelize.define(alias,cols,config);
 
     ventas.associate = function (modelos){
 
-        ventas.belongsTo(modelos.users, {
+        /* ventas.belongsTo(modelos.users, {
             as: "usuarios",
             foreignKey: "Usuario_id"
-        });
+        }); */
 
         ventas.belongsTo(modelos.products, {
             as: "productos",

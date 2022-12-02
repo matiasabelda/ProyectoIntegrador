@@ -53,9 +53,11 @@
                         <div class="col-12 col-md-6">
                             <label for="category" class="form-label">Categoría:</label>
                             <select name="category" id="category" class="form-input" required>
-                                <option value="">Elegí</option>
-                                <option value="in-sale">En oferta</option>
-                                <option value="visited">Últimos agregados</option>
+                                <% for(let cat of categorias) { %> 
+                                    <option value="<%= cat.id %>">
+                                        <%= cat.name %>
+                                    </option>
+                                <% } %> 
                             </select>
                             <div class="valid-feedback">¡Ok, válido!</div>
                             <div class="invalid-feedback">Seleccioná una categoría</div>

@@ -1,46 +1,44 @@
 function productsData(sequelize, Datatypes) {
 
-    alias = 'products';
-    cols = {
-        id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
-        create_at: {type: Datatypes.DATE},
-        update_at: {type: Datatypes.DATE},
-        name: {type: Datatypes.STRING(500)},
-        price: {type: Datatypes.FLOAT},
-        discount: { type: Datatypes.INTEGER},
-        category: { type: Datatypes.STRING},
-        description: {type: Datatypes.STRING(1500)},
-        image: {type: Datatypes.STRING}, // product-Img asi se llama en el formulario
-    };
+  alias = 'products';
 
-    config = {camelCase: false, timestamps: false}; 
-    
-    const productos = sequelize.define(alias,cols,config); // error al ejecutar
+  cols = {
+      id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
+      create_at: {type: Datatypes.DATE},
+      update_at: {type: Datatypes.DATE},
+      delete_at: {type: Datatypes.DATE},
+      name: {type: Datatypes.STRING(500)},
+      price: {type: Datatypes.FLOAT(10)},
+      discount: {type: Datatypes.INTEGER},
+      Categoria_id: {type: Datatypes.INTEGER},
+      image: {type: Datatypes.STRING(500)},
+      description: {type: Datatypes.STRING(1500)},
+      admin_id: {type: Datatypes.INTEGER}, // las imagenes van en la tabla imagen
+  };
 
-    productos.associate = function (modelos){
+  config = {tableName: 'Producto', camelCase: false, timestamps: false}; 
+  
+  const productos = sequelize.define(alias,cols,config); // error al ejecutar
 
-        productos.belongsTo(modelos.users, {
-              as: "usuarios",
-              foreignKey: "admin_id"
+  productos.associate = function (modelos){
+
+      /* productos.belongsTo(modelos.users, {
+            as: "usuarios",
+            foreignKey: "Admin_id"
+      }); */
+
+      productos.belongsTo(modelos.category, {
+          as: "categorias",
+          foreignKey: "Categoria_id"
+    });
+
+      productos.hasMany(modelos.sales, {   
+          as: "ventas",
+          foreignKey: "Producto_id",
         });
-
-        productos.belongsTo(modelos.category, {
-            as: "categoria",
-            foreignKey: "Categoria_id"
-      });
-    
-        productos.hasMany(modelos.image, {   
-          as: "imagen",
-          foreignKey: "Producto_id"
-        });
-
-        productos.hasMany(modelos.sales, {   
-            as: "ventas",
-            foreignKey: "Producto_id",
-          });
-    };
-    
-    return productos;
+  };
+  
+  return productos;
 }
-    
+  
 module.exports = productsData;

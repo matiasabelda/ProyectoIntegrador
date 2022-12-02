@@ -23,56 +23,57 @@
         <div class="container products-wrapper">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="products-title">Estás editando: <%=producto.name%></h2>
+                    <h2 class="products-title">Estás editando: <%=productoAEditar.name%></h2>
                 </div>
             </div>
-            <div class="col-12">
-                <form action="/products/edit/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="needs-validation" id="FormEdit"novalidate>
+            <div class="col-12"> <!-- ?_method=PUT -->
+                <form action="/products/edit/<%=productoAEditar.id%>" method="POST" enctype="multipart/form-data" class="needs-validation" id="FormEdit"novalidate>
                     <div class="row product-detail">
                         <div class="col-12 col-md-6">
                             <label for="name" class="form-label">Nombre del producto:</label>
-                            <input type="text" id="name" name="name" value="<%=producto.name%>" placeholder="Ej: Zapatillas Reebok" class="form-input" required>
+                            <input type="text" id="name" name="name" value="<%=productoAEditar.name%>" placeholder="Ej: Zapatillas Reebok" class="form-input" required>
                             <div class="valid-feedback">¡Ok, válido!</div>
                             <div class="invalid-feedback">Complete el campo</div>
                         </div>
                         <div class="col-12 col-md-6">
                             <label for="price" class="form-label">Precio del producto:</label>
-                            <input type="text" id="price" name="price"  value="<%=producto.price%>" placeholder="Ej: 5678" class="form-input" required>
+                            <input type="text" id="price" name="price"  value="<%=productoAEditar.price%>" placeholder="Ej: 5678" class="form-input" required>
                             <div class="valid-feedback">¡Ok, válido!</div>
                             <div class="invalid-feedback">Complete el campo</div>
                         </div>
                         <div class="col-12 col-md-6">
                             <label for="discount" class="form-label">Descuento:</label>
-                            <input type="text" id="discount" name="discount" value="<%=producto.discount%>" placeholder="Ej: 15" class="form-input">
+                            <input type="text" id="discount" name="discount" value="<%=productoAEditar.discount%>" placeholder="Ej: 15" class="form-input">
                             <div class="valid-feedback">¡Ok, válido!</div>
                             <div class="invalid-feedback">Complete el campo</div>
                         </div>
                         <div class="col-12 col-md-6">
                             <label for="category" class="form-label">Categoría:</label>
                             <select name="category" id="category" class="form-input" required>
-                                <% if (producto.category=="in-sale") {%>
-                                    <option value="">Elegí</option>
-                                    <option value="in-sale" selected>En oferta</option>
-                                    <option value="visited" >Últimos agregados</option>
+                                <% for(let cat of categorias) { %>
+                                    <% if(cat.id == productoAEditar.Categoria_id) { %>
+                                        <option value="<%= cat.id %>" selected>
+                                            <%= cat.name %>
+                                        </option>
+                                    <% } else { %>
+                                        <option value="<%= cat.id %>">
+                                            <%= cat.name %>
+                                        </option>
+                                    <% } %>
                                 <% } %>
-                                <% if (producto.category=="visited") {%>
-                                    <option value="">Elegí</option>
-                                    <option value="in-sale">En oferta</option>
-                                    <option value="visited" selected>Últimos agregados</option>
-                                <% } %>{
                             </select>
                             <div class="valid-feedback">¡Ok, válido!</div>
                             <div class="invalid-feedback">Seleccioná una categoría</div>
                         </div>
                         <div class="col-12 col-md-6">
                             <label for="product-img" class="form-label">Cargá una imagen:</label><br>
-                            <input type="file" id="product-img" name="product-img" required></input>
+                            <input type="file" id="product-img" name="product-img" value="<%=productoAEditar.image%>" required></input>
                             <div class="valid-feedback">¡Ok, imagen cargada!</div>
                             <div class="invalid-feedback">Subí una imagen</div>
                         </div>
                         <div class="col-12" id="title-description">
                             <label for="description" class="form-label">Descripción:</label>
-                            <textarea name="description" id="description" class="form-input" required><%=producto.description%></textarea>
+                            <textarea name="description" id="description" class="form-input" required><%=productoAEditar.description%></textarea>
                             <div class="valid-feedback">¡Ok, válido!</div>
                             <div class="invalid-feedback">Complete el campo</div>
                         </div>

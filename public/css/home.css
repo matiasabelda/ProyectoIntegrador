@@ -49,7 +49,7 @@
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
     background-color: #fff;
     cursor: default;
-    transition: all 400ms ease;
+    transition: all 500ms ease;
 }
 .card-producto img {
     width: 194px;
@@ -66,9 +66,9 @@
 }
 
 .card-producto:hover .detalle-producto i {
-    transform: rotate(-90deg);
+    transform: rotate(-360deg);
 }
-.card-producto:hover .nombre-producto{
+.card-producto:hover .nombre-producto {
     display: block;
 }
 .detalle-producto {
@@ -112,10 +112,11 @@
 
 .nombre-producto {
     display: none;
+    color: black;
     text-align: center;
     font-size: 16px;
     margin-top: 10px;
-    transition: 2000ms;
+    /* transition: 2000ms; */
 }
 
 /* ------------------- Inicio Medias Queries --------------------- */

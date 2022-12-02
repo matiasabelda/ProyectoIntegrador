@@ -30,11 +30,11 @@ router.get('/detail/:id', productController.detail);
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id', productController.edit); 
-router.put('/edit/:id', uploadFile.single('product-img'), productController.update); 
+router.post('/edit/:id', uploadFile.single('product-img'), productController.update); 
 
 
 /*** DELETE ONE PRODUCT***/ 
-router.delete('/:id', productController.destroy);
+router.delete('/:id', productController.delete);
 
 /*** PRODUCTS IN CART***/
 router.get('/carrito', productController.carrito);
