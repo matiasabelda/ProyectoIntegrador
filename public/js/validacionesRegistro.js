@@ -1,10 +1,10 @@
-Window.addEventListener("load", function(){
+window.addEventListener("load", function() {
     let formulario = document.querySelector("#FormDicons")
-
+    console.log(formulario)
     formulario.addEventListener("submit", function(e) {
         let errores= [];
 
-        let campoNombre = document.querySelector("#name");
+        let campoNombre = document.querySelector("#Name");
 
         if (campoNombre.value == ""){
             errores.push("El campo nombre tiene que estar completo");
@@ -32,7 +32,7 @@ Window.addEventListener("load", function(){
 
         let campoEmail = document.querySelector("#emailInput")
 
-        if (campoEmail .value == ""){
+        if (campoEmail.value == ""){
             errores.push("El campo email tiene que estar completo")
         } else if (campoEmail.value.length < 2){
             errores.push ("El campo de email debe tener al menos 2 caracteres");
@@ -45,13 +45,14 @@ Window.addEventListener("load", function(){
         }
 
         if (errores.length > 0){
-            e.preventDefault();
+            e.preventDefault()
 
-            let ulErrores = document.querySelector("div.errores ul");
-            for (let i = 0; i< errores.length; i++) {
-                ulErrores.innerHTML += "<li> " + errores[i] + "</li>"
+            let ulErrores = document.querySelector(".errores");
+            for (let i = 0; i < errores.length; i++) {
+
+                ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
             }
         }
         
-    })
+    });
 })

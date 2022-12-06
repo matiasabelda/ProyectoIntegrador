@@ -31,50 +31,41 @@
       <div class="errores">
             <ul></ul>
       </div>
+      
 <div class="container" >
           
-      <form action="register" method="POST" id="FormDicons" enctype="multipart/form-data" class=" row mt-3 needs-validation" novalidate>
+      <form action="register" method="POST" id="FormDicons" enctype="multipart/form-data" class=" row mt-3 " >
 
             <div class="col-6">
                   <label for="Name" class="form-label">Nombre</label>
                   <input type="text"  name="name"  class="form-control"  id="Name" placeholder ="Ingresá tu nombre" required>
-                  <div class="valid-feedback">¡Ok, válido!</div>
-                  <div class="invalid-feedback">Completá tu nombre</div>
+                  
             </div>
             <div class="col-6">
                   <label for="apell" class="form-label">Apellido</label>
                   <input type="text"  name="apell"  class="form-control"  id="apell" placeholder ="Ingresá tu apellido" required>
-                  <div class="valid-feedback">¡Ok, válido!</div>
-                  <div class="invalid-feedback">Completá tu apellido</div>
+                  
             </div>
             <div class="col-6">
                   <label for="Nacimiento" class="form-label">Fecha de Nacimiento</label>
                   <input type="date" name="nac" min =1900-01-01 max = 2022-01-01 class="form-control"  id="Nacimiento" placeholder ="Fecha de Nacimiento"  required>
-                  <div class="valid-feedback">¡Ok, válido!</div>
-                  <div class="invalid-feedback">Completá tu fecha de nacimiento</div>
+                 
             </div>
             <div class="col-6">
                   <label for="Country" class="form-label">País de residencia</label>
                   <input type="text"  name="count" class="form-control"  id="Country" placeholder ="Ingresa pais de residencia" required>
-                  <div class="valid-feedback">¡Ok, válido!</div>
-                  <div class="invalid-feedback">Completá tu país</div>
+              
             </div>
             <div class="col-6">
                   <label for="emailInput" class="form-label">Email</label>
                   <input type="email" name="email" class="form-control"  id="emailInput" placeholder ="Ingresa tu @ mail" required>
-                  <div class="valid-feedback">¡Ok, válido!</div>
-                  <div class="invalid-feedback">Completá tu email</div>
-                  <%  if (locals.errors && errors.email){ %> 
-                        <div class ="text-danger"> 
-                              <% errors.email.msg %> 
-                        </div>
-                  <% } %>
+                  
+                
             </div>
             <div class="col-6">
                   <label for="passwordinput" class="form-label">Contraseña</label>
                   <input type="password" name="pass" class="form-control"  id="passwordinput" placeholder ="Ingresa tu contraseña" required>
-                  <div class="valid-feedback">¡Ok, válido!</div>
-                  <div class="invalid-feedback">Completá tu contraseña</div>
+                  
             </div>
             <div class="col-12">
                   <div class="form-radio"> <br>
@@ -82,15 +73,13 @@
                         <input type="radio" name="genero"  value="Masculino" id="Masculino"  checked required> Masculino
                         <input type="radio" name="genero"  value="Femenino"  id="Femenino"> Femenino
                         <input type="radio" name="genero"  value="Otro" id="Otro"> Otro
-                        <div class="valid-feedback">¡Ok, válido!</div>
-                        <div class="invalid-feedback">Completá tu género</div>
+                        
                   </div>
             </div>
             <div class="col-12 col-md-6" style="margin-bottom: 20px;"> <br>
                   <label for="avatar" class="form-genero-label">Cargá una imagen:</label><br>
                   <input type="file" id="avatar" name="avatar" required></input>
-                  <div class="valid-feedback">¡Ok, imagen cargada!</div>
-                  <div class="invalid-feedback">Subí una imagen</div>
+                  
             </div>
             <div class="col-4"><br><br> 
                   <button type="button reset" class="btn btn-dark">Reiniciar</button>
@@ -103,8 +92,7 @@
                   <div class="form-check">
                         <input type="checkbox"  name="terms" id="terms" class="form-checkterm-input" required>
                         <label for="terms" class="form-checkterm-label">Acepto términos y condiciones </label>
-                        <div class="valid-feedback">¡Ok, válido!</div>
-                        <div class="invalid-feedback">Complete el campo</div>  
+                      
                   </div>
                   <div class="col-4" style="margin-bottom: 20px; margin-top: 10px;">
                         <button type="submit" class="btn btn-secondary btn-lg">Registrarse</button> 
@@ -115,7 +103,7 @@
 
     </main>
     
-   <!--footer -->
+      <!--footer -->
 	<%- include ('../partials/footer') %>
 	<!-- /footer -->
 
@@ -123,27 +111,8 @@
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
        <script src="https://kit.fontawesome.com/2c086df42b.js" crossorigin="anonymous"></script>
        <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
-       <script src="/src/middlewares/validaciones.js"></script>
-       <script>
-            (function () {
-                  'use strict'
-
-                  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                  var forms = document.querySelectorAll('.needs-validation')
-
-                  // Loop over them and prevent submission
-                  Array.prototype.slice.call(forms)
-                  .forEach(function (form) {
-                  form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                        }
-
-                        form.classList.add('was-validated')
-                  }, false)
-                  })
-            })()
-      </script>
+       
+       
+      <script src="/js/validacionesRegistro.js"></script>
        </body>
 </html>

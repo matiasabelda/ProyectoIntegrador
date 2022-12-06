@@ -103,6 +103,11 @@ const userController = {
         
 	},
 
+    profileEdit: (req, res) => {
+        return res.render('./users/profileEdit.ejs');
+    },
+
+
 	logout: (req, res) => {
 		res.clearCookie('userEmail');
 		req.session.destroy();

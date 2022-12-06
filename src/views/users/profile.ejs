@@ -28,8 +28,10 @@
             <div id="primera-lista" >
    <!--usuario nuevo -->           
             <div class="nombre-foto-1" >
-               <img width="50" height="50" src="/img/users/<%= user.avatar %>" style="margin-top:4px;">          
-               <h3 style="margin-left:20px;">Hi, <%= user.name %> <%= user.apell %> </h3>
+               <img class="foto-perfil"src="/img/users/<%= user.avatar %>" style="margin-top:4px;">          
+               <h2 class="nombre-perfil"> <%= user.name %> <%= user.apell %> </h2>
+               
+               
             </div>
                
             </div>
@@ -37,48 +39,21 @@
             <div id="segunda-lista">
     
     <!--Mis datos --> 
-
+    <a href="a" class="boton-modificar-datos">
              <div class="nombre-foto">
-               <a href="a"><i id="usuario-icono-2" class="fa-regular fa-circle-user"></i></a>
+               <i id="usuario-icono-2" class="fa-regular fa-circle-user"></i>
                <h3>Mis datos</h3>
              </div>
+    </a>
          
     <!--Seguridad--> 
-          
+    <a href="/users/profileEdit.ejs" class="boton-modificar-datos">
              <div class="nombre-foto">
-                <a href="a"><i id="icono-datos" class="fa-solid fa-lock"></i></a>
-                <h3>Seguridad</h3>
+                <iconify-icon  id="icono-datos"icon="fa6-regular:pen-to-square"></iconify-icon>
+                <h3>Modificar mis datos</h3>
              </div>
-
-    <!--Mis tarjetas --> 
-
-             <div class="nombre-foto">
-                <a href="a"><i id="icono-datos-tarjeta"class="fa-regular fa-credit-card"></i></a>
-                <h3>Mis tarjetas</h3>
-             </div>
-
-    <!--Direcciones --> 
-
-             <div class="nombre-foto">
-                <a href="a"><i id="icono-datos-direcciones" class="fa-solid fa-location-dot"></i></a>
-                <h3>Direcciones</h3>
-             </div>
-
-    <!--Privacidad --> 
-
-             <div class="nombre-foto">
-                <a href="a"><i id="icono-datos-privacidad" class="fa-solid fa-user-shield"></i></a>
-                <h3>Privacidad</h3>
-             </div>
-
-    <!--Comunicaciones --> 
-
-             <div class="nombre-foto">
-                <a href="a"><i id="icono-datos-comunicaciones" class="fa-regular fa-message"></i></a>
-                <h3>Comunicaciones</h3>
-             </div>
-
-            </div>
+    </a>
+  
         </div>
         <br>
     </main>

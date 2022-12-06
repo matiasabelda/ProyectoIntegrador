@@ -52,6 +52,9 @@ router.post('/login', userController.loginProcess);
 // Perfil de Usuario
 router.get('/profile', authMiddleware, userController.profile);
 
+// Perfil de editar Usuario
+router.get('/profileEdit', authMiddleware, userController.profileEdit);
+
 // Logout
 router.get('/logout', userController.logout);
 
