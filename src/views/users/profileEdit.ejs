@@ -5,6 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit profile</title>
+    <%- include ('../partials/head') %>
+            
+  
+  
+    <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/footer.css" rel="stylesheet">
+    <link href="/css/profileEdit.css" rel="stylesheet">
+
+ 
 </head>
 <body>
     <!-- Contenido del Header -->
@@ -15,12 +24,48 @@
   <main>
 
 
+    <br>
+    <div ><h3>Editar datos</h3> </div>     
+    <hr>
+    <main>
+        <!--class="row mt-3"-->
+        <div class="errores">
+              <ul></ul>
+        </div>
+        
+  <div class="container" >
+            
+    <form action="register" method="POST" id="FormDicons" enctype="multipart/form-data" class=" row mt-3 " >
+  
+      <div class="col-6">
+        <label for="emailInput" class="form-label">Nuevo Email</label>
+        <input type="email" name="email" class="form-control"  id="emailInput" placeholder ="Ingresa tu @ mail" required>
+      </div>
+      <div class="col-6">
+        <label for="passwordinput" class="form-label">Nueva Contraseña</label>
+        <input type="password" name="pass" class="form-control"  id="passwordinput" placeholder ="Ingresa tu contraseña" required>
+      </div>
 
-ffff
+      <div class="col-12 col-md-6" style="margin-bottom: 20px;"> <br>
+        <label for="avatar" class="form-genero-label">Cargá una imagen:</label><br>
+        <input type="file" id="avatar" name="avatar" required></input>
+      </div>
 
-
-
-
+      <div class="col-6">
+       <label for="passwordinput" class="form-label">Confirmar contraseña</label>
+       <input type="password" name="pass" class="form-control"  id="passwordinput" placeholder ="Ingresa tu contraseña" required>
+      </div>
+             
+          
+             
+              
+              <div class="col-4">
+                
+                    <div class="col-4" style="margin-bottom: 20px; margin-top: 10px;">
+                          <button type="submit" class="btn btn-secondary btn-lg">Confirmar </button> 
+                    </div>
+              </div>
+              
 
   </main>
 
