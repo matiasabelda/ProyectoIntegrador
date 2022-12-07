@@ -36,9 +36,10 @@
     <ul style="z-index: 1;">
       <% if (locals.isLogged) { %>
        
-        <li><a href="/users/profile"><img class="imagen-perfil"src="/img/users/<%= locals.userLogged.avatar %>" style="border-radius: 100%;"> Perfil </a> </li>
+        <li><a href="/users/profile"><img class="imagen-perfil"src="/img/users/<%= locals.userLogged[0].avatar %>" style="border-radius: 100%; width: 30px; height: 30px; align-self: center;"> Mi Perfil </a> </li>
+        <li><a href="/products/carrito"><i class="fa-solid fa-cart-shopping"></i> Mi Carrito </a> </li>
         <li><a href="/users/logout"><i class="fa-solid fa-right-to-bracket"></i> Cerrar Sesión </a> </li>
-        <li><a href="/products/carrito"><i class="fa-solid fa-cart-shopping"></i> Carrito </a> </li>
+        
 
         </div>
       <% } else { %>

@@ -1,5 +1,6 @@
 const db = require('../database/models'); // Importo toda la carpeta models incluyendo Sequelize con sus metodos
 
+
 let controladorProducts = {
 
     // Show all products
@@ -43,6 +44,7 @@ let controladorProducts = {
 		})
 		// Faltaria crear un alert que diga "producto creado correctamente" y luego redirigimos la vista al home
 		.then(function() {
+			
 			res.redirect("/");
 		});
 		

@@ -104,7 +104,7 @@ const userController = {
 	},
 
     profileEdit: (req, res) => {
-        return res.render('./users/profileEdit.ejs');
+        return res.render('./users/profileEdit');
     },
 
 
