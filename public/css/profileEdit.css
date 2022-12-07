@@ -1,0 +1,15 @@
+.editar-datos-texto{
+    font-weight: bold;
+}
+.div-editar{
+    margin-left: 10px;
+}
+#boton-confirmar{
+    background-color: black;
+}
+#avatar{
+    color: black;
+}
+#passwordinput-2{
+    margin-top: 9px;
+}
