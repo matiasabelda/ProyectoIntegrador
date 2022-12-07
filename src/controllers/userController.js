@@ -106,6 +106,9 @@ const userController = {
     profileEdit: (req, res) => {
         return res.render('./users/profileEdit');
     },
+    profileData: (req, res) => {
+        return res.render('./users/profileData');
+    },
 
 
 	logout: (req, res) => {
