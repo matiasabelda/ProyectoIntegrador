@@ -10,6 +10,7 @@
         <link href="/css/footer.css" rel="stylesheet">
         <link href="/css/header.css" rel="stylesheet">
         <link href="/css/forms.css" rel="stylesheet">
+        <link href="/css/validaciones.css" rel="stylesheet">
         <link rel="stylesheet" href="sweetalert2.min.css">
         
         <title >Dicons | Compra Online</title> 
@@ -27,29 +28,24 @@
                     <h2 class="products-title">Formulario de creación de productos</h2>
                 </div>
             </div>
-            <div class="errores">
-                <ul></ul>
-            </div>
+            
             <div class="col-12">
-                <form action="create" method="POST" enctype="multipart/form-data" id="FormCreate" class="needs-validation">
+                <form action="create" method="POST" enctype="multipart/form-data" id="FormCreate" >
                     <div class="row product-detail">
                         <div class="col-12 col-md-6">
                             <label for="name" class="form-label">Nombre del producto:</label>
                             <input type="text" id="name" name="name" placeholder="Ej: Camiseta de la Selección" class="form-control" required>
-                            <div class="valid-feedback">¡Ok, válido!</div>
-                            <div class="invalid-feedback">Complete el campo</div>
+                            <span></span>
                         </div>
                         <div class="col-12 col-md-6">
                             <label for="price" class="form-label">Precio del producto:</label>
                             <input type="text" id="price" name="price" placeholder="Ej: 5235" class="form-control" id="precio-create" required>
-                            <div class="valid-feedback">¡Ok, válido!</div>
-                            <div class="invalid-feedback">Complete el campo</div>
+                            <span></span>
                         </div>
                         <div class="col-12 col-md-6">
                             <label for="discount" class="form-label">Descuento:</label>
                             <input type="text" id="discount" name="discount" placeholder="Ej: 35" class="form-input">
-                            <div class="valid-feedback">¡Ok, válido!</div>
-                            <div class="invalid-feedback">Complete el campo</div>
+                           
                         </div>
                         <div class="col-12 col-md-6">
                             <label for="category" class="form-label">Categoría:</label>
@@ -60,20 +56,18 @@
                                     </option>
                                 <% } %> 
                             </select>
-                            <div class="valid-feedback">¡Ok, válido!</div>
+                           
                             <div class="invalid-feedback">Seleccioná una categoría</div>
                         </div>
                         <div class="col-12 col-md-6">
                             <label for="product-img" class="form-label">Cargá una imagen:</label><br>
                             <input type="file" id="product-img" name="product-img" required></input>
-                            <div class="valid-feedback">¡Ok, imagen cargada!</div>
-                            <div class="invalid-feedback">Subí una imagen</div>
+                            <span></span>
                         </div>
                         <div class="col-12" id="title-description">
                             <label for="description" class="form-label" id="descuento-create">Descripción:</label>
                             <textarea name="description" id="description" class="form-input" required></textarea>
-                            <div class="valid-feedback">¡Ok, válido!</div>
-                            <div class="invalid-feedback">Complete el campo</div>
+                            <span></span>
                         </div>
                         <div class="col-12">
                             <button type="submit" class="buy-now-button">Guardar producto</button>
@@ -95,28 +89,9 @@
     <script src="https://kit.fontawesome.com/2c086df42b.js" crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
     <script src="bootstrap4/js/bootstrap.min.js"></script>
-    <script>
-        (function () {
-    'use strict'
+
+    <script src="/js/validacionesCreateForm.js"></script>
   
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-  
-          form.classList.add('was-validated')
-        }, false)
-      })
-  })()
-    </script>
-    <script src="/src/middlewares/validacionesCreateForm.js"></script>
         
     
     </body>

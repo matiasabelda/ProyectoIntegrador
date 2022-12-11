@@ -8,6 +8,7 @@
             <link href="/css/StylesFormulario.css" rel="stylesheet">
             <link href="/css/header.css" rel="stylesheet">
             <link href="/css/footer.css" rel="stylesheet">
+            <link href="/css/validaciones.css" rel="stylesheet">
         
             <title >Dicons | Formulario Registro</title> 
         </head>
@@ -36,34 +37,35 @@
 
             <div class="col-6">
                   <label for="Name" class="form-label">Nombre</label>
-                  <input type="text"  name="name"  class="form-control"  id="Name" placeholder ="Ingresá tu nombre" required>
+                  <input type="text"  name="nombre"  class="form-control"  id="Name" placeholder ="Ingresá tu nombre" required>
+                  <span></span>
                   
             </div>
             <div class="col-6">
                   <label for="apell" class="form-label">Apellido</label>
-                  <input type="text"  name="apell"  class="form-control"  id="apell" placeholder ="Ingresá tu apellido" required>
-                  
+                  <input type="text"  name="apellido"  class="form-control"  id="apell" placeholder ="Ingresá tu apellido" required>
+                  <span></span>
             </div>
             <div class="col-6">
                   <label for="Nacimiento" class="form-label">Fecha de Nacimiento</label>
-                  <input type="date" name="nac" min =1900-01-01 max = 2022-01-01 class="form-control"  id="Nacimiento" placeholder ="Fecha de Nacimiento"  required>
-                 
+                  <input type="date" name="nacimiento" min =1900-01-01 max = 2022-01-01 class="form-control"  id="Nacimiento" placeholder ="Fecha de Nacimiento"  required>
+                  
             </div>
             <div class="col-6">
                   <label for="Country" class="form-label">País de residencia</label>
-                  <input type="text"  name="count" class="form-control"  id="Country" placeholder ="Ingresa pais de residencia" required>
-              
+                  <input type="text"  name="pais" class="form-control"  id="Country" placeholder ="Ingresa pais de residencia" required>
+                  <span></span>
             </div>
             <div class="col-6">
                   <label for="emailInput" class="form-label">Email</label>
                   <input type="email" name="email" class="form-control"  id="emailInput" placeholder ="Ingresa tu @ mail" required>
-                  
+                  <span></span>
                 
             </div>
             <div class="col-6">
                   <label for="passwordinput" class="form-label">Contraseña</label>
-                  <input type="password" name="pass" class="form-control"  id="passwordinput" placeholder ="Ingresa tu contraseña" required>
-                  
+                  <input type="password" name="contraseña" class="form-control"  id="passwordinput" placeholder ="Ingresa tu contraseña" required>
+                  <span></span>
             </div>
             <div class="col-12">
                   <div class="form-radio"> <br>
@@ -77,6 +79,7 @@
             <div class="col-12 col-md-6" style="margin-bottom: 20px;"> <br>
                   <label for="avatar" class="form-genero-label">Cargá una imagen:</label><br>
                   <input type="file" id="avatar" name="avatar" required></input>
+                  <span></span>
                   
             </div>
             <div class="col-4"><br><br> 

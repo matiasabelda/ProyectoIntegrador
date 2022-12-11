@@ -42,6 +42,7 @@
 
         
     </style>
+           <link href="/css/validaciones.css" rel="stylesheet">
 
 </head>
 <body>
@@ -69,12 +70,13 @@
                     <ul></ul>
                 </div>
                 <!--Login-->
-                <form action="login" method="POST" class="needs-validation" id ="FormLogin"novalidate>
+                <form action="login" method="POST"  id ="FormLogin"novalidate>
                     <div class="mb-4">
                         <label for="email" class="form-label">Correo electrónico</label>
                         <input type="email" class="form-control" name="email" id ="email-login"required>
-                        <div class="valid-feedback">¡Ok, válido!</div>
-                        <div class="invalid-feedback">Completá tu email</div>
+                        <span></span>
+                        <br>
+                        
                         <% if(locals.msg) { %>
                             <div class="text-danger"><%= locals.msg %></div>
                         <% } %>
@@ -82,8 +84,8 @@
                     <div class="mb-4">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" name="password" id="contraseña-login"required>
-                        <div class="valid-feedback">¡Ok, válido!</div>
-                        <div class="invalid-feedback">Completá tu contraseña</div>
+                        <span></span>
+                        
                         <span><a href="#">Recuperar Contraseña</a></span>
                     </div>
                     <div class="mb-4 form-check">
@@ -106,27 +108,7 @@
             </div>
         </div>
     </div>
-    <script>
-        (function () {
-    'use strict'
-  
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-  
-          form.classList.add('was-validated')
-        }, false)
-      })
-  })()
-    </script>
-    <script src="/src/middlewares/validacionesLogin.js"></script>
+   
+    <script src="/js/validacionesLogin.js"></script>
 </body>
 </html>
