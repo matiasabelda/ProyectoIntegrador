@@ -50,16 +50,15 @@
                     </div>
                 </a>
 
-                <!--Delete User--> 
-                <!-- <form action="/users/<%= user.id %>?_method=DELETE" method="POST" class="boton-modificar-datos">
-                    <div class="nombre-foto">
-                        <iconify-icon  id="icono-datos" icon="material-symbols:delete-outline-rounded"></iconify-icon>
-                        <h3>Eliminar Usuario</h3>
-                    </div>
-                </form> -->
+                <!--Delete User-->
                 <div class="boton-editar">
-                    <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
-                      <button type="submit" id="boton-editar-eliminar" class="w3-button w3-black w3-round-small">Eliminar Usuario <i  class="fa-solid fa-chevron-right"></i></button>
+                    <form id="deleteUser" action="/users/<%= user.id %>?_method=DELETE" method="POST"></form>
+                        <a style="text-decoration: none;" href="javascript:{}" onclick="document.getElementById('deleteUser').submit();">    
+                            <div class="nombre-foto">
+                                <iconify-icon  id="icono-datos" icon="material-symbols:delete-outline-rounded"></iconify-icon>
+                                <h3>Eliminar Usuario</h3>
+                            </div>
+                        </a>
                     </form>
                   </div>
             </div>
