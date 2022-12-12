@@ -8,50 +8,75 @@ const db = require('../database/models');
 
 const userController = {
 
-    
     // Show Form Users Register
     registro: (req, res) => {
         return res.render('./users/register');
     },
 
-    //ha agrego crear usuario------------------------------------
     // Process Register - Create User
     processRegister: (req,res) => {
 
-        let userImage = "";
-        if(req.file) {
-			userImage = req.file.filename;
-		} else {
-			userImage = 'profile.jpg';
-		}
-        // 
-        db.users.create({
-            create_at: req.body.create_at,
-            update_at: req.body.update_at,
-            delete_at: req.body.delete_at,
-            name: req.body.name,
-            apell: req.body.apell,
-            nac: req.body.nac,
-            count: req.body.count,
-            email: req.body.email,
-            pass: bcrypt.hashSync(req.body.pass, 10),
-            terms: req.body.terms,
-            avatar: userImage,
-            admin: req.body.admin
-        });
+        var newUser = req.body;
 
-	    return res.redirect('login');
+        console.log(newUser.email); //-----------------------------
+        console.log(newUser); //-----------------------------------
+
+        db.users.findAll({
+            where: {
+              email: newUser.email
+            }
+          }).then((userBody) => {
+            
+            console.log(userBody); ////////////////////////////////////////
+
+            if(userBody == "") {
+
+            // Si el usuario no sube ningun avatar que se cargue una foto por default
+            let imgUser = '';
+
+            if(req.file) {
+
+                imgUser = req.file.filename;
+
+            } else {
+                
+                imgUser = 'profile.jpg';
+            }
+                db.users.create({
+                    create_at: req.body.create_at,
+                    update_at: req.body.update_at,
+                    delete_at: req.body.delete_at,
+                    name: req.body.name,
+                    apell: req.body.apell,
+                    nac: req.body.nac,
+                    count: req.body.count,
+                    email: req.body.email,
+                    pass: bcrypt.hashSync(req.body.pass, 10),
+                    gen: req.body.gen,
+                    terms: req.body.terms,
+                    avatar: imgUser,
+                    admin: req.body.admin
+                });
+
+                return res.redirect('login');
+
+            } else {
+
+                res.render('./users/register',
+                {msg: 'Este mail ya existe en nuestra base de datos'});
+            }
+
+          })
+
+        
     },
 
-    // Process Register - Create User
+    // Show Form login Users
     login: (req, res) => {
-		db.users.findAll()
-			.then(function(usuarios) {
-				return res.render('./users/login', {usuarios: usuarios});
-			}
-		);
+		return res.render('./users/login');
 	},
 
+    // Users Login Process
     loginProcess: (req, res) => {
         db.users.findAll({
             where: {
@@ -94,8 +119,6 @@ const userController = {
 	},
 
     profile: (req, res) => {
-        console.log('Estoy en el profile')
-        console.log(req.session.userLogged[0])
 		return res.render('./users/profile', {
 			user: req.session.userLogged[0]
             
@@ -115,6 +138,20 @@ const userController = {
 		res.clearCookie('userEmail');
 		req.session.destroy();
 		return res.redirect('/');
+	},
+
+    // Delete - Delete specific product by id
+	delete : (req, res) => {
+		db.users.destroy({
+			where:{
+				id: req.params.id
+			}
+		}).then(() => {
+            res.clearCookie('userEmail');
+		    req.session.destroy();
+			res.redirect("/");
+		});
+		
 	}
 
 }

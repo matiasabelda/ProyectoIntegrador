@@ -26,35 +26,44 @@
         <div id="box-lista-de-opciones-datos">
            
             <div id="primera-lista" >
-   <!--usuario nuevo -->           
-            <div class="nombre-foto-1" >
-               <img class="foto-perfil"src="/img/users/<%= user.avatar %>" style="margin-top:4px;">          
-               <h2 class="nombre-perfil"> <%= user.name %> <%= user.apell %> </h2>
-               
-               
-            </div>
-               
+                <!--usuario nuevo -->           
+                <div class="nombre-foto-1" >
+                <img class="foto-perfil"src="/img/users/<%= user.avatar %>" style="margin-top:4px;">          
+                <h2 class="nombre-perfil"> <%= user.name %> <%= user.apell %> </h2>
+                </div>
             </div>
          
             <div id="segunda-lista">
-    
-    <!--Mis datos --> 
-    <a href="/users/profileData " class="boton-modificar-datos">
-             <div class="nombre-foto">
-               <i id="usuario-icono-2" class="fa-regular fa-circle-user"></i>
-               <h3>Mis datos</h3>
-             </div>
-    </a>
-         
-    <!--Seguridad--> 
-    <a href="/users/profileEdit" class="boton-modificar-datos">
-             <div class="nombre-foto">
-                <iconify-icon  id="icono-datos"icon="fa6-regular:pen-to-square"></iconify-icon>
-                <h3>Modificar mis datos</h3>
-             </div>
-    </a>
-  
-        </div>
+                <!--Mis datos --> 
+                <a href="/users/profileData " class="boton-modificar-datos">
+                    <div class="nombre-foto">
+                        <i id="usuario-icono-2" class="fa-regular fa-circle-user"></i>
+                        <h3>Mis datos</h3>
+                    </div>
+                </a>
+                    
+                <!--Editar mis datos--> 
+                <a href="/users/profileEdit" class="boton-modificar-datos">
+                    <div class="nombre-foto">
+                        <iconify-icon  id="icono-datos"icon="fa6-regular:pen-to-square"></iconify-icon>
+                        <h3>Modificar mis datos</h3>
+                    </div>
+                </a>
+
+                <!--Delete User--> 
+                <!-- <form action="/users/<%= user.id %>?_method=DELETE" method="POST" class="boton-modificar-datos">
+                    <div class="nombre-foto">
+                        <iconify-icon  id="icono-datos" icon="material-symbols:delete-outline-rounded"></iconify-icon>
+                        <h3>Eliminar Usuario</h3>
+                    </div>
+                </form> -->
+                <div class="boton-editar">
+                    <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
+                      <button type="submit" id="boton-editar-eliminar" class="w3-button w3-black w3-round-small">Eliminar Usuario <i  class="fa-solid fa-chevron-right"></i></button>
+                    </form>
+                  </div>
+            </div>
+        </div>    
         <br>
         <br>
         <br>

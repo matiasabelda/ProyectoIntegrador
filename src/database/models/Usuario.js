@@ -12,6 +12,7 @@ function usersData(sequelize, Datatypes) {
       count: {type: Datatypes.STRING(50)},
       email: {type: Datatypes.STRING(100)},
       pass: {type: Datatypes.STRING(1500)},
+      gen: {type: Datatypes.STRING(50)},
       terms: {type: Datatypes.STRING(10)},
       avatar: {type: Datatypes.STRING},
       admin: {type: Datatypes.BOOLEAN} //preguntar que Datatypes es, si admin, bit o string o a que se refiere el admin
