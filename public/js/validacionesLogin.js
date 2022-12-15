@@ -11,7 +11,7 @@ const validacionContraseña = (mensaje, e)=> {
         archivo.nextElementSibling.classList.add("error")
         archivo.nextElementSibling.innerText = mensaje
 
-    }else{
+    }else {
         archivo.classList.remove("campo-invalido")
         archivo.nextElementSibling.classList.remove("error")
         archivo.nextElementSibling.innerText = ""
@@ -23,7 +23,7 @@ const validacionGeneral = (mensaje, e)=> {
     const archivo = e.target;
     const archivoValue = e.target.value;
 
-    if(archivoValue.trim().length == 0){
+    if(archivoValue.trim().length < 3){
         archivo.classList.add("campo-invalido")
         archivo.nextElementSibling.classList.add("error")
         archivo.nextElementSibling.innerText = mensaje

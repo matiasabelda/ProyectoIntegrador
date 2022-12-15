@@ -9,7 +9,7 @@ const validacionGeneral = (mensaje, e)=> {
     const archivo = e.target;
     const archivoValue = e.target.value;        
 
-    if(archivoValue.trim().length == 0){
+    if(archivoValue.trim().length < 3){
         archivo.classList.add("campo-invalido")
         archivo.nextElementSibling.classList.add("error")
         archivo.nextElementSibling.innerText = mensaje
