@@ -29,10 +29,10 @@ function usersData(sequelize, Datatypes) {
         foreignKey: "Usuario_id"
       });
 
-      /* usuarios.hasMany(modelos.products, {   
+      usuarios.hasMany(modelos.products, {   
           as: "productos",
           foreignKey: "Admin_id",
-        }); */
+      });
   };
   
   return usuarios;

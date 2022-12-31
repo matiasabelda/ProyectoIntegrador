@@ -95,7 +95,6 @@ let controladorProducts = {
 		
 	},
 
-	//ha agrego delete producto------------------------------------
 	// Delete - Delete specific product by id
 	delete : (req, res) => {
 		db.products.destroy({
@@ -109,8 +108,46 @@ let controladorProducts = {
 	},
 	
 	carrito: (req, res) => {
-        res.render('carrito');
-    }
+		let productToAdd = db.products.findByPk(req.params.id);
+		return res.render('carrito', {
+			user: req.session.userLogged[0],
+			productToAdd: productToAdd
+            
+		});
+	},
+
+	// Root - Show all products
+	traerProductos: (req, res) => {
+	
+		db.products.findAll({include: [{association: 'categorias'}]})
+		.then((productos) =>{
+			
+			let listaProductos=[];
+		
+			for (prod of productos){
+
+				let itemProduct = {
+					id: prod.id,
+					nombre:  prod.name,
+					precio: prod.price,
+					descuento: prod.discount,
+					categoria: prod.categorias.name,
+					descripcion: prod.description
+					//imagen: "http://localhost:3002/" + prod.attributes.src.nodeValue
+				}
+
+				listaProductos.push(itemProduct);
+				
+			}
+
+			res.json({
+			descripcion: "Lista de Productos",
+		    codigo: 200,
+			data: listaProductos})
+
+		});
+		
+	},
 };
 
 module.exports = controladorProducts;

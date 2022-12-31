@@ -22,20 +22,20 @@ function productsData(sequelize, Datatypes) {
 
   productos.associate = function (modelos){
 
-      /* productos.belongsTo(modelos.users, {
+      productos.belongsTo(modelos.users, {
             as: "usuarios",
             foreignKey: "Admin_id"
-      }); */
+      });
 
       productos.belongsTo(modelos.category, {
           as: "categorias",
           foreignKey: "Categoria_id"
-    });
+      });
 
       productos.hasMany(modelos.sales, {   
           as: "ventas",
           foreignKey: "Producto_id",
-        });
+      });
   };
   
   return productos;

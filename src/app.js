@@ -29,6 +29,10 @@ app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la 
 
 app.use('/', routes); // va al archivo de rutas
 
+app.all('*', function (req, res) {
+	res.sendFile(__dirname+'/home.html') /* <= Where my ng-view is located */
+  })
+
 app.use('*', function(req, res) {
     res.render('error-404');
 });

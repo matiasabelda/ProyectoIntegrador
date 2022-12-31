@@ -20,38 +20,45 @@
 
   <div id="producto-entero">
     <div class="fotos-producto">
-      <img class="fotos-izq" src="/img/products/<%= productoBuscado.image %>">
-      <img class="fotos-izq" src="/img/products/noImage.jpg">
-      <img class="fotos-izq" src="/img/products/noImage.jpg">
-      <img class="fotos-izq" src="/img/products/noImage.jpg">
+      <img id="imagen-producto" class="fotos-izq rounded-3" src="/img/products/<%= productoBuscado.image %>">
+      <img class="fotos-izq rounded-3" src="/img/products/noImage.jpg">
+      <img class="fotos-izq rounded-3" src="/img/products/noImage.jpg">
+      <img class="fotos-izq rounded-3" src="/img/products/noImage.jpg">
     </div>
     <div class="fotos-producto-grande">
-      <img class="fotos-derecha" src="/img/products/<%= productoBuscado.image %>">
+      <img id="imagen-producto" class="fotos-derecha rounded-3" src="/img/products/<%= productoBuscado.image %>">
     </div>
   
 
     <div class="nombre-producto">
       <div class="x-nombre">
-        <h2 class="nombre-productos"><%= productoBuscado.name %></h2>
+        <h2 id="nombre-producto" class="nombre-productos"><%= productoBuscado.name %></h2>
      </div>
     
-    <h3 class="Descripcion"><%= productoBuscado.description %></h3>
-    
+    <h3 id="descripcion-producto" class="Descripcion"><%= productoBuscado.description %></h3>
+
+    <div id="producto-id" style="display:none"><%= productoBuscado.id %></div>
+
     <div id="precio-descuento">
 
-    <h2 class="precio-producto-descuento">$<%= productoBuscado.price %></h2>
+    <h2 id="precio-producto" class="precio-producto-descuento">$<%= productoBuscado.price %></h2>
     <h2 class="barra"> / </h2>
-    <h2 class="descuento"><%= productoBuscado.discount %>%</h2>
+    <h2 id="descuento-producto" class="descuento"><%= productoBuscado.discount %>%</h2>
     
     </div>
-     <h2 class="precio-producto">$<%= ( ( (100-productoBuscado.discount) * productoBuscado.price ) / 100  ) %></h2>
-     <select id="cantidad-productos"class="form-select" aria-label="Default select example">
+     <h2 id="priceDiscountPrice" class="precio-producto">$<%= ( ( (100-productoBuscado.discount) * productoBuscado.price ) / 100  ) %></h2>
+     <!-- <select id="cantidad-productos"class="form-select" aria-label="Default select example">
       <option selected> Cantidad:</option>
       <option value="1">1 unidad</option>
       <option value="2">2 unidades</option>
       <option value="3">3 unidades</option>
-     </select>
-
+     </select> -->
+     <label for="">Cantidad</label>
+     <div class=" input-group">
+        <button id="minus" class="input-group-text">-</button>
+        <span id="numberPlace" type="text" class="col-sm-2 form-control" >1</span>
+        <button id="plus" class="input-group-text">+</button>
+     </div>
 
      <!-- boton comprar-->
      <div class="div-boton-comprar">
@@ -61,7 +68,7 @@
 
      <!-- boton carrito-->
      <div class="div-boton-carrito">
-      <a href="/"><button id="boton-carrito"class="w3-button w3-gray w3-round-small">Agregar al carrito </button></a>
+      <button id="boton-carrito" class="w3-button w3-gray w3-round-small">🛒 Agregar al carrito </button>
      </div>
 
 
@@ -132,5 +139,8 @@
   <!-- footer -->
 	<%- include ('./partials/footer') %>
 	<!-- /footer -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/js/carrito-detail.js" type="text/javascript"></script>
+  <script src="/js/btn-quantity.js" type="text/javascript"></script>
    </body>
 

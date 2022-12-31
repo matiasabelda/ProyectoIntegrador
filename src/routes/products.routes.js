@@ -39,4 +39,7 @@ router.delete('/:id', productController.delete);
 /*** PRODUCTS IN CART***/
 router.get('/carrito', productController.carrito);
 
+/***SHOW ALL PRODUCTS***/
+router.get('/traerProductos', productController.traerProductos);
+
 module.exports = router;

@@ -31,6 +31,6 @@
     "nodemon": "^2.0.20",
     "sequelize": "^6.25.5",
     "sequelize-cli": "^6.5.2",
-    "sweetalert2": "^11.6.15"
+    "sweetalert2": "^11.6.16"
   }
 }

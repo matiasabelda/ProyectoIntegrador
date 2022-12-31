@@ -4,8 +4,9 @@
     --dark-blue: #03264C;
     --light-blue: #1259c3;
     --gray: #666666;
-    --light-gray: #ebebeb;
+    --light-gray: #999999;
     --green: #39b54a;
+    --dark-green: #0a6616;
     --base-font-family: 'Roboto', sans-serif
   }
 
@@ -50,6 +51,7 @@
     background-color: #fff;
     cursor: default;
     transition: all 500ms ease;
+    border: #1259c3 solid 1px;
 }
 .card-producto img {
     width: 198px;
@@ -68,6 +70,7 @@
 .card-producto:hover .detalle-producto i {
     transform: rotate(-360deg);
 }
+
 .card-producto:hover .nombre-producto {
     display: block;
 }
@@ -96,19 +99,28 @@
 }
 
 .detalle-producto i {
-    color: var(--green);
+    color: var(--light-gray);
     font-size: 18px;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background-color: #ffffff;
-    border: solid 1px;
+    border: solid 1px var(--light-gray);
     position: absolute;
-    padding: 6px;
+    padding: 5px;
     right: 10px;
     top: -18px;
     transition: 200ms;
 }
+
+.detalle-producto i:hover  {
+    color: var(--light-blue);
+    border: solid 1px var(--light-blue);
+    
+}
+/* .detalle-producto a {
+    
+} */
 
 .nombre-producto {
     display: none;
@@ -118,6 +130,11 @@
     margin-top: 10px;
     /* transition: 2000ms; */
 }
+
+.swal2-popup {
+    font-size: 0.7rem !important;
+    font-family: Georgia, serif;
+  }
 
 /* ------------------- Inicio Medias Queries --------------------- */
 
