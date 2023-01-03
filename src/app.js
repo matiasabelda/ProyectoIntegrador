@@ -4,6 +4,7 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 const routes = require('./routes/index.routes');//se llama al archivo de rutas correspondientes
 const session = require ('express-session');
 const cookies = require('cookie-parser');
+const cors = require('cors');
 
 const app = express();
 
@@ -18,6 +19,8 @@ app.use(session({
 app.use(cookies());
 
 app.use(userloggedMiddleware);
+
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: false }));

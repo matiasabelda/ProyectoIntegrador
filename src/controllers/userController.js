@@ -156,12 +156,12 @@ const userController = {
 
     // API Route - Show all Users
 	traerUsuarios: (req, res) => {
-	
+
 		db.users.findAll()
 		.then((usuarios) =>{
 			
 			let listaUsuarios=[];
-		
+
 			for (usuario of usuarios){
 
 				let itemUser={
@@ -184,14 +184,49 @@ const userController = {
 				}
 
 				listaUsuarios.push(itemUser);
-				
+                
 			}
-
+            
+            let cantidadUsuarios = listaUsuarios.length;
 			res.json({
 			descripcion: "Lista de Usuarios",
+            cantidadUsuarios: cantidadUsuarios,
 		    codigo: 200,
 			data: listaUsuarios})
 			
+		});
+		
+	},
+
+    traerUsuarioPorId: (req, res) => {
+
+		db.users.findByPk(req.params.id)
+		.then((usuario) =>{
+
+			let itemUser={
+
+                datosPersonales: {
+                    nombre:  usuario.name,
+                    apellido: usuario.apell,
+                    genero: usuario.gen,
+                    fechaNac: usuario.nac,
+                    pais: usuario.count
+                }, 
+
+                datosUsuario: {
+                    id: usuario.id,
+                    email: usuario.email,
+                    //avatar: "http://localhost:3002/" + users.attributes.src.nodeValue, //chequear si entrega la url de la imagen
+                    usuarioDesde: usuario.create_at,
+
+                }
+            }
+
+			res.json({
+			descripcion: "Usuario encontrado por id " + req.params.id,
+		    codigo: 200,
+			data: itemUser})
+
 		});
 		
 	}

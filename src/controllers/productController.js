@@ -140,14 +140,134 @@ let controladorProducts = {
 				
 			}
 
+			let cantidadProductos = listaProductos.length;
 			res.json({
 			descripcion: "Lista de Productos",
+			cantidadProductos: cantidadProductos,
 		    codigo: 200,
 			data: listaProductos})
 
 		});
 		
 	},
+
+	// Root - Show products by ID
+	traerProductoPorId: (req, res) => {
+
+		db.products.findByPk(req.params.id, {include: [{association: 'categorias'}]})
+		.then((prod) =>{
+
+			let itemProduct = {
+				id: prod.id,
+				nombre:  prod.name,
+				precio: prod.price,
+				descuento: prod.discount,
+				categoria: prod.categorias.name,
+				descripcion: prod.description
+				//imagen: "http://localhost:3002/" + prod.attributes.src.nodeValue
+			}
+
+			res.json({
+			descripcion: "Producto encontrado por id " + req.params.id,
+		    codigo: 200,
+			data: itemProduct})
+
+		})
+		// .catch(error => res.json({
+		// 	error: "El Producto con el id " + req.params.id + " no se encuentra en la base de datos",
+		//     codigo: 200,
+		// 	data: itemProduct}));
+
+		
+	},
+
+	// Root - Show products in each Category
+	traerProductosPorCategoria: (req, res) => {
+
+		db.products.findAll({include: [{association: 'categorias'}]},
+		{
+			model: category
+		})
+		.then((categorias) => {
+
+			res.json({
+				descripcion: "Cantidad de Productos por Categoria",
+				cantidadCategorias: cantidadCategorias,
+					codigo: 200,
+				data: listaCategorias})
+		});
+
+
+		// db.category.findAll({include: [{association: 'productos'}]})
+		// .then((categorias) =>{
+			
+		// 	let listaCategorias=[];
+		
+		// 	for (cat of categorias){
+
+		// 		let listaProductos = [];
+
+		// 		for(prod of cat.productos){
+		// 			var prodCat = prod.categorias.length
+					
+		// 		}
+
+		// 		listaProductos.push(prodCat)
+
+		// 		let itemCategory = {
+
+		// 			categoria: cat.name,
+		// 			cantProductos: listaProductos
+					
+		// 		}
+
+		// 		listaCategorias.push(itemCategory);
+				
+		// 	}
+
+		// 	let cantidadCategorias = listaCategorias.length;
+		// 	res.json({
+		// 	descripcion: "Lista de Productos",
+		// 	cantidadCategorias: cantidadCategorias,
+		//     codigo: 200,
+		// 	data: listaCategorias})
+
+		// });
+
+		
+	},
+
+	// Root - Show all categories
+	traerCategorias: (req, res) => {
+	
+		db.category.findAll()
+		.then((categorias) =>{
+			
+			let listaCategorias=[];
+		
+			for (cat of categorias){
+
+				let itemCategory = {
+
+					id: cat.id,
+					nombre: cat.name
+
+				}
+
+				listaCategorias.push(itemCategory);
+				
+			}
+
+			let cantidadCategorias = listaCategorias.length;
+			res.json({
+			descripcion: "Lista de Categorias",
+			cantidadProductos: cantidadCategorias,
+		    codigo: 200,
+			data: listaCategorias})
+
+		});
+		
+	}
 };
 
 module.exports = controladorProducts;

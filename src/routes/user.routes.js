@@ -64,8 +64,11 @@ router.get('/logout', userController.logout);
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/:id', userController.delete);
 
-// API Consulta de todos los Usuarios
+/***SHOW ALL USERS***/
 router.get('/traerUsuarios', userController.traerUsuarios);
+
+/***SHOW ALL USERS by ID***/
+router.get('/traerUsuarioPorId/:id', userController.traerUsuarioPorId);
 
 router.get('/check', function (req, res){
     if(req.session.usuarioLogueado == undefined) {

@@ -51,7 +51,7 @@
     background-color: #fff;
     cursor: default;
     transition: all 500ms ease;
-    border: #1259c3 solid 1px;
+    border: var(--light-gray) solid 1px;
 }
 .card-producto img {
     width: 198px;

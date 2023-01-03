@@ -39,7 +39,15 @@ router.delete('/:id', productController.delete);
 /*** PRODUCTS IN CART***/
 router.get('/carrito', productController.carrito);
 
+/***API PRODUCTS ENDPOINTS***/
+
 /***SHOW ALL PRODUCTS***/
 router.get('/traerProductos', productController.traerProductos);
+
+/***SHOW ALL PRODUCTS by ID***/
+router.get('/traerProductoPorId/:id', productController.traerProductoPorId);
+
+/***SHOW ALL CATEGORIES***/
+router.get('/traerProductosPorCategoria', productController.traerProductosPorCategoria); 
 
 module.exports = router;
