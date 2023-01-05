@@ -8,9 +8,6 @@ body{
 }
 
 
-
-
-
 .caja-boton{
     display: flex;
     flex-direction: row;
@@ -218,7 +215,7 @@ body{
     font-size: 36px;
 }
 .mc{
-    margin-top: -1px;
+    margin-top: 2px;
 }
 .american-express{
     font-size: 36px;
@@ -226,12 +223,13 @@ body{
 
 .mercado-pago{
     font-size: 64px;
+   
 }
 .mp{
-    margin-top: -17.5px;
+    margin-top: -12px;
 }
 .american{
-    margin-top: -1px;
+    margin-top: 2px;
 }
 
 #producto-resumen{
@@ -385,6 +383,9 @@ body{
     #div-like{
        display: none;
     }
+    #div-like2{
+        display: none;
+     }
     .codigo-desc{
         width: 92vw;
       
@@ -499,6 +500,9 @@ body{
     #div-like{
        display: none;
     }
+    #div-like2{
+        display: none;
+     }
     .codigo-desc{
         width: 82vw;
       
@@ -830,15 +834,7 @@ body{
         
     }
     
-    .visa{
-        font-size: 27px;
-    }
-    .vs{
-        margin-top: 4.5px;
-        margin-left: auto;
-        margin-right: 3px;
-    
-    }
+ 
     .tarjetas-div{
         border: 1px solid rgba( 0, 0, 0, 0.5);
         width: 105px;
@@ -847,25 +843,7 @@ body{
       
     
     }
-    .mastercard{
-        font-size: 36px;
-    }
-    .mc{
-        margin-top: -1px;
-    }
-    .american-express{
-        font-size: 36px;
-    }
-    
-    .mercado-pago{
-        font-size: 64px;
-    }
-    .mp{
-        margin-top: -17.5px;
-    }
-    .american{
-        margin-top: -1px;
-    }
+ 
     
     #producto-resumen{
         display: flex;
