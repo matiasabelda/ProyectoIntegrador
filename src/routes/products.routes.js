@@ -42,4 +42,6 @@ router.get('/carrito', productController.carrito);
 /***SHOW ALL PRODUCTS***/
 router.get('/traerProductos', productController.traerProductos);
 
+router.get('/promociones', productController.promociones);
+
 module.exports = router;
