@@ -4,8 +4,8 @@ function diconsData(sequelize, Datatypes) {
   
   cols = {
     id: {type: Datatypes.INTEGER, primaryKey: true, autoIncrement: true},
-    created_at: {type: Datatypes.DATE},
-    updated_at: {type: Datatypes.DATE},
+    createdAt: {type: Datatypes.DATE},
+    updatedAt: {type: Datatypes.DATE},
     monto_total: {type: Datatypes.FLOAT},
     Detalle_Venta_id: {type: Datatypes.INTEGER}
   };

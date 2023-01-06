@@ -13,39 +13,46 @@ window.onload=function(){
         minusBtn.onclick = function(){
 
             
-            if (number>min){
-               number = number-1; /// Minus 1 of the number
-               numberPlace.innerText = number ; /// Display the value in place of the number
-               
-            }
-            if(number == min) {        
-                numberPlace.style.color= "red";
-                setTimeout(function(){numberPlace.style.color= "black"},500)
-            }
-            else {
-              numberPlace.style.color="black";            
-               }
-                    
+
+                if (number>min){
+                number = number-1; /// Minus 1 of the number
+                numberPlace.innerText = number ; /// Display the value in place of the number
+                
+                }
+                if(number == min) {        
+                    numberPlace.style.color= "red";
+                    setTimeout(function(){numberPlace.style.color= "black"},500)
+                }
+                else {
+                numberPlace.style.color="black";            
+                }
+                 
+            
         }
+    
+    
+
     
 
         plusBtn.onclick = function(){
-            if(number<max){
-            number = number+1;
-            numberPlace.innerText = number ; /// Display the value in place of the number
-            }     
-            if(number == max){
-                numberPlace.style.color= "red";
-                setTimeout(function(){numberPlace.style.color= "black"},500)
-            }
+
             
-            else {
-                numberPlace.style.color= "black";
+
+                if(number<max){
+                number = number+1;
+                numberPlace.innerText = number ; /// Display the value in place of the number
+                }     
+                if(number == max){
+                    numberPlace.style.color= "red";
+                    setTimeout(function(){numberPlace.style.color= "black"},500)
+                }
                 
-            }
-        
+                else {
+                    numberPlace.style.color= "black";
+                    
+                }
             
         }
-  
+    
     
 }

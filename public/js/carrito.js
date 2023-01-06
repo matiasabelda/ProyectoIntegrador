@@ -1,4 +1,4 @@
-window.addEventListener('load', function(){
+//window.addEventListener('load', function(){
 
     if(localStorage.getItem('carrito') !== null){
 
@@ -28,8 +28,8 @@ window.addEventListener('load', function(){
         } else if(carrito.length >= 1){
             counter2.innerHTML = `${carrito.length}`;
         }
-        renderCarrito();
-        function renderCarrito() {
+        //renderCarrito();
+        //function renderCarrito() {
 
             carrito.forEach(productoGuardado => {
 
@@ -70,9 +70,9 @@ window.addEventListener('load', function(){
                                             ${productoGuardado.price}
                                         </h5>
                                     </div>
-                                    <div id="delete-icon" onclick="deleteItem(${productoGuardado.id})" style="color: #cecece;" onmouseover="this.style.color='#ff3b3b'"; onmouseout="this.style.color='#cecece'";>
+                                    <a href="/products/carrito"><div id="delete-icon" onclick="deleteItem(${productoGuardado.id})" style="color: #cecece;" onmouseover="this.style.color='#ff3b3b'"; onmouseout="this.style.color='#cecece'";>
                                     <i class="fas fa-trash-alt" ></i>
-                                    </div>
+                                    </div></a>
                                     
                                 </div>
                             </div>
@@ -80,18 +80,19 @@ window.addEventListener('load', function(){
                 `;
 
                 itemContainer.appendChild(itemCarrito);
-                //deleteItem();
+                
                 
                 
             });
             
-        }
+        //}
 
         function deleteItem(prodId) {
 
             let item = carrito.map((productoGuardado) => {
                 productoGuardado.id === prodId
             });
+            
             let index = carrito.indexOf(item);
             carrito.splice(index, 1);
         }
@@ -99,10 +100,10 @@ window.addEventListener('load', function(){
         vaciarCarrito.addEventListener('click', function(){
 
             localStorage.clear();
-            localStorage.setItem('carrito');
+            //localStorage.setItem('carrito');
             //renderCarrito();
         })
     
         
     }
-});
+//});

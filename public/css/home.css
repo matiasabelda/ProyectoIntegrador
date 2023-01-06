@@ -65,6 +65,7 @@
 }
 .card-producto:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    /* box-shadow: 0px 0px 2px 1px black; */
 }
 
 .card-producto:hover .detalle-producto i {

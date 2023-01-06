@@ -46,8 +46,7 @@ let controladorProducts = {
 		.then(function() {
 			
 			res.redirect("/");
-		});
-		
+		});	
 	},
 
 	// Detail - Detail Form of each product
@@ -83,7 +82,8 @@ let controladorProducts = {
 			discount: req.body.discount,
 			Categoria_id: req.body.category,
 			description: req.body.description,
-			image: req.body.image //image: req.file ? req.file.filename : "logo-PF-tipografico.png",
+			imagen: "http://localhost:3002/img/products/" + prod.image
+			//image: req.file ? req.file.filename : "logo-PF-tipografico.png",
 		},
 		{
 			where:{
@@ -92,7 +92,6 @@ let controladorProducts = {
 		}).then(() => {
 			res.redirect("/products/detail/" + req.params.id)
 		});
-		
 	},
 
 	// Delete - Delete specific product by id
@@ -103,16 +102,14 @@ let controladorProducts = {
 			}
 		}).then(() => {
 			res.redirect("/products");
-		});
-		
+		});	
 	},
 	
 	carrito: (req, res) => {
 		let productToAdd = db.products.findByPk(req.params.id);
 		return res.render('carrito', {
 			user: req.session.userLogged[0],
-			productToAdd: productToAdd
-            
+			productToAdd: productToAdd  
 		});
 	},
 
@@ -132,23 +129,24 @@ let controladorProducts = {
 					precio: prod.price,
 					descuento: prod.discount,
 					categoria: prod.categorias.name,
-					descripcion: prod.description
-					//imagen: "http://localhost:3002/" + prod.attributes.src.nodeValue
+					descripcion: prod.description,
+					imagen: "http://localhost:3002/img/products/" + prod.image
 				}
 
 				listaProductos.push(itemProduct);
-				
 			}
 
-			let cantidadProductos = listaProductos.length;
-			res.json({
-			descripcion: "Lista de Productos",
-			cantidadProductos: cantidadProductos,
-		    codigo: 200,
-			data: listaProductos})
+			db.products.count({attributes: ['Categoria_id', 'categorias.name'], group: 'Categoria_id', include: 'categorias' })
+			.then((grupo) => {
+				console.log(grupo)
 
-		});
-		
+				res.json({
+					descripcion: "Listado de Productos",
+					cantidadProductos: listaProductos.length,
+					data: listaProductos,
+					dataCategory: grupo})
+			})
+		})
 	},
 
 	// Root - Show products by ID
@@ -163,78 +161,52 @@ let controladorProducts = {
 				precio: prod.price,
 				descuento: prod.discount,
 				categoria: prod.categorias.name,
-				descripcion: prod.description
-				//imagen: "http://localhost:3002/" + prod.attributes.src.nodeValue
+				descripcion: prod.description,
+				imagen: "http://localhost:3002/img/products/" + prod.image
 			}
 
 			res.json({
 			descripcion: "Producto encontrado por id " + req.params.id,
 		    codigo: 200,
 			data: itemProduct})
-
 		})
-		// .catch(error => res.json({
-		// 	error: "El Producto con el id " + req.params.id + " no se encuentra en la base de datos",
-		//     codigo: 200,
-		// 	data: itemProduct}));
-
-		
 	},
 
 	// Root - Show products in each Category
 	traerProductosPorCategoria: (req, res) => {
 
-		db.products.findAll({include: [{association: 'categorias'}]},
-		{
-			model: category
-		})
-		.then((categorias) => {
+		db.products.findAll({include: [{association: 'categorias'}]})
+		.then((prod) =>{
 
-			res.json({
-				descripcion: "Cantidad de Productos por Categoria",
-				cantidadCategorias: cantidadCategorias,
-					codigo: 200,
-				data: listaCategorias})
-		});
+			let itemProduct = {
+				id: prod.id,
+				nombre:  prod.name,
+				precio: prod.price,
+				descuento: prod.discount,
+				//categoria: prod.categorias.name,
+				descripcion: prod.description,
+				imagen: "http://localhost:3002/img/products/" + prod.image //http://localhost:3002/img/products/1669982399705.jpg
+			}
 
+			db.products.count({attributes: ['Categoria_id', 'categorias.name'], group: 'Categoria_id', include: 'categorias' })
+			.then((grupo) => {
+				console.log(grupo)
 
-		// db.category.findAll({include: [{association: 'productos'}]})
-		// .then((categorias) =>{
-			
-		// 	let listaCategorias=[];
-		
-		// 	for (cat of categorias){
-
-		// 		let listaProductos = [];
-
-		// 		for(prod of cat.productos){
-		// 			var prodCat = prod.categorias.length
-					
-		// 		}
-
-		// 		listaProductos.push(prodCat)
-
-		// 		let itemCategory = {
-
-		// 			categoria: cat.name,
-		// 			cantProductos: listaProductos
-					
-		// 		}
-
-		// 		listaCategorias.push(itemCategory);
 				
-		// 	}
+				db.category.count().then((lista) => {
 
-		// 	let cantidadCategorias = listaCategorias.length;
-		// 	res.json({
-		// 	descripcion: "Lista de Productos",
-		// 	cantidadCategorias: cantidadCategorias,
-		//     codigo: 200,
-		// 	data: listaCategorias})
+				let listaCategorias = lista;
+				console.log(listaCategorias)
 
-		// });
-
-		
+					res.json({
+						descripción: "Cantidad de Productos por Categoria",
+						cantidadCategorias: listaCategorias,
+						codigo: 200,
+						data: grupo
+					})
+				})
+			})
+		})
 	},
 
 	// Root - Show all categories
@@ -255,18 +227,89 @@ let controladorProducts = {
 				}
 
 				listaCategorias.push(itemCategory);
-				
 			}
 
 			let cantidadCategorias = listaCategorias.length;
 			res.json({
 			descripcion: "Lista de Categorias",
-			cantidadProductos: cantidadCategorias,
+			cantidadCategorias: cantidadCategorias,
 		    codigo: 200,
 			data: listaCategorias})
-
 		});
+	},
+
+	// Root - Show products Quantity
+	productsQuantity: (req, res) => {
+
+		db.products.findAll()
+		.then((productos) => {
+
+			let listaProductos=[];
 		
+			for (prod of productos){
+
+				let itemProducts = {
+
+					id: prod.id,
+					nombre: prod.name
+
+				}
+
+				listaProductos.push(itemProducts);
+				
+			}
+			let cantidadProductos = listaProductos.length;
+			res.json(cantidadProductos
+				)
+		});
+	},
+
+	allCategories: (req, res) => {
+	
+		db.category.findAll()
+		.then((categorias) =>{
+			
+			let listaCategorias=[];
+		
+			for (cat of categorias){
+
+				let itemCategory = cat.name
+
+				listaCategorias.push(itemCategory);
+				
+			}
+
+			res.json(listaCategorias)
+		});	
+	},
+
+	// Root - Show last product created
+	lastProductCreated: (req, res) => {
+
+		db.products.findAll({include: [{association: 'categorias'}]})
+		.then((productos) => {
+
+			let listaProductos=[];
+		
+			for (prod of productos){
+
+				let itemProduct = {
+					id: prod.id,
+					nombre:  prod.name,
+					precio: prod.price,
+					descuento: prod.discount,
+					categoria: prod.categorias.name,
+					descripcion: prod.description,
+					imagen: "http://localhost:3002/img/products/" + prod.image 
+				}
+
+				listaProductos.push(itemProduct);
+			}
+
+			let lastProductCreated = listaProductos.slice(-1);
+			
+			res.json({lastProductCreated})
+		});
 	}
 };
 

@@ -47,7 +47,19 @@ router.get('/traerProductos', productController.traerProductos);
 /***SHOW ALL PRODUCTS by ID***/
 router.get('/traerProductoPorId/:id', productController.traerProductoPorId);
 
+/***SHOW ALL PRODUCTS by Category***/
+router.get('/traerProductosPorCategoria', productController.traerProductosPorCategoria);
+
 /***SHOW ALL CATEGORIES***/
-router.get('/traerProductosPorCategoria', productController.traerProductosPorCategoria); 
+router.get('/traerCategorias', productController.traerCategorias);
+
+/***SHOW ALL CATEGORIES***/
+router.get('/allCategories', productController.allCategories); 
+
+/***SHOW PRODUCTS QUANTITY***/
+router.get('/productsQuantity', productController.productsQuantity);
+
+/***SHOW LAST PRODUCT CREATED***/
+router.get('/lastProductCreated', productController.lastProductCreated);
 
 module.exports = router;

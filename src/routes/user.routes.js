@@ -70,6 +70,14 @@ router.get('/traerUsuarios', userController.traerUsuarios);
 /***SHOW ALL USERS by ID***/
 router.get('/traerUsuarioPorId/:id', userController.traerUsuarioPorId);
 
+/***SHOW USERS QUANTITY***/
+router.get('/usersQuantity', userController.usersQuantity);
+
+/***SHOW USERS QUANTITY***/
+router.get('/usersByCountry', userController.usersByCountry);
+
+
+
 router.get('/check', function (req, res){
     if(req.session.usuarioLogueado == undefined) {
         res.send('No estas Logueado');

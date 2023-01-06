@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
+var Sequelize = require("sequelize");
 
 const db = require('../database/models'); 
 
@@ -165,22 +166,16 @@ const userController = {
 			for (usuario of usuarios){
 
 				let itemUser={
-
-                    datosPersonales: {
-                        nombre:  usuario.name,
-                        apellido: usuario.apell,
-                        genero: usuario.gen,
-                        fechaNac: usuario.nac,
-                        pais: usuario.count
-                    }, 
-
-                    datosUsuario: {
-                        id: usuario.id,
-                        email: usuario.email,
-                        //avatar: "http://localhost:3002/" + users.attributes.src.nodeValue, //chequear si entrega la url de la imagen
-                        usuarioDesde: usuario.create_at,
-
-                    }
+                    
+                    id: usuario.id,
+                    nombre:  usuario.name,
+                    apellido: usuario.apell,
+                    genero: usuario.gen,
+                    fechaNac: usuario.nac,
+                    pais: usuario.count,
+                    email: usuario.email,
+                    avatar: "http://localhost:3002/img/users/" + usuario.avatar,
+                    usuarioDesde: usuario.create_at
 				}
 
 				listaUsuarios.push(itemUser);
@@ -229,7 +224,76 @@ const userController = {
 
 		});
 		
-	}
+	},
+
+    // Root - Show users Quantity
+	usersQuantity: (req, res) => {
+
+		db.users.findAll()
+		.then((usuarios) => {
+
+			let listaUsuarios=[];
+		
+			for (user of usuarios){
+
+				let itemUser = {
+
+					id: user.id,
+					nombre: user.name
+
+				}
+
+				listaUsuarios.push(itemUser);
+				
+			}
+			let cantidadUsuarios = listaUsuarios.length;
+			res.json(cantidadUsuarios
+				)
+		});
+
+	},
+    // ({attributes: ['Categoria_id', 'categorias.name'], group: 'Categoria_id', include: 'categorias' })
+    
+     usersByCountry: (req, res) => {
+
+       //({group: ['users.count']})
+        // const myAttrs = Object.keys(MyModel.rawAttributes)
+        // MyModel.getAttributes()
+         // usuarios.conutry?User.findAll({
+  
+            db.users.count({attributes: ["users.count"],
+            group: "count",
+            raw: true,
+            order: ["count", "ASC"],
+            })
+	 	  	.then((grupo) => {
+	 	  		console.log(grupo)
+                   
+
+	 	  		res.json({
+	 	  			descripcion: "Cantidad de Usuarios por Paises",
+	 	  			codigo: 200,
+	 	  			data: grupo})
+
+            })
+
+                //  db.users.count({
+                //     attributes: {
+                //         include: [[Sequelize.fn("COUNT", Sequelize.col("users.country")), "users.count"]] 
+                        
+                //     },
+                //     group: ['users.count']
+                // })
+                // .then((grupo) => {
+                //     console.log(grupo)
+   
+                //     res.json({
+                //         descripcion: "Cantidad de Usuarios por Paises",
+                //         codigo: 200,
+                //         data: grupo})
+   
+                //     })
+    }
 
 }
 
