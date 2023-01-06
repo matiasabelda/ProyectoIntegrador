@@ -311,6 +311,32 @@ let controladorProducts = {
 			res.json({lastProductCreated})
 		});
 	}
+	promociones : (req,res) => {
+		db.products.findAll() //asociar los productos con cada usuario?
+		.then((productos) => {
+
+			let listaProductos=[];
+
+			for (let producto of productos){
+
+				let objaux={
+					id: producto.id,
+					name: producto.name,
+					price: producto.price,
+					discount: producto.discount,
+					description: producto.description,
+					image: producto.image,
+				}
+
+				listaProductos.push(objaux);
+				
+			}
+
+			res.render('promociones',{Allproductos: listaProductos}); 
+
+		});
+
+	}
 };
 
 module.exports = controladorProducts;
