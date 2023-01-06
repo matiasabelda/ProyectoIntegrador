@@ -27,17 +27,17 @@
  
     <ul class="lista-izq">
       <% if (locals.isLogged) { %>
-      <li><a href="/products/create"> Vender  </a></li>
+      <li class="boton-vender"><a href="/products/create"> Vender  </a></li>
       <% } else { %>
         <li><a href="/products/create" style="display: none;"> Vender  </a></li>
         <% } %>
-      <li><a href="#">Historial</a></li>
+      <li><a href="/documentacionApis">Documentacion Apis</a></li>
       <li><a href="#">Promociones</a></li>
       <li class="ayuda"><a href="#">Ayuda</a></li>
      </ul>
     
     
-    <ul style="z-index: 1;">
+    <ul class="lista-derecha"style="z-index: 1;">
       <% if (locals.isLogged) { %>
        
         <li><a href="/users/profile"><img class="imagen-perfil"src="/img/users/<%= locals.userLogged[0].avatar %>" style="border-radius: 100%; width: 30px; height: 30px; align-self: center;"> Mi Perfil </a> </li>

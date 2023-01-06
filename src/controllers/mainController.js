@@ -35,7 +35,13 @@ let controladorMain = {
     },
 	search: (req, res) => {
 		res.send('Proximamente...');
+	},
+
+	documentacionApis: (req, res) => {
+		res.render('documentacionApis')
+
 	}
+
 };
 
 module.exports = controladorMain;
