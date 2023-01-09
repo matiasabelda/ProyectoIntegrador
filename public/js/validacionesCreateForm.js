@@ -2,6 +2,9 @@ const nombre = document.querySelector ("#name")
 const precio = document.querySelector ("#price")
 const descripcion = document.querySelector ("#description")
 const img = document.getElementById("product-img")
+const botonCrear = document.getElementsByClassName ("buy-now-button")
+
+
 
 const validacionGeneral = (mensaje, e)=> {
     const archivo = e.target;
@@ -34,6 +37,10 @@ img.addEventListener("change", (e) => {
         archivo.nextElementSibling.classList.remove("error")
         archivo.nextElementSibling.innerText = ""
     }
+    
+botonCrear.addEventListener("click", (e)=>{
+    console.log("Producto creado")
+})
 
 })
 
