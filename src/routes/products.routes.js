@@ -62,6 +62,7 @@ router.get('/productsQuantity', productController.productsQuantity);
 /***SHOW LAST PRODUCT CREATED***/
 router.get('/lastProductCreated', productController.lastProductCreated);
 
+/***SHOW ONLY PRODUCTS WITH DISCOUNT***/
 router.get('/promociones', productController.promociones);
 
 module.exports = router;

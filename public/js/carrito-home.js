@@ -1,6 +1,8 @@
+//import { sumaTotalCarrito, imprimirItemCarrito, counter } from './carrito';
+
 window.addEventListener('load', function(){
 
-    
+    // Este JS solo captura los productos del home y los guarda en el localStorage
     const iconCart = document.querySelectorAll("#icon-cart");
     iconCart.onmouseover = "return overlib('Agregar al Carrito');"
 
@@ -13,16 +15,17 @@ window.addEventListener('load', function(){
 
         iconCart.forEach(icon => {
 
-            icon.addEventListener('click', addToCarritoItem)
+            icon.addEventListener('click', addToLocalStorage)
             
         });
 
-        function addToCarritoItem(e) {
+
+        function addToLocalStorage(e) {
 
             let button = e.target
-            let item = button.closest('.card-producto');
+            let item = button.closest('.card-producto'); //captura el contenedor padre del icono del carrito
             
-            let productoGuardado = {
+            let newItemInLocalStorage = {
                                 id: item.querySelector('#producto-id').textContent,
                                 name: item.querySelector('#nombre-producto').textContent,
                                 price: item.querySelector('#precio-producto').textContent,
@@ -31,32 +34,42 @@ window.addEventListener('load', function(){
                                 quantity: 1
             }
             
-            // carrito.map((prop) => {
-
-            //     if(prop.id === productoGuardado.id) {
-            //         prop.quantity++;
-
-            //         return null;
-            //     }
-            // });
-
+            //agrego cada item al carrito
+            addItemCarrito(newItemInLocalStorage)
             
-            carrito.push(productoGuardado);
-            localStorage.setItem('carrito', JSON.stringify(carrito));
-    
-            //alert('El Producto "' + productoGuardado.name +'" se agregó al carrito exitosamente!');
 
+            // Cada vez que agrego un nuevo producto le envío un mensaje exitoso
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
-                title: 'El Producto "' + productoGuardado.name +'" se agregó al carrito!',
+                title: 'El Producto "' + newItemInLocalStorage.name +'" se agregó al carrito!',
                 showConfirmButton: false,
                 timer: 1500,
                 width: '400px',
                 height: '200px',
               })
+            console.log('LocalStorage');
+            console.log(carrito);
         }
 
+
+        function addItemCarrito(newItemInLocalStorage) {
+
+            // Si el producto ya está agregado al carrito que solo sume la cantidad
+            for(let i=0; i <carrito.length; i++) {
+
+                if(carrito[i].id === newItemInLocalStorage.id) {
+                    carrito[i].quantity++;
+                    console.log('for'+carrito);
+                    console.log(carrito);
+                    return null;
+                }
+            }
+            
+            carrito.push(newItemInLocalStorage);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            //imprimirItemCarrito()
+        }
         
 })
 

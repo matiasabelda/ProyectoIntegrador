@@ -211,9 +211,7 @@ const userController = {
                 datosUsuario: {
                     id: usuario.id,
                     email: usuario.email,
-                    //avatar: "http://localhost:3002/" + users.attributes.src.nodeValue, //chequear si entrega la url de la imagen
-                    usuarioDesde: usuario.create_at,
-
+                    avatar: "http://localhost:3002/img/users/" + usuario.avatar
                 }
             }
 
@@ -222,7 +220,18 @@ const userController = {
 		    codigo: 200,
 			data: itemUser})
 
-		});
+		})
+        .catch(error => {
+			
+		 	error = "Invalid string value: 'asdf'. Allowed values: [mostpopular]"
+
+		 	res.json({
+		 		error: "El Usuario buscado por el id " + req.params.id + " no se encuentra en nuestra base de datos",
+		 		codigo: 400,
+		 		Error: error
+		 	})
+		  
+		})
 		
 	},
 

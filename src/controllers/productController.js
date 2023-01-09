@@ -170,6 +170,18 @@ let controladorProducts = {
 		    codigo: 200,
 			data: itemProduct})
 		})
+		.catch(error => {
+			
+			error = "Invalid string value: 'asdf'. Allowed values: [mostpopular]"
+
+
+			res.json({
+				error: "El Producto buscado por el id " + req.params.id + " no se encuentra en nuestra base de datos",
+				codigo: 400,
+				Error: error
+			})
+		  
+		})
 	},
 
 	// Root - Show products in each Category
@@ -310,8 +322,9 @@ let controladorProducts = {
 			
 			res.json({lastProductCreated})
 		});
-	}
-	promociones : (req,res) => {
+	},
+	
+	promociones: (req,res) => {
 		db.products.findAll() //asociar los productos con cada usuario?
 		.then((productos) => {
 
