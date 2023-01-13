@@ -73,6 +73,7 @@
 
 
      <!-- boton editar y eliminar-->
+     <% if (locals.isLogged) { %>
   <div class="editar-eliminar">
       
     <div class="boton-eliminar">
@@ -85,6 +86,7 @@
       </form>
     </div>
   </div>
+  <% } %>
 
 
     <!-- boton compartit y cuotas-->
