@@ -33,32 +33,32 @@
       
 <div class="container" >
           
-      <form action="register" method="POST" id="FormDicons" enctype="multipart/form-data" class=" row mt-3 " >
+      <form action="register" method="POST" id="FormDicons" enctype="multipart/form-data" class="row mt-3" >
 
             <div class="col-6">
                   <label for="Name" class="form-label">Nombre</label>
-                  <input type="text"  name="name"  class="form-control"  id="Name" placeholder ="Ingresá tu nombre" required>
+                  <input type="text"  name="name"  class="form-control" id="Name" placeholder ="Ingresá tu nombre" required>
                   <span></span>
                   
             </div>
             <div class="col-6">
                   <label for="apell" class="form-label">Apellido</label>
-                  <input type="text"  name="apell"  class="form-control"  id="apell" placeholder ="Ingresá tu apellido" required>
+                  <input type="text"  name="apell"  class="form-control" id="apell" placeholder ="Ingresá tu apellido" required>
                   <span></span>
             </div>
             <div class="col-6">
                   <label for="Nacimiento" class="form-label">Fecha de Nacimiento</label>
-                  <input type="date" name="nac" min =1900-01-01 max = 2022-01-01 class="form-control"  id="Nacimiento" placeholder ="Fecha de Nacimiento"  required>
+                  <input type="date" name="nac" min =1900-01-01 max = 2022-01-01 class="form-control" id="Nacimiento" placeholder ="Fecha de Nacimiento"  required>
                   
             </div>
             <div class="col-6">
                   <label for="Country" class="form-label">País de residencia</label>
-                  <input type="text"  name="count" class="form-control"  id="Country" placeholder ="Ingresa pais de residencia" required>
+                  <input type="text"  name="count" class="form-control" id="Country" placeholder ="Ingresa pais de residencia" required>
                   <span></span>
             </div>
             <div class="col-6">
                   <label for="emailInput" class="form-label">Email</label>
-                  <input type="email" name="email" class="form-control"  id="emailInput" placeholder ="Ingresa tu @ mail" required>
+                  <input type="email" name="email" class="form-control" id="emailInput" placeholder ="Ingresa tu @ mail" required>
                   <span></span>
                   <% if(locals.msg) { %>
                         <div class="text-danger"><%= locals.msg %></div>

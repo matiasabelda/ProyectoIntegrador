@@ -24,7 +24,7 @@ window.addEventListener('load', function(){
 
             let button = e.target
             let item = button.closest('.card-producto'); //captura el contenedor padre del icono del carrito
-            
+            console.log(item)
             let newItemInLocalStorage = {
                                 id: item.querySelector('#producto-id').textContent,
                                 name: item.querySelector('#nombre-producto').textContent,
@@ -33,7 +33,7 @@ window.addEventListener('load', function(){
                                 image: item.querySelector('#imagen-producto').attributes.src.nodeValue,
                                 quantity: 1
             }
-            
+            console.log(newItemInLocalStorage)
             //agrego cada item al carrito
             addItemCarrito(newItemInLocalStorage)
             
@@ -56,16 +56,17 @@ window.addEventListener('load', function(){
         function addItemCarrito(newItemInLocalStorage) {
 
             // Si el producto ya está agregado al carrito que solo sume la cantidad
-            for(let i=0; i <carrito.length; i++) {
+             for(let i=0; i <carrito.length; i++) {
 
-                if(carrito[i].id === newItemInLocalStorage.id) {
-                    carrito[i].quantity++;
-                    console.log('for'+carrito);
-                    console.log(carrito);
-                    return null;
-                }
-            }
-            
+                 if(carrito[i].id === newItemInLocalStorage.id) {
+                     carrito[i].quantity++;
+                     console.log('for'+carrito);
+                     console.log(carrito);
+                     return null;
+                 }
+             }
+
+                        
             carrito.push(newItemInLocalStorage);
             localStorage.setItem('carrito', JSON.stringify(carrito));
             //imprimirItemCarrito()

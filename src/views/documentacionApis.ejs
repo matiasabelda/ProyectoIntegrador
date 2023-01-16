@@ -5,110 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/apis.css">
     <%- include ('./partials/head') %>
 </head>
+<!-- 110vh #03264C-->
 <body style="background-color: black;">
   <a href="/"><img style="width: 7%; margin-left: 14px; margin-top: 17px;" src="/img/products/logoo.jpg"> </img></a>
  
-<div style="border: #03264C solid 2px;  width: 90%; height: 110vh; margin-top: 2%; margin-left: auto;margin-right: auto; background-color: white;">
-  <h1 style="margin-top:90px; text-align: center;" ><b>API ENDPOINTS DICONS</b></h1>
-
-<div style="border: 1px solid #03264C; width: 79%; height: max-content; margin-left: 10%; margin-top: 3%; background-color: #999999 ">
-
-
-  <div class="row g-0 text-center" >
-   
-    <div class="col-6 col-md-6" style="width: 50%; height: max-content; border: 1px solid white;">
+<div class="rounded-3" style="width: 90%; height: auto; margin-top: 2%; margin-bottom: 2%; margin-left: auto; margin-right: auto; background-color: darkgray">
   
-     <h2 ><b>Todos los Productos</b></h2>  
-     <p>Para traer todos los productos ingresar: </p>
-  
+  <div class="container-fluid d-flex justify-content-center">
+    <div class="row">
+      <div class="col">
+        <h2 style="color: white;">API ENDPOINTS DICONS</h2>
+        <table class="table table-dark">
+          
+          <thead>
+            <tr>
+              <th>Documentación</th>
+              <th>Instrucciones</th>
+              <th>Endpoints</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>PRODUCTOS</b></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="fila">
+              <td>Todos los Productos</td>
+              <td>Para traer todos los productos ingresá:</td>
+              <td><a href="http://localhost:3002/products/traerProductos" target="_blank"><p>"http://localhost:3002/products/traerProductos"</p></a></td>
+            </tr>
+            <tr>
+              <td>Productos por Categoría</td>
+              <td>Para traer todos los Productos por Categoría ingresá:</td>
+              <td><a href="http://localhost:3002/products/traerProductosPorCategoria" target="_blank"> <p>"http://localhost:3002/products/traerProductosPorCategoria"</p></a></td>
+            </tr>
+            <tr>
+              <td>Productos por ID</td>
+              <td>Para traer un producto por su id ingresá: </td>
+              <td>
+                <p>"http://localhost:3002/products/traerProductoPorId/{id}"</p> 
+                <a href="http://localhost:3002/products/traerProductoPorId/19" target="_blank"> <p>"http://localhost:3002/products/traerProductoPorId/19"</p> </a> 
+              </td>
+            </tr>
+            <tr>
+              <td><b>USUARIOS</b></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Todos los usuarios</td>
+              <td>Para traer todos los usuarios ingresar: </td>
+              <td>
+                <a href="http://localhost:3002/users/traerUsuarios" target="_blank"> <p>"http://localhost:3002/users/traerUsuarios"</p> </a> 
+              </td>
+            </tr>
+            <tr>
+              <td>Usuarios por ID</td>
+              <td>Para buscar usuarios por id ingresar: </td>
+              <td>
+                <p>"http://localhost:3002/users/traerUsuarioPorId/{id}"</p> 
+                <a href="http://localhost:3002/users/traerUsuarioPorId/2" target="_blank"> <p>"http://localhost:3002/products/traerProductoPorId/2"</p> </a> 
+              </td>
+            </tr>
+          </tbody>
+      </table>
+      </div>
     </div>
-   
-    <div class="col-sm-6 col-md-6" style="width: 50%; height: 96px; border: 1px solid white;">
-  
-    <a href="http://localhost:3002/products/traerProductos" target="_blank"> <p style="margin-top: 19px;">"http://localhost:3002/products/traerProductos"</p></a>
-   
-    </div>
   </div>
-
-   
-  <div class="row g-0 text-center" >
-   
-    <div class="col-6 col-md-6" style="width: 50%; height: max-content; border: 1px solid white;">
   
-     <h2 ><b>Productos por Categoría</b></h2>  
-     <p>Para traer todos los productos por categoría ingresar: </p>
   
-    </div>
-   
-    <div class="col-sm-6 col-md-6" style="width: 50%; height: 96px; border: 1px solid white;">
-  
-    <a href="http://localhost:3002/products/traerProductosPorCategoria" target="_blank"> <p style="margin-top: 19px;">"http://localhost:3002/products/traerProductosPorCategoria"</p></a>
-   
-    </div>
-  </div>
-
-
-<div class="row g-0 text-center" >
-   
-   <div class="col-6 col-md-6" style="width: 50%; height: max-content; border: 1px solid white;">
-
-    <h2 ><b>Productos por ID</b></h2>  
-    <p>Para buscar productos por id ingresar: </p>
-
-   </div>
-  
-   <div class="col-sm-6 col-md-6" style="width: 50%; height: 96px; border: 1px solid white;">
-    <p style="margin-top: 19px;">"http://localhost:3002/products/traerProductoPorId/{id}"</p> 
-    <a href="http://localhost:3002/products/traerProductoPorId/19" target="_blank"> <p style="margin-top: 19px;">"http://localhost:3002/products/traerProductoPorId/19"</p> </a> 
-   </div>
- </div>
-
- <div class="row g-0 text-center" >
-   
-  <div class="col-6 col-md-6" style="width: 50%; height: max-content; border: 1px solid white;">
-
-   <h2 ><b>Todos los usuarios </b></h2>  
-   <p>Para traer todos los usuarios ingresar: </p>
-
-  </div>
- 
-  <div class="col-sm-6 col-md-6" style="width: 50%; height: 96px; border: 1px solid white;">
-
-  
-  <a href="http://localhost:3002/users/traerUsuarios" target="_blank"> <p style="margin-top: 19px;">"http://localhost:3002/users/traerUsuarios"</p> </a> 
-   
- 
-  </div>
 </div>
-  
-<div class="row g-0 text-center" >
-   
-  <div class="col-6 col-md-6" style="width: 50%; height: max-content; border: 1px solid white;">
-
-   <h2><b>Usuarios por ID</b></h2>  
-   <p>Para buscar usuarios por id ingresar: </p>
-
-  </div>
- 
-  <div class="col-sm-6 col-md-6" style="width: 50%; height: 96px; border: 1px solid white;">
-
-    <p style="margin-top: 19px;">"http://localhost:3002/users/traerUsuarioPorId/{id}"</p> 
-    <a href="http://localhost:3002/users/traerUsuarioPorId/2" target="_blank"> <p style="margin-top: 19px;">"http://localhost:3002/products/traerProductoPorId/2"</p> </a> 
-  
- 
-  </div>
-</div>
-
-
-
-
-</div>
-</div>
-
- 
-
-   
 </body>
 </html>

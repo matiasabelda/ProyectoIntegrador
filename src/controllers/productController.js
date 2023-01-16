@@ -82,8 +82,8 @@ let controladorProducts = {
 			discount: req.body.discount,
 			Categoria_id: req.body.category,
 			description: req.body.description,
-			imagen: "http://localhost:3002/img/products/" + prod.image
-			//image: req.file ? req.file.filename : "logo-PF-tipografico.png",
+			image: req.file.filename
+			//image: req.file ? req.file.filename : "noImage.jpg",
 		},
 		{
 			where:{
@@ -144,7 +144,8 @@ let controladorProducts = {
 					descripcion: "Listado de Productos",
 					cantidadProductos: listaProductos.length,
 					data: listaProductos,
-					dataCategory: grupo})
+					//dataCategory: grupo
+				})
 			})
 		})
 	},

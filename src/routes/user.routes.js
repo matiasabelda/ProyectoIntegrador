@@ -58,6 +58,9 @@ router.get('/profileEdit', authMiddleware, userController.profileEdit);
 // Perfil de Data Usuario
 router.get('/profileData', authMiddleware, userController.profileData);
 
+// Actualizar Perfil de Usuario
+router.post('/profileData', uploadFile.single('avatar'), userController.update);
+
 // Logout
 router.get('/logout', userController.logout);
 

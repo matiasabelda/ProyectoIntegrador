@@ -26,7 +26,7 @@ const userController = {
             where: {
               email: newUser.email
             }
-          }).then((userBody) => {
+        }).then((userBody) => {
             
             console.log(userBody); ////////////////////////////////////////
 
@@ -67,7 +67,7 @@ const userController = {
                 {msg: 'Este mail ya existe en nuestra base de datos'});
             }
 
-          })
+        })
 
         
     },
@@ -119,7 +119,7 @@ const userController = {
           })
 	},
 
-    profile: (req, res) => {
+    profile: (req, res) => { // Muestra el perfil para poder ver los datos, modificarlos y eliminarlos
 		return res.render('./users/profile', {
 			user: req.session.userLogged[0]
             
@@ -127,14 +127,68 @@ const userController = {
         
 	},
 
+    profileData: (req, res) => { // Muestra los datos de cada Usuario
+        return res.render('./users/profileData', {
+			user: req.session.userLogged[0]
+            
+		});
+    },
+
     profileEdit: (req, res) => {
-        return res.render('./users/profileEdit');
-    },
-    profileData: (req, res) => {
-        return res.render('./users/profileData');
-    },
+
+        // let userToEdit = db.users.findByPk(req.params.id);
 
 
+		// Promise.all([userToEdit])
+		// 	.then(([usuarioAEditar]) => {
+		// 		res.render('./users/profileEdit', {
+		// 			usuarioAEditar: usuarioAEditar
+		// 			});
+		// 	});
+        return res.render('./users/profileEdit', {
+			user: req.session.userLogged[0]
+            
+		});
+    },
+
+    // Update - Update users atributes
+	update: async (req,res) => {
+
+        let userToUpdate = req.session.userLogged[0];
+
+		var userUpdated = await db.users.update({
+			
+			update_at: req.body.update_at,
+            id: req.body.id ? req.body.id : userToUpdate.id,
+            name: req.body.name ? req.body.name : userToUpdate.name,
+            apell: req.body.apell ? req.body.apell : userToUpdate.apell,
+            nac: req.body.nac ? req.body.nac : userToUpdate.nac,
+            count: req.body.count ? req.body.count : userToUpdate.count,
+            gen: req.body.gen ? req.body.gen : userToUpdate.gen,
+            avatar: req.file ? req.file.filename : userToUpdate.avatar
+		},
+		{
+			where:{
+				id: userToUpdate.id
+			}
+
+		});
+
+        let userRender = db.users.findAll({
+
+            where: { id: req.session.userLogged[0].id },
+
+        });
+
+        Promise.all([userUpdated, userRender]).then((data) => {
+            console.log(data[1][0].dataValues.id);
+            req.session.userLogged[0] = data[1][0].dataValues;
+            res.render('./users/profileData', {
+              user: req.session.userLogged[0],
+            });
+          });
+	},
+    
 	logout: (req, res) => {
 		res.clearCookie('userEmail');
 		req.session.destroy();
@@ -270,10 +324,10 @@ const userController = {
         // MyModel.getAttributes()
          // usuarios.conutry?User.findAll({
   
-            db.users.count({attributes: ["users.count"],
+            db.users.findAndCountAll({attributes: ["users.count"],
             group: "count",
             raw: true,
-            order: ["count", "ASC"],
+            order: ["count"],
             })
 	 	  	.then((grupo) => {
 	 	  		console.log(grupo)

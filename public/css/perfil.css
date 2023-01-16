@@ -96,7 +96,7 @@ main{
     width: 90px;
     height: 90px;
     border-radius: 50% ;
-    border: solid black 4px;
+    border: solid darkgray 2px;
     margin-bottom: 3px;
     
 }
